@@ -4,7 +4,7 @@
 
 ## 操作步骤<a name="zh-cn_topic_0129288885_section58626732"></a>
 
-1.  登录华为云网站****[www.huaweicloud.com](http://www.huaweicloud.com)****。
+1.  登录华为云网站[www.huaweicloud.com](http://www.huaweicloud.com)。
 2.  注册账号。
 
     使用OBS前需注册一个华为云账号。若您已有账号，请从[3](#zh-cn_topic_0129288885_li20682154824415)开始。
