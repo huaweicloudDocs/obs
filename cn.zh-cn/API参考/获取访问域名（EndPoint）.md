@@ -2,7 +2,7 @@
 
 OBS在每个区域都提供独立的二级域名，访问OBS服务既可以使用OBS提供的域名，也可以使用自定义域名。
 
-OBS已上线全新域名**\*.myhuaweicloud.com**，同时也依然支持老域名**\*.myhwclouds.com**。
+OBS已上线全新域名*.myhuaweicloud.com，同时也依然支持老域名*.myhwclouds.com。
 
 推荐您使用新域名访问OBS，新域名请从[地区和终端节点](http://developer.huaweicloud.com/dev/endpoint)获取。本文档的所有示例均使用新域名。
 
