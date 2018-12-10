@@ -477,7 +477,7 @@ Content-Length: 0
 **在Query参数中携带签名并上传对象**
 
 ```
-PUT /object02?AWSAccessKeyId=H4IPJX0TQTHTHEBQQCEC&Expires=1532688887&Signature=EQmDuOhWLUrzrzRNZxwS72CXeXM%3D HTTP/1.1
+PUT /object02?AccessKeyId=H4IPJX0TQTHTHEBQQCEC&Expires=1532688887&Signature=EQmDuOhWLUrzrzRNZxwS72CXeXM%3D HTTP/1.1
 User-Agent: curl/7.29.0
 Host: examplebucket.obs.myhuaweicloud.com
 Accept: */*
