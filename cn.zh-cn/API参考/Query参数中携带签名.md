@@ -57,7 +57,7 @@ Signature = URL-Encode( Base64( HMAC-SHA1( YourSecretAccessKeyID, UTF-8-Encoding
      Content-MD5 + "\n" +   
      Content-Type + "\n" +   
      Expires + "\n" +   
-     CanonicalizedAmzHeaders +   CanonicalizedResource; 
+     CanonicalizedHeaders +   CanonicalizedResource; 
 ```
 
 各个参数的含义如[表2](#table34479832212511)所示：
