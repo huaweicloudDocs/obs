@@ -45,20 +45,20 @@ Authorization: OBS AccessKeyID:signature
     <tr id="row1824493"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p13566274"><a name="p13566274"></a><a name="p13566274"></a>Content-Type</p>
     </td>
     <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p25126432"><a name="p25126432"></a><a name="p25126432"></a>内容类型，用于指定 消息类型，例如： text/plain。</p>
-    <p id="p24811297"><a name="p24811297"></a><a name="p24811297"></a>当请求中不带该头域时，该参数按照空字符串处理，见<a href="#ZH-CN_TOPIC_0100846723__table14775325212511">表2</a>。</p>
+    <p id="p24811297"><a name="p24811297"></a><a name="p24811297"></a>当请求中不带该头域时，该参数按照空字符串处理，见<a href="#table14775325212511">表2</a>。</p>
     </td>
     </tr>
     <tr id="row63558046"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p28804613404"><a name="p28804613404"></a><a name="p28804613404"></a>Date</p>
     </td>
     <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p10901346204019"><a name="p10901346204019"></a><a name="p10901346204019"></a>生成请求的时间，该时间格式遵循RFC 1123；</p>
-    <p id="p792134614016"><a name="p792134614016"></a><a name="p792134614016"></a>当有自定义字段x-obs-date时，该参数按照空字符串处理；见<a href="#ZH-CN_TOPIC_0100846723__table25826370212511">表3</a>。</p>
+    <p id="p792134614016"><a name="p792134614016"></a><a name="p792134614016"></a>当有自定义字段x-obs-date时，该参数按照空字符串处理；见<a href="#table25826370212511">表3</a>。</p>
     <p id="p99420463401"><a name="p99420463401"></a><a name="p99420463401"></a>如果进行临时授权方式操作（如临时授权方式获取对象内容等操作）时，该参数不需要。</p>
     </td>
     </tr>
     <tr id="row42990474"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p59676394"><a name="p59676394"></a><a name="p59676394"></a>CanonicalizedHeaders</p>
     </td>
     <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1949763"><a name="p1949763"></a><a name="p1949763"></a>HTTP请求头字段，以“x-obs-”作为前辍的消息头，如“x-obs-date，x-obs-acl”。</p>
-    <a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>自定义字段中的所有字符要转为小写，需要添加多个字段时，要将所有字段按照字典序进行排序。</li><li>在添加自定义字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要合并成x-obse-meta-name:name1,name2。</li><li>当自定义字段中，含有非ASCII码或不可识别字符时，需进行Base64编码</li><li>当自定义字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个自定义字段最后都需要另起新行，见<a href="#ZH-CN_TOPIC_0100846723__table46456687212511">表4</a></li></ol>
+    <a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>自定义字段中的所有字符要转为小写，需要添加多个字段时，要将所有字段按照字典序进行排序。</li><li>在添加自定义字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要合并成x-obse-meta-name:name1,name2。</li><li>当自定义字段中，含有非ASCII码或不可识别字符时，需进行Base64编码</li><li>当自定义字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个自定义字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
     </td>
     </tr>
     <tr id="row7450793"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p66643399"><a name="p66643399"></a><a name="p66643399"></a>CanonicalizedResource</p>
@@ -204,6 +204,10 @@ Authorization: OBS AccessKeyID:signature
     import java.security.NoSuchAlgorithmException;
     import java.security.InvalidKeyException;
     import java.util.Base64;
+    import java.text.SimpleDateFormat;
+    import java.util.Calendar;
+    import java.util.Locale;
+    import java.util.TimeZone;
     public class Signature{
     	public static void signWithHmacSha1(String sk, String canonicalString)throws UnsupportedEncodingException{
     	
@@ -220,11 +224,14 @@ Authorization: OBS AccessKeyID:signature
                     String yourSecretAccessKeyID = "275hSvB6EEOorBNsMDEfOaICQnilYaPZhXUaSK64";
     		String httpMethod = "PUT";
     		String contentType = "application/xml";
-                    // "time" is the time when the request was actually generated
-    		String time = "Fri, 06 Jul 2018 08:10:26 GMT";
+                    // "date" is the time when the request was actually generated
+                    Calendar cd = Calendar.getInstance();
+                    SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss 'GMT'", Locale.US);
+                    sdf.setTimeZone(TimeZone.getTimeZone("GMT")); // 设置时区为GMT
+                    String date = sdf.format(cd.getTime());
     		String canonicalizedHeaders = "x-obs-acl:private\nx-obs-storage-class:STANDARD\n";
     		String CanonicalizedResource = "/newbucketname2";
-    	String canonicalString = httpMethod + "\n" + "\n" +contentType + "\n" + time "\n" + canonicalizedHeaders + CanonicalizedResource;
+    	String canonicalString = httpMethod + "\n" + "\n" + contentType + "\n" + date + "\n" + canonicalizedHeaders + CanonicalizedResource;
     		try{
     			signWithHmacSha1(yourSecretAccessKeyID,canonicalString);
     		}catch (UnsupportedEncodingException e){
@@ -236,6 +243,6 @@ Authorization: OBS AccessKeyID:signature
     }
     ```
 
-    签名的计算结果为：ydH8ffpcbS6YpeOMcEZfn0wE90c=
+    签名的计算的样例结果为（按照执行时间的不同变化）：ydH8ffpcbS6YpeOMcEZfn0wE90c=
 
 

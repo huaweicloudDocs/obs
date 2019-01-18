@@ -236,7 +236,7 @@ HTTP方法（也称为操作或动词），它告诉服务你正在请求什么�
     </tr>
     <tr id="row50360765"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="p52690158"><a name="p52690158"></a><a name="p52690158"></a>ETag</p>
     </td>
-    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p40044371"><a name="p40044371"></a><a name="p40044371"></a>对象的Hash值，只与对象内容有关，与对象元数据无关。</p>
+    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p40044371"><a name="p40044371"></a><a name="p40044371"></a>对象的base64编码的128位MD5摘要。ETag是对象内容的唯一标识，可以通过该值识别对象内容是否有变化。比如上传对象时ETag为A，下载对象时ETag为B，则说明对象内容发生了变化。</p>
     <p id="p24855020"><a name="p24855020"></a><a name="p24855020"></a>类型：字符串。</p>
     </td>
     </tr>
