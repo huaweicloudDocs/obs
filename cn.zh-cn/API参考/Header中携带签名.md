@@ -65,7 +65,7 @@ Authorization: OBS AccessKeyID:signature
     </td>
     <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p29406249"><a name="p29406249"></a><a name="p29406249"></a>表示HTTP请求所指定的OBS资源，构造方式如下：</p>
     <p id="p63329656"><a name="p63329656"></a><a name="p63329656"></a>&lt;桶名+对象名&gt;+[子资源]+[查询字符串]</p>
-    <a name="ol135483613475"></a><a name="ol135483613475"></a><ol id="ol135483613475"><li>桶名和对象名，例如：/bucket/object。如果没有对象名，如列举桶，则为"/bucket/"，如桶名也没有，则为“/”。</li><li>如果有子资源，则将子资源添加进来，例如?acl，?logging。子资源包括acl, lifecycle, location, logging, notification, partNumber, policy, uploadId, uploads, versionId, versioning, versions, website, quota, storageClass, storageinfo, delete, restore, tagging, cors, replication。</li><li>如有查询字符串那么将这些查询字符串及其请求值按照字典序从小到大排列。</li></ol>
+    <a name="ol135483613475"></a><a name="ol135483613475"></a><ol id="ol135483613475"><li>桶名和对象名，例如：/bucket/object。如果没有对象名，如列举桶，则为"/bucket/"，如桶名也没有，则为“/”。</li><li>如果有子资源，则将子资源添加进来，例如?acl，?logging。子资源包括CDNNotifyConfiguration, acl, encryption, lifecycle, location, logging, metadata, notification, partNumber, policy, uploadId, uploads, versionId, versioning, versions, website, quota, storageClass, storageinfo, delete, restore, tagging, cors, replication。</li><li>如有查询字符串那么将这些查询字符串及其请求值按照字典序从小到大排列。</li></ol>
     </td>
     </tr>
     </tbody>
