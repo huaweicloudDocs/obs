@@ -24,6 +24,7 @@
     <tbody><tr id="row335362611573"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p1335417269573"><a name="p1335417269573"></a><a name="p1335417269573"></a>存储用量</p>
     </td>
     <td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p63819601786"><a name="p63819601786"></a><a name="p63819601786"></a>桶中存储的对象占用的存储空间。</p>
+    <p id="p41001540162115"><a name="p41001540162115"></a><a name="p41001540162115"></a>桶的存储空间默认情况下是没有配额限制的，您也可以通过设置桶配额来设置桶的存储空间，详情请参见<a href="https://support.huaweicloud.com/api-obs/zh-cn_topic_0100846743.html" target="_blank" rel="noopener noreferrer">设置桶配额</a>。</p>
     </td>
     </tr>
     <tr id="row4356142614579"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p6357926195717"><a name="p6357926195717"></a><a name="p6357926195717"></a>对象数量</p>

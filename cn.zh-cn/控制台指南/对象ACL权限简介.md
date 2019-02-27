@@ -24,7 +24,7 @@ OBS支持通过ACL对如下授权用户授予访问对象的指定权限，如[�
 </tr>
 <tr id="r30eade55e6e646dc8fe1c64ab67e6382"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="a8bbaeefc421f4773ae9282e48768170e"><a name="a8bbaeefc421f4773ae9282e48768170e"></a><a name="a8bbaeefc421f4773ae9282e48768170e"></a>匿名用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="a4cf47ba94b5f476e91dc55c0c1c4d46b"><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a>未注册OBS的普通访客。如果匿名用户被授予了访问桶和对象的权限，则表示所有人都可以访问对应的桶和对象。</p>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="a4cf47ba94b5f476e91dc55c0c1c4d46b"><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a>未注册OBS的普通访客。如果匿名用户被授予了访问对象的权限，则表示所有人都可以访问对应的对象。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0071293615_row14759379"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0071293615_p54659014"><a name="zh-cn_topic_0071293615_p54659014"></a><a name="zh-cn_topic_0071293615_p54659014"></a>注册用户组</p>
