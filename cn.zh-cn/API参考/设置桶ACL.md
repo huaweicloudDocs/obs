@@ -12,7 +12,7 @@ OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操�
 
 ```
 PUT /?acl HTTP/1.1 
-Host: bucketname.obs.cn-north-1.myhuaweicloud.com
+Host: bucketname.obs.cn-north-1.myhuaweicloud.com 
 Date: date
 Authorization: authorization
 Content-Type: application/xml 
@@ -180,7 +180,8 @@ Date: WED, 01 Jul 2015 02:37:22 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:iqSPeUBl66PwXDApxjRKk6hlcN4=
 Content-Length: 727
 
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">  
+<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">
+  
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 
   </Owner>  
