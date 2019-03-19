@@ -159,7 +159,8 @@ Date: WED, 01 Jul 2015 04:42:34 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:8xAODun1ofjkwHm8YhtN0QEcy9M=
 Content-Length: 727
 
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">  
+<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">
+  
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 
   </Owner>  
