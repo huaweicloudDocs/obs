@@ -170,8 +170,8 @@ Content-Type: application/xml
 Date: WED, 01 Jul 2015 03:54:36 GMT
 Content-Length: 825
 
-<?xml version="1.0" encoding="utf-8"?>
-<CORSConfiguration xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">  
+<?xml version="1.0" encoding="utf-8"?> 
+<CORSConfiguration xmlns="http://obs.cn-north-1.myhuaweicloud.com/doc/2015-06-30/"> 
   <CORSRule> 
     <ID>783fc6652cf246c096ea836694f71855</ID>  
     <AllowedMethod>POST</AllowedMethod>  

@@ -188,7 +188,7 @@ Date: WED, 01 Jul 2015 04:45:55 GMT
 Content-Length: 769
 
 <?xml version="1.0" encoding="utf-8"?>
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">  
+<AccessControlPolicy xmlns="http://obs.cn-north-1.myhuaweicloud.com/doc/2015-06-30/"> 
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 
   </Owner>  

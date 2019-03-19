@@ -8,7 +8,7 @@
 
 ```
 GET /?acl HTTP/1.1 
-Host: bucketname.obs.cn-north-1.myhuaweicloud.com
+Host: bucketname.obs.cn-north-1.myhuaweicloud.com 
 Date: date
 Authorization: authorization
 ```
@@ -145,7 +145,8 @@ Date: WED, 01 Jul 2015 02:39:28 GMT
 Content-Length: 784
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">  
+<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">
+  
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 
   </Owner>  
