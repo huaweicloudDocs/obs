@@ -7,7 +7,9 @@
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >同一个桶中存储的对象名是唯一的，在桶未开启多版本的情况下，重复上传同名对象，前一次上传的对象将被后一次上传的对象覆盖。  
 
-如果在指定的桶内已经有相同的对象键值的对象，用户上传的新对象会覆盖原来的对象；为了确保数据在传输过程中没有遭到破坏，用户可以在请求消息头中加入Content-MD5参数。在这种情况下，OBS收到上传的对象后，会对对象进行MD5校验，如果不一致则返回出错信息。用户还可以在上传对象时指定x-obs-acl参数，设置对象的权限控制策略。
+如果在指定的桶内已经有相同的对象键值的对象，用户上传的新对象会覆盖原来的对象；为了确保数据在传输过程中没有遭到破坏，用户可以在请求消息头中加入Content-MD5参数。在这种情况下，OBS收到上传的对象后，会对对象进行MD5校验，如果不一致则返回出错信息。
+
+用户还可以在上传对象时指定x-obs-acl参数，设置对象的权限控制策略。如果匿名用户在上传对象时未指定x-obs-acl参数，则该对象默认可以被所有OBS注册用户访问。
 
 该操作支持服务端加密功能。
 
@@ -129,7 +131,7 @@ Date: date
 <p id="p21367535"><a name="p21367535"></a><a name="p21367535"></a>例如，重定向请求到桶内另一对象：</p>
 <p id="p58090092"><a name="p58090092"></a><a name="p58090092"></a>x-obs-website-redirect-location:/anotherPage.html</p>
 <p id="p53048785"><a name="p53048785"></a><a name="p53048785"></a>或重定向请求到一个外部URL：</p>
-<p id="p7677024"><a name="p7677024"></a><a name="p7677024"></a>x-obs-website-redirect-location:http://www.huawei.com/</p>
+<p id="p7677024"><a name="p7677024"></a><a name="p7677024"></a>x-obs-website-redirect-location:http://www.example.com/</p>
 <p id="p1984352"><a name="p1984352"></a><a name="p1984352"></a>类型：字符串</p>
 <p id="p17859171"><a name="p17859171"></a><a name="p17859171"></a>默认值：无</p>
 <p id="p26514819"><a name="p26514819"></a><a name="p26514819"></a>约束：必须以“/”、“http://”或“https://”开头，长度不超过2KB。</p>
@@ -451,7 +453,7 @@ User-Agent: curl/7.29.0
 Host: examplebucket.obs.cn-north-1.myhuaweicloud.com
 Accept: */*
 Date: WED, 01 Jul 2015 04:17:12 GMT
-x-obs-website-redirect-location: http://www.huawei.com/
+x-obs-website-redirect-location: http://www.example.com/
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:uFVJhp/dJqj/CJIVLrSZ0gpw3ng=
 Content-Length: 10240
 Expect: 100-continue
@@ -479,7 +481,7 @@ Content-Length: 0
 ```
 PUT /object02?AccessKeyId=H4IPJX0TQTHTHEBQQCEC&Expires=1532688887&Signature=EQmDuOhWLUrzrzRNZxwS72CXeXM%3D HTTP/1.1
 User-Agent: curl/7.29.0
-Host: examplebucket.obs.myhuaweicloud.com
+Host: examplebucket.obs.cn-north-1.myhuaweicloud.com
 Accept: */*
 Content-Length: 1024
 

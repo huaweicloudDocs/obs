@@ -1,6 +1,6 @@
 # Query参数中携带签名<a name="ZH-CN_TOPIC_0100846724"></a>
 
-Query参数中携带签名：OBS服务支持用户构造一个特定操作的URL，这个URL中会包含用户AK、签名、有效期、资源等信息，任何拿到这个URL的人均可执行这个操作，OBS服务收到这个请求后认为该请求就是签发URL用户自己在执行操作。例如构造一个携带签名信息的下载对象的URL，拿到相应URL的人能下载这个对象，但该URL只在Expires指定的失效时间内有效。Query参数中携带签名的URL主要用于在不提供给其他人（可以是非公有云用户）Secret Access Key的情况下，让其他人能用预签发的URL来进行身份认证，并执行预定义的操作。
+Query参数中携带签名：OBS服务支持用户构造一个特定操作的URL，这个URL中会包含用户AK、签名、有效期、资源等信息，任何拿到这个URL的人均可执行这个操作，OBS服务收到这个请求后认为该请求就是签发URL用户自己在执行操作。例如构造一个携带签名信息的下载对象的URL，拿到相应URL的人能下载这个对象，但该URL只在Expires指定的失效时间内有效。Query参数中携带签名的URL主要用于在不提供给其他人Secret Access Key的情况下，让其他人能用预签发的URL来进行身份认证，并执行预定义的操作。
 
 Query参数中携带签名请求的消息格式如下：
 
@@ -32,7 +32,7 @@ Host: bucketname.obs.cn-north-1.myhuaweicloud.com
 </tr>
 <tr id="row8913420"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p50898414"><a name="p50898414"></a><a name="p50898414"></a>Expires</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p29130856"><a name="p29130856"></a><a name="p29130856"></a>临时授权失效的时间；UTC时间，1970年1月1日零时之后的指定的Expires时间内有效（以秒为单位）。</p>
+<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p29130856"><a name="p29130856"></a><a name="p29130856"></a>临时授权失效的时间；临时授权失效的时间为24小时，非临时的授权时间可设置的最长时间为1年，但是如果含有了临时的AK，其授权失效时间最大值也只能为24小时；UTC时间，1970年1月1日零时之后的指定的Expires时间内有效（以秒为单位）。</p>
 <p id="p60851118"><a name="p60851118"></a><a name="p60851118"></a>类型：字符串。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.3 "><p id="p29993536"><a name="p29993536"></a><a name="p29993536"></a>是</p>
@@ -90,7 +90,7 @@ Signature = URL-Encode( Base64( HMAC-SHA1( YourSecretAccessKeyID, UTF-8-Encoding
 <tr id="row42990474"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p59676394"><a name="p59676394"></a><a name="p59676394"></a>CanonicalizedHeaders</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1949763"><a name="p1949763"></a><a name="p1949763"></a>HTTP请求头字段，以“x-obs-”作为前辍的消息头，如“x-obs-date，x-obs-acl”。</p>
-<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>自定义字段中的所有字符要转为小写，需要添加多个字段时，要将所有字段按照字典序进行排序。</li><li>在添加自定义字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要合并成x-obse-meta-name:name1,name2。</li><li>当自定义字段中，含有非ASCII码或不可识别字符时，需进行Base64编码</li><li>当自定义字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个自定义字段最后都需要另起新行。</li></ol>
+<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>自定义字段中的所有字符要转为小写，需要添加多个字段时，要将所有字段按照字典序进行排序。</li><li>在添加自定义字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要合并成x-obs-meta-name:name1,name2。</li><li>当自定义字段中，含有非ASCII码或不可识别字符时，需进行Base64编码</li><li>当自定义字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个自定义字段最后都需要另起新行。</li></ol>
 </td>
 </tr>
 <tr id="row7450793"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p66643399"><a name="p66643399"></a><a name="p66643399"></a>CanonicalizedResource</p>

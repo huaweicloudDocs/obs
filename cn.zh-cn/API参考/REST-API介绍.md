@@ -19,7 +19,7 @@ OBS根据桶和对象及带的资源参数来确定具体的URI，当需要进�
 
 URI的一般格式为（方括号内为可选项）：
 
-**protocol ://hostname\[:port\] \[/bucket\] \[/object\] \[?param\]**
+**protocol://bucket.domain\[:prot\]\[/object\]\[?param\]**
 
 **表 1**  URI中的参数
 
@@ -39,11 +39,18 @@ URI的一般格式为（方括号内为可选项）：
 <td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.3 "><p id="p39351575"><a name="p39351575"></a><a name="p39351575"></a>必选</p>
 </td>
 </tr>
-<tr id="row18619861"><td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.1 "><p id="p31813738"><a name="p31813738"></a><a name="p31813738"></a>hostname</p>
+<tr id="row88287534152"><td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.1 "><p id="p1930030181620"><a name="p1930030181620"></a><a name="p1930030181620"></a>bucket</p>
 </td>
-<td class="cellrowborder" valign="top" width="73.74000000000001%" headers="mcps1.2.4.1.2 "><p id="p26775963"><a name="p26775963"></a><a name="p26775963"></a>请求使用的主机名，是指存放资源的服务器的域名或IP地址。</p>
+<td class="cellrowborder" valign="top" width="73.74000000000001%" headers="mcps1.2.4.1.2 "><p id="p930030121615"><a name="p930030121615"></a><a name="p930030121615"></a>请求使用的桶资源路径，在整个系统中唯一标识一个桶。</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.3 "><p id="p58107106"><a name="p58107106"></a><a name="p58107106"></a>必选</p>
+<td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.3 "><p id="p3300803163"><a name="p3300803163"></a><a name="p3300803163"></a>可选</p>
+</td>
+</tr>
+<tr id="row55346801513"><td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.1 "><p id="p135344812156"><a name="p135344812156"></a><a name="p135344812156"></a>domain</p>
+</td>
+<td class="cellrowborder" valign="top" width="73.74000000000001%" headers="mcps1.2.4.1.2 "><p id="p323103261516"><a name="p323103261516"></a><a name="p323103261516"></a>存放资源的服务器的域名或IP地址。</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.3 "><p id="p125929367153"><a name="p125929367153"></a><a name="p125929367153"></a>必选</p>
 </td>
 </tr>
 <tr id="row53201908"><td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.1 "><p id="p14387307"><a name="p14387307"></a><a name="p14387307"></a>port</p>
@@ -54,13 +61,6 @@ URI的一般格式为（方括号内为可选项）：
 <p id="p25031604"><a name="p25031604"></a><a name="p25031604"></a>OBS对象存储服务的http方式访问端口为80，HTTPs方式访问端口为443。</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.3 "><p id="p14294078"><a name="p14294078"></a><a name="p14294078"></a>可选</p>
-</td>
-</tr>
-<tr id="row61537845"><td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.1 "><p id="p18509547"><a name="p18509547"></a><a name="p18509547"></a>bucket</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.74000000000001%" headers="mcps1.2.4.1.2 "><p id="p22878309"><a name="p22878309"></a><a name="p22878309"></a>请求使用的桶资源路径，在整个系统中唯一标识一个桶。</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.3 "><p id="p41203723"><a name="p41203723"></a><a name="p41203723"></a>可选</p>
 </td>
 </tr>
 <tr id="row35289195"><td class="cellrowborder" valign="top" width="13.13%" headers="mcps1.2.4.1.1 "><p id="p39852543"><a name="p39852543"></a><a name="p39852543"></a>object</p>
@@ -236,7 +236,7 @@ HTTP方法（也称为操作或动词），它告诉服务你正在请求什么�
     </tr>
     <tr id="row50360765"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="p52690158"><a name="p52690158"></a><a name="p52690158"></a>ETag</p>
     </td>
-    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p40044371"><a name="p40044371"></a><a name="p40044371"></a>对象的base64编码的128位MD5摘要。ETag是对象内容的唯一标识，可以通过该值识别对象内容是否有变化。比如上传对象时ETag为A，下载对象时ETag为B，则说明对象内容发生了变化。</p>
+    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p40044371"><a name="p40044371"></a><a name="p40044371"></a>对象的base64编码的128位MD5摘要。ETag是对象内容的唯一标识，可以通过该值识别对象内容是否有变化。比如上传对象时ETag为A，下载对象时ETag为B，则说明对象内容发生了变化。实际的ETag是对象的哈希值。ETag只反映变化的内容，而不是其元数据。上传的对象或拷贝操作创建的对象，通过MD5加密后都有唯一的ETag。如果通过多段上传对象，则无论加密方法如何，MD5会拆分ETag，此类情况ETag就不是MD5的摘要。</p>
     <p id="p24855020"><a name="p24855020"></a><a name="p24855020"></a>类型：字符串。</p>
     </td>
     </tr>

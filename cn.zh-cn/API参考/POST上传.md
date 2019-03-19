@@ -550,7 +550,7 @@ ETag: "ab7abb0da4bca5323ab6119bb5dcd296"
             "x-obs-storage-class":"WARM"
         },
         {
-            "success_action_redirect":"http://www.huawei.com"
+            "success_action_redirect":"http://www.example.com"
         },
         {
             "x-obs-acl":"public-read"

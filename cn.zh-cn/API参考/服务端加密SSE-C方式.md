@@ -154,7 +154,7 @@ Content-Length: 0
 ```
 PUT /encrypobject?AccessKeyId=H4IPJX0TQTHTHEBQQCEC&Expires=1532688887&Signature=EQmDuOhWLUrzrzRNZxwS72CXeXM%3D HTTP/1.1
 User-Agent: curl/7.29.0
-Host: examplebucket.obs.myhuaweicloud.com
+Host: examplebucket.obs.cn-north-1.myhuaweicloud.com
 Accept: */*
 x-obs-server-side-encryption-customer-algorithm: AES256
 x-obs-server-side-encryption-customer-key:K7QkYpBkM5+hcs27fsNkUnNVaobncnLht/rCB2o/9Cw=
