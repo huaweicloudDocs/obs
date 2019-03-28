@@ -34,7 +34,7 @@ IAM策略的应用场景如下：
 
 OBS桶和对象的ACL是基于账号的访问控制，默认情况下，创建桶和对象时会同步创建ACL，授权拥有者对桶和对象资源的完全控制权限。
 
-OBS ACL是基于账号级别的读写权限控制，权限控制细粒度不如桶策略和IAM策略。一般情况下，建议使用IAM策略和桶策略进行访问控制。
+OBS  ACL是基于账号级别的读写权限控制，权限控制细粒度不如桶策略和IAM策略。一般情况下，建议使用IAM策略和桶策略进行访问控制。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >对象的拥有者是上传对象的账号，而不是对象所属的桶的拥有者。例如，如果账号B被授予访问账号A的桶的权限，然后账号B上传一个文件到桶中，则账号B是对象的拥有者，而不是账号A。  
@@ -48,68 +48,8 @@ OBS ACL是基于账号级别的读写权限控制，权限控制细粒度不如�
 **图 1**  访问策略授权过程<a name="fig137808145374"></a>  
 ![](figures/访问策略授权过程.png "访问策略授权过程")
 
-桶策略、IAM策略和ACL的Allow和Deny作用结果如[表1](#table12121938103915)所示。
+桶策略、IAM策略和ACL的Allow和Deny作用结果如[图2](#fig1251114133010)所示。
 
-**表 1**  桶策略、IAM策略和ACL的Allow和Deny作用结果
-
-<a name="table12121938103915"></a>
-<table><tbody><tr id="row11373819394"><td class="cellrowborder" rowspan="2" valign="top"><p id="p121333810394"><a name="p121333810394"></a><a name="p121333810394"></a>桶策略</p>
-</td>
-<td class="cellrowborder" colspan="3" valign="top"><p id="p1495144184414"><a name="p1495144184414"></a><a name="p1495144184414"></a>IAM策略</p>
-</td>
-<td class="cellrowborder" rowspan="2" valign="top"><p id="p10131938183916"><a name="p10131938183916"></a><a name="p10131938183916"></a>ACL</p>
-</td>
-</tr>
-<tr id="row1979673164111"><td class="cellrowborder" valign="top"><p id="p8588184819441"><a name="p8588184819441"></a><a name="p8588184819441"></a>Deny</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p147978324114"><a name="p147978324114"></a><a name="p147978324114"></a>Allow</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p20797203174114"><a name="p20797203174114"></a><a name="p20797203174114"></a>Default Deny</p>
-</td>
-</tr>
-<tr id="row191353816393"><td class="cellrowborder" rowspan="2" valign="top"><p id="p1679714318415"><a name="p1679714318415"></a><a name="p1679714318415"></a>Deny</p>
-<p id="p31383817398"><a name="p31383817398"></a><a name="p31383817398"></a></p>
-</td>
-<td class="cellrowborder" colspan="3" valign="top"><p id="p95469474710"><a name="p95469474710"></a><a name="p95469474710"></a>Deny</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p179081435164516"><a name="p179081435164516"></a><a name="p179081435164516"></a>Allow</p>
-</td>
-</tr>
-<tr id="row01317383395"><td class="cellrowborder" colspan="3" valign="top"><p id="p1931520916474"><a name="p1931520916474"></a><a name="p1931520916474"></a>Deny</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p5131438103916"><a name="p5131438103916"></a><a name="p5131438103916"></a>Default Deny</p>
-</td>
-</tr>
-<tr id="row113638113910"><td class="cellrowborder" rowspan="2" valign="top"><p id="p181393833911"><a name="p181393833911"></a><a name="p181393833911"></a>Allow</p>
-</td>
-<td class="cellrowborder" rowspan="2" valign="top"><p id="p18158122512475"><a name="p18158122512475"></a><a name="p18158122512475"></a>Deny</p>
-</td>
-<td class="cellrowborder" colspan="2" valign="top"><p id="p1193629195212"><a name="p1193629195212"></a><a name="p1193629195212"></a>Allow</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p03112119466"><a name="p03112119466"></a><a name="p03112119466"></a>Allow</p>
-</td>
-</tr>
-<tr id="row191393893911"><td class="cellrowborder" colspan="2" valign="top"><p id="p1414259145114"><a name="p1414259145114"></a><a name="p1414259145114"></a>Allow</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p1831131184614"><a name="p1831131184614"></a><a name="p1831131184614"></a>Default Deny</p>
-</td>
-</tr>
-<tr id="row61323813919"><td class="cellrowborder" rowspan="2" valign="top" width="20%"><p id="p14149122116464"><a name="p14149122116464"></a><a name="p14149122116464"></a>Default Deny</p>
-</td>
-<td class="cellrowborder" rowspan="2" valign="top" width="20%"><p id="p16540103512526"><a name="p16540103512526"></a><a name="p16540103512526"></a>Deny</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%"><p id="p11313833916"><a name="p11313833916"></a><a name="p11313833916"></a>Allow</p>
-</td>
-<td class="cellrowborder" rowspan="2" valign="top" width="20%"><p id="p116865514479"><a name="p116865514479"></a><a name="p116865514479"></a>Deny</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%"><p id="p232732174617"><a name="p232732174617"></a><a name="p232732174617"></a>Allow</p>
-</td>
-</tr>
-<tr id="row81317386390"><td class="cellrowborder" valign="top"><p id="p181353843913"><a name="p181353843913"></a><a name="p181353843913"></a>Deny</p>
-</td>
-<td class="cellrowborder" valign="top"><p id="p13271121462"><a name="p13271121462"></a><a name="p13271121462"></a>Default Deny</p>
-</td>
-</tr>
-</tbody>
-</table>
+**图 2**  桶策略、IAM策略和ACL的Allow和Deny作用结果<a name="fig1251114133010"></a>  
+![](figures/桶策略-IAM策略和ACL的Allow和Deny作用结果.png "桶策略-IAM策略和ACL的Allow和Deny作用结果")
 

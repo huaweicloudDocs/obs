@@ -8,7 +8,7 @@ OBS提供基于账号的ACL，桶的拥有者可以通过ACL授予其他账号�
 
 OBS支持通过ACL对如下授权用户授予访问对象的指定权限，如[表1](#table23236845)所示：
 
-**表 1**  OBS支持的被授权用户
+**表 1** OBS支持的被授权用户
 
 <a name="table23236845"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0071293615_row16039151"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0071293615_p24102815"><a name="zh-cn_topic_0071293615_p24102815"></a><a name="zh-cn_topic_0071293615_p24102815"></a>被授权用户</p>
@@ -24,12 +24,12 @@ OBS支持通过ACL对如下授权用户授予访问对象的指定权限，如[�
 </tr>
 <tr id="r30eade55e6e646dc8fe1c64ab67e6382"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="a8bbaeefc421f4773ae9282e48768170e"><a name="a8bbaeefc421f4773ae9282e48768170e"></a><a name="a8bbaeefc421f4773ae9282e48768170e"></a>匿名用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="a4cf47ba94b5f476e91dc55c0c1c4d46b"><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a>未注册OBS的普通访客。如果匿名用户被授予了访问对象的权限，则表示所有人都可以访问对应的对象。</p>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="a4cf47ba94b5f476e91dc55c0c1c4d46b"><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a><a name="a4cf47ba94b5f476e91dc55c0c1c4d46b"></a>未注册<span id="ph194421038134011"><a name="ph194421038134011"></a><a name="ph194421038134011"></a>OBS</span>的普通访客。如果匿名用户被授予了访问对象的权限，则表示所有人都可以访问对应的对象。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0071293615_row14759379"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0071293615_p54659014"><a name="zh-cn_topic_0071293615_p54659014"></a><a name="zh-cn_topic_0071293615_p54659014"></a>注册用户组</p>
 </td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0071293615_p65304051"><a name="zh-cn_topic_0071293615_p65304051"></a><a name="zh-cn_topic_0071293615_p65304051"></a>注册OBS的用户。例如，注册用户可以通过AK/SK访问OBS客户端。</p>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0071293615_p65304051"><a name="zh-cn_topic_0071293615_p65304051"></a><a name="zh-cn_topic_0071293615_p65304051"></a>注册<span id="ph19729204894019"><a name="ph19729204894019"></a><a name="ph19729204894019"></a>OBS</span>的用户。例如，注册用户可以通过AK/SK访问<span id="ph1799714344018"><a name="ph1799714344018"></a><a name="ph1799714344018"></a>OBS</span>客户端。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0071293615_row59256928"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0071293615_p35081826"><a name="zh-cn_topic_0071293615_p35081826"></a><a name="zh-cn_topic_0071293615_p35081826"></a>特定用户</p>
@@ -42,7 +42,7 @@ OBS支持通过ACL对如下授权用户授予访问对象的指定权限，如[�
 
 针对对象，OBS当前支持如下访问权限，如[表2](#table28226836)所示：
 
-**表 2**  OBS支持的访问权限
+**表 2** OBS支持的访问权限
 
 <a name="table28226836"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0071293615_row61083978"><th class="cellrowborder" valign="top" width="19.55%" id="mcps1.2.4.1.1"><p id="p3671603217261"><a name="p3671603217261"></a><a name="p3671603217261"></a>权限</p>
