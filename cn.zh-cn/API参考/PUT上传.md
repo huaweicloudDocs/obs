@@ -204,7 +204,7 @@ Date: date
 </tr>
 <tr id="row121411077571"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p1514215711573"><a name="p1514215711573"></a><a name="p1514215711573"></a>x-obs-expires</p>
 </td>
-<td class="cellrowborder" valign="top" width="66%" headers="mcps1.2.4.1.2 "><p id="p038312375711"><a name="p038312375711"></a><a name="p038312375711"></a>表示上传对象的过期时间，单位是天。</p>
+<td class="cellrowborder" valign="top" width="66%" headers="mcps1.2.4.1.2 "><p id="p038312375711"><a name="p038312375711"></a><a name="p038312375711"></a>表示对象的过期时间，单位是天。过期之后对象会被自动删除。（从对象最后修改时间开始计算）</p>
 <p id="p133831235577"><a name="p133831235577"></a><a name="p133831235577"></a>类型：整型。</p>
 <p id="p638302312574"><a name="p638302312574"></a><a name="p638302312574"></a>示例：x-obs-expires:3</p>
 </td>
@@ -293,7 +293,7 @@ Content-Type: type
 
 该请求的返回无特殊错误，所有错误已经包含在[表1](错误码列表.md#d0e843)中。
 
-## 请求实例1<a name="section14482163815396"></a>
+## 请求示例1<a name="section14482163815396"></a>
 
 **上传对象**
 
@@ -310,7 +310,7 @@ Expect: 100-continue
 [1024 Byte data content]
 ```
 
-## 响应实例1<a name="section11653102613112"></a>
+## 响应示例1<a name="section11653102613112"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -322,7 +322,7 @@ Date: WED, 01 Jul 2015 04:11:15 GMT
 Content-Length: 0
 ```
 
-## 请求实例2<a name="section9978114711117"></a>
+## 请求示例2<a name="section9978114711117"></a>
 
 **上传对象的同时设置ACL**
 
@@ -340,7 +340,7 @@ Expect: 100-continue
 [1024 Byte data content]
 ```
 
-## 响应实例2<a name="section17245101261216"></a>
+## 响应示例2<a name="section17245101261216"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -352,7 +352,7 @@ Date: WED, 01 Jul 2015 04:13:55 GMT
 Content-Length: 0
 ```
 
-## 请求实例3<a name="section74231427201219"></a>
+## 请求示例3<a name="section74231427201219"></a>
 
 **上传指定存储类型的对象**
 
@@ -370,7 +370,7 @@ Expect: 100-continue
 [1024 Byte data content]
 ```
 
-## 响应实例3<a name="section1526805513128"></a>
+## 响应示例3<a name="section1526805513128"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -382,7 +382,7 @@ Date: WED, 01 Jul 2015 04:15:07 GMT
 Content-Length: 0
 ```
 
-## 请求实例4<a name="section18923277137"></a>
+## 请求示例4<a name="section18923277137"></a>
 
 **桶开启多版本时上传对象**
 
@@ -400,7 +400,7 @@ Expect: 100-continue
 [1024 Byte data content]
 ```
 
-## 响应实例4<a name="section16530173215133"></a>
+## 响应示例4<a name="section16530173215133"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -413,7 +413,7 @@ x-obs-version-id: AAABQ4q2M9_c0vycq3gAAAAAVURTRkha
 Content-Length: 0
 ```
 
-## 请求实例5<a name="section17724204519133"></a>
+## 请求示例5<a name="section17724204519133"></a>
 
 **上传对象时携带MD5**
 
@@ -431,7 +431,7 @@ Expect: 100-continue
 1234567890
 ```
 
-## 响应实例5<a name="section3283216161415"></a>
+## 响应示例5<a name="section3283216161415"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -443,7 +443,7 @@ Date: WED, 01 Jul 2015 04:17:50 GMT
 Content-Length: 0
 ```
 
-## 请求实例6<a name="section2272113211413"></a>
+## 请求示例6<a name="section2272113211413"></a>
 
 **桶设置了Website配置，上传对象时设置下载对象时重定向**
 
@@ -461,7 +461,7 @@ Expect: 100-continue
 [1024 Byte data content]
 ```
 
-## 响应实例6<a name="section632052520159"></a>
+## 响应示例6<a name="section632052520159"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -474,7 +474,7 @@ x-obs-version-id: AAABQ4q2M9_c0vycq3gAAAAAVURTRkha
 Content-Length: 0
 ```
 
-## 请求实例7<a name="section9838237181513"></a>
+## 请求示例7<a name="section9838237181513"></a>
 
 **在Query参数中携带签名并上传对象**
 
@@ -488,7 +488,7 @@ Content-Length: 1024
 [1024 Byte data content]
 ```
 
-## 响应实例7<a name="section96529021618"></a>
+## 响应示例7<a name="section96529021618"></a>
 
 ```
 HTTP/1.1 200 OK

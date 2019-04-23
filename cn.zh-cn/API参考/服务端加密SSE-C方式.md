@@ -79,7 +79,7 @@ OBS 不存储您提供的加密密钥，如果您丢失加密密钥，则会无�
 </tbody>
 </table>
 
-## 请求实例1<a name="section151461344181918"></a>
+## 请求示例1<a name="section151461344181918"></a>
 
 **上传SSE-C加密对象**
 
@@ -98,7 +98,7 @@ Content-Length: 5242
 [5242 Byte object contents]
 ```
 
-## 响应实例1<a name="section039121783514"></a>
+## 响应示例1<a name="section039121783514"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -112,7 +112,7 @@ Date: Wed, 06 Jun 2018 09:12:00 GMT
 Content-Length: 0
 ```
 
-## 请求实例2<a name="section3959940113518"></a>
+## 请求示例2<a name="section3959940113518"></a>
 
 **将SSE-C加密对象拷贝为KMS加密对象**
 
@@ -133,7 +133,7 @@ Content-Length: 5242
 [5242 Byte object contents]
 ```
 
-## 响应实例2<a name="section1589193223912"></a>
+## 响应示例2<a name="section1589193223912"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -147,7 +147,7 @@ Date: Wed, 06 Jun 2018 09:20:10 GMT
 Content-Length: 0
 ```
 
-## 请求实例3<a name="section13241145493917"></a>
+## 请求示例3<a name="section13241145493917"></a>
 
 **在Query参数中携带签名并上传SSE-C加密对象**
 
@@ -165,7 +165,7 @@ Expect: 100-continue
 [5242 Byte object contents]
 ```
 
-## 响应实例3<a name="section1990581416405"></a>
+## 响应示例3<a name="section1990581416405"></a>
 
 ```
 HTTP/1.1 100 Continue

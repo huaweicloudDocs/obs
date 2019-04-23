@@ -181,7 +181,7 @@ Content-Length: length
 
 无特殊错误，所有错误已经包含在[表1](错误码列表.md#d0e843)中。
 
-## 请求实例<a name="section14482163815396"></a>
+## 请求示例<a name="section14482163815396"></a>
 
 ```
 PUT /?cors HTTP/1.1
@@ -211,7 +211,7 @@ Content-Length: 617
 </CORSConfiguration>
 ```
 
-## 响应实例<a name="section76081155815"></a>
+## 响应示例<a name="section76081155815"></a>
 
 ```
 HTTP/1.1 100 Continue

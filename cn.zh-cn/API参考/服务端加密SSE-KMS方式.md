@@ -62,7 +62,7 @@ OBS支持Bucket Policy，如果您要对所有存储在桶中的对象执行服�
 }
 ```
 
-## 请求实例1<a name="section9676048111413"></a>
+## 请求示例1<a name="section9676048111413"></a>
 
 ****使用默认秘钥对上传的对象进行加密****
 
@@ -80,7 +80,7 @@ Expect: 100-continue
 [5242 Byte object contents]
 ```
 
-## 响应实例1<a name="section5769165793118"></a>
+## 响应示例1<a name="section5769165793118"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -94,7 +94,7 @@ Date: Wed, 06 Jun 2018 09:08:21 GMT
 Content-Length: 0
 ```
 
-## 请求实例2<a name="section1066121573210"></a>
+## 请求示例2<a name="section1066121573210"></a>
 
 **使用指定秘钥对上传的对象进行加密**
 
@@ -113,7 +113,7 @@ Expect: 100-continue
 [5242 Byte object contents]
 ```
 
-## 响应实例2<a name="section3936203519339"></a>
+## 响应示例2<a name="section3936203519339"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -127,7 +127,7 @@ Date: Wed, 06 Jun 2018 09:08:50 GMT
 Content-Length: 0
 ```
 
-## 请求实例3<a name="section1354925617332"></a>
+## 请求示例3<a name="section1354925617332"></a>
 
 **将普通对象拷贝为加密对象，且指定加密秘钥**
 
@@ -143,7 +143,7 @@ Authorization: OBS H4IPJX0TQTHTHEBQQCEC:SH3uTrElaGWarVI1uTq325kTVCI=
 x-obs-copy-source: /bucket/srcobject1
 ```
 
-## 响应实例3<a name="section1665573753412"></a>
+## 响应示例3<a name="section1665573753412"></a>
 
 ```
 HTTP/1.1 200 OK
@@ -157,7 +157,7 @@ Date: Wed, 06 Jun 2018 09:10:29 GMT
 Content-Length: 0
 ```
 
-## 请求实例4<a name="section9689143461811"></a>
+## 请求示例4<a name="section9689143461811"></a>
 
 **在Query参数中携带签名并上传加密对象**
 
@@ -169,7 +169,7 @@ Accept: */*
 Date: Wed, 06 Jun 2018 09:10:29 GMT
 ```
 
-## 响应实例4<a name="section1970120340184"></a>
+## 响应示例4<a name="section1970120340184"></a>
 
 ```
 HTTP/1.1 200 OK

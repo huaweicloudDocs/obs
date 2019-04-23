@@ -148,7 +148,7 @@ Content-Length: length
 
 其余错误已经包含在[表1](错误码列表.md#d0e843)中。
 
-## 请求实例<a name="section14482163815396"></a>
+## 请求示例<a name="section14482163815396"></a>
 
 ```
 GET /?cors HTTP/1.1
@@ -159,7 +159,7 @@ Date: WED, 01 Jul 2015 03:54:36 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:WJGghTrPQQXRuCx5go1fHyE+Wwg=
 ```
 
-## 响应实例<a name="section76081155815"></a>
+## 响应示例<a name="section76081155815"></a>
 
 ```
 HTTP/1.1 200 OK

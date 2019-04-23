@@ -19,7 +19,7 @@ OBS根据桶和对象及带的资源参数来确定具体的URI，当需要进�
 
 URI的一般格式为（方括号内为可选项）：
 
-**protocol://bucket.domain\[:prot\]\[/object\]\[?param\]**
+**protocol://**\[**bucket.**\]**domain\[:prot\]\[/object\]\[?param\]**
 
 **表 1**  URI中的参数
 

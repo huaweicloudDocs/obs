@@ -165,7 +165,7 @@ Content-Type: application/xml
 
 无特殊错误，所有错误已经包含在[表1](错误码列表.md#d0e843)中。
 
-## 请求实例<a name="section339018376100"></a>
+## 请求示例<a name="section339018376100"></a>
 
 ```
 GET /object011?acl HTTP/1.1
@@ -176,7 +176,7 @@ Date: WED, 01 Jul 2015 04:45:55 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:YcmvNQxItGjFeeC1K2HeUEp8MMM=
 ```
 
-## 响应实例<a name="section179715418192"></a>
+## 响应示例<a name="section179715418192"></a>
 
 ```
 HTTP/1.1 200 OK

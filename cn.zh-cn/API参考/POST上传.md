@@ -358,7 +358,7 @@ Upload to OBS
 </tr>
 <tr id="row7583033195917"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p1514215711573"><a name="p1514215711573"></a><a name="p1514215711573"></a>x-obs-expires</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p038312375711"><a name="p038312375711"></a><a name="p038312375711"></a>表示上传对象的过期时间，单位是天。</p>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p6876185903819"><a name="p6876185903819"></a><a name="p6876185903819"></a>表示对象的过期时间，单位是天。过期之后对象会被自动删除。（从对象最后修改时间开始计算）</p>
 <p id="p133831235577"><a name="p133831235577"></a><a name="p133831235577"></a>类型：整型。</p>
 <p id="p638302312574"><a name="p638302312574"></a><a name="p638302312574"></a>示例：x-obs-expires:3</p>
 </td>
@@ -470,7 +470,7 @@ ETag: etag
 
 无特殊错误，所有错误已经包含在[表1](错误码列表.md#d0e843)中。
 
-## 请求实例<a name="section14482163815396"></a>
+## 请求示例<a name="section14482163815396"></a>
 
 **普通POST上传**
 
@@ -514,7 +514,7 @@ Upload
 -----------------------------7db143f50da2--
 ```
 
-## 响应实例1<a name="section76081155815"></a>
+## 响应示例1<a name="section76081155815"></a>
 
 桶配置cors后，响应会包含Access-Control-\*的信息。
 
@@ -533,7 +533,7 @@ Date: WED, 01 Jul 2015 04:15:23 GMT
 ETag: "ab7abb0da4bca5323ab6119bb5dcd296"
 ```
 
-## 请求实例2<a name="section392181218378"></a>
+## 请求示例2<a name="section392181218378"></a>
 
 **带x-obs-acl头域并指定存储类型，重定向头域，上传对象**
 
@@ -613,7 +613,7 @@ c2c6cd0f-898e-11e8-aab6-e567c91fb541
 --9431149156168--
 ```
 
-## 响应实例2<a name="section1999141253715"></a>
+## 响应示例2<a name="section1999141253715"></a>
 
 ```
 HTTP/1.1 204 No Content
