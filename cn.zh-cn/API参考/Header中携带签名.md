@@ -64,7 +64,7 @@ StringToSign =
 <tr id="row42990474"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p59676394"><a name="p59676394"></a><a name="p59676394"></a>CanonicalizedHeaders</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1949763"><a name="p1949763"></a><a name="p1949763"></a>HTTP请求头字段，以“x-obs-”作为前辍的消息头，如“x-obs-date，x-obs-acl”。</p>
-<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>自定义字段中的所有字符要转为小写，需要添加多个字段时，要将所有字段按照字典序进行排序。</li><li>在添加自定义字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要合并成x-obs-meta-name:name1,name2。</li><li><span>如果头域的自定义字段中含有非ASCII码或不可识别字符，需先进行Base64编码。同时在发送请求时，头域中的该自定义字段也需要进行Base64编码。</span></li><li>当自定义字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个自定义字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
+<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>自定义字段中关键字的所有字符要转为小写，需要添加多个字段时，要将所有字段按照关键字的字典序进行排序。</li><li>在添加自定义字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要合并成x-obs-meta-name:name1,name2。</li><li><span>如果头域的自定义字段中含有非ASCII码或不可识别字符，需先进行Base64编码。同时在发送请求时，头域中的该自定义字段也需要进行Base64编码。</span></li><li>当自定义字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个自定义字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
 </td>
 </tr>
 <tr id="row7450793"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p66643399"><a name="p66643399"></a><a name="p66643399"></a>CanonicalizedResource</p>
@@ -368,4 +368,8 @@ print encode_canonical
 
 1.  计算签名的接口包含在sign.h头文件中。
 2.  计算签名的示例代码在main.c文件中。
+
+## 签名计算工具<a name="section19121175184814"></a>
+
+OBS提供可视化签名工具，帮助您轻松完成签名计算，请单击[这里](https://bbs.huaweicloud.com/forum/thread-13219-1-1.html)获取。
 
