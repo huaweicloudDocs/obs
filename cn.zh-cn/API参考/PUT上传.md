@@ -139,6 +139,8 @@ Date: date
 <td class="cellrowborder" valign="top" width="66%" headers="mcps1.2.4.1.2 "><p id="p20610280"><a name="p20610280"></a><a name="p20610280"></a>创建对象时，可以在HTTP请求中加入以“x-obs-meta-”开头的消息头，用来加入自定义的元数据，以便对对象进行自定义管理。当用户获取此对象或查询此对象元数据时，加入的自定义元数据将会在返回消息的头中出现。HTTP请求不包含消息体，长度不能超过8KB。</p>
 <p id="p51274795"><a name="p51274795"></a><a name="p51274795"></a>类型：字符串</p>
 <p id="p58819972"><a name="p58819972"></a><a name="p58819972"></a>示例：x-obs-meta-test: test metadata</p>
+<p id="p7651164516420"><a name="p7651164516420"></a><a name="p7651164516420"></a>约束：请求头字段中的关键字不允许含有非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。例如“中文”是非ASCII码，可以做URL编码为“%E4%B8%AD%E6%96%87”，头域x-obs-meta-%E4%B8%AD%E6%96%87: test%E4%B8%AD%E6%96%87。自定义元数据就是x-obs-meta-%E4%B8%AD%E6%96%87，服务端只会作为字符串处理，不会做解码。</p>
+<p id="p101413441643"><a name="p101413441643"></a><a name="p101413441643"></a>说明：请求头支持大小写字母，服务端会把请求消息头的key转换成小写，value不变。例如：x-obs-meta-Test1: Test Meta1，设置成功之后，下载对象返回的消息头是：x-obs-meta-test1: Test Meta1。</p>
 </td>
 <td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.4.1.3 "><p id="p66797252"><a name="p66797252"></a><a name="p66797252"></a>否</p>
 </td>
