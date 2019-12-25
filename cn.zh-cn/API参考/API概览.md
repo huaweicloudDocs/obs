@@ -215,6 +215,21 @@
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p1884053916398"><a name="p1884053916398"></a><a name="p1884053916398"></a>删除桶已设置的自定义域名。</p>
 </td>
 </tr>
+<tr id="row14569184217390"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p657015421395"><a name="p657015421395"></a><a name="p657015421395"></a><a href="设置桶的加密配置.md">设置桶的加密配置</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p199653120135"><a name="p199653120135"></a><a name="p199653120135"></a>为桶创建或更新默认服务端加密配置信息。设置桶加密配置后，在该桶中上传对象时，会采用桶的默认加密配置对数据进行加密。</p>
+</td>
+</tr>
+<tr id="row31612477390"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p11664714393"><a name="p11664714393"></a><a name="p11664714393"></a><a href="获取桶的加密配置.md">获取桶的加密配置</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p7166472397"><a name="p7166472397"></a><a name="p7166472397"></a>查询桶的默认服务端加密配置信息。</p>
+</td>
+</tr>
+<tr id="row4195192718395"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p2195162793919"><a name="p2195162793919"></a><a name="p2195162793919"></a><a href="删除桶的加密配置.md">删除桶的加密配置</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p1319516275397"><a name="p1319516275397"></a><a name="p1319516275397"></a>删除桶的默认服务端加密配置信息。</p>
+</td>
+</tr>
 <tr id="row618812407575"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p15189134015571"><a name="p15189134015571"></a><a name="p15189134015571"></a><a href="设置桶归档对象直读策略.md">设置桶归档对象直读策略</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p7837122112711"><a name="p7837122112711"></a><a name="p7837122112711"></a>开启或关闭桶的归档对象直读功能。开启后，归档对象不需要取回便可以直接下载。</p>
