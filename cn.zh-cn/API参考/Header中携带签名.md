@@ -64,7 +64,7 @@ StringToSign =
 <tr id="row42990474"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p59676394"><a name="p59676394"></a><a name="p59676394"></a>CanonicalizedHeaders</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1949763"><a name="p1949763"></a><a name="p1949763"></a>HTTP请求头域中的OBS请求头字段，即以“x-obs-”作为前辍的头域，如“x-obs-date，x-obs-acl，x-obs-meta-*”。</p>
-<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>请求头字段中关键字的的所有字符要转为小写，需要添加多个字段时，要将所有字段按照关键字的字典序从小到大进行排序。</li><li>在添加请求头字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要先将重名字段的值（这里是name1和name2）按照字典序从小到大排序后再以逗号分隔，合并成x-obs-meta-name:name1,name2。</li><li>头域中的请求头字段中的关键字不允许含有非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。</li><li>当请求头字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个请求头字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
+<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>请求头字段中关键字的的所有字符要转为小写，需要添加多个字段时，要将所有字段按照关键字的字典序从小到大进行排序。</li><li>在添加请求头字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要先将重名字段的值（这里是name1和name2）按照字典序从小到大排序后再以逗号分隔，合并成x-obs-meta-name:name1,name2。</li><li>头域中的请求头字段中的关键字不允许含有非ASCII码或不可识别字符；请求头字段中的值也不建议使用非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。</li><li>当请求头字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个请求头字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
 </td>
 </tr>
 <tr id="row7450793"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p66643399"><a name="p66643399"></a><a name="p66643399"></a>CanonicalizedResource</p>
@@ -288,48 +288,222 @@ Authorization: OBS UDSIAMSTUBTEST000254:ydH8ffpcbS6YpeOMcEZfn0wE90c=
 ## Java中签名的计算方法<a name="section131611926171613"></a>
 
 ```
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
-import java.security.InvalidKeyException;
-import java.util.Base64;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.TimeZone;
-public class Signature{
-	public static void signWithHmacSha1(String sk, String canonicalString)throws UnsupportedEncodingException{
-	
-		try {
-			SecretKeySpec signingKey = new SecretKeySpec(sk.getBytes("UTF-8"), "HmacSHA1");
-			Mac mac = Mac.getInstance("HmacSHA1");
-         		mac.init(signingKey);	
-			System.out.println(Base64.getEncoder().encodeToString(mac.doFinal(canonicalString.getBytes("UTF-8"))));
-		} catch (NoSuchAlgorithmException|InvalidKeyException|UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
-	public static void main(String[] str){
-                String yourSecretAccessKeyID = "275hSvB6EEOorBNsMDEfOaICQnilYaPZhXUaSK64";
-		String httpMethod = "PUT";
-		String contentType = "application/xml";
-                // "date" is the time when the request was actually generated
-                Calendar cd = Calendar.getInstance();
-                SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss 'GMT'", Locale.US);
-                sdf.setTimeZone(TimeZone.getTimeZone("GMT")); // 设置时区为GMT
-                String date = sdf.format(cd.getTime());
-                String canonicalizedHeaders = "x-obs-acl:private";
-		String CanonicalizedResource = "/newbucketname2";
-	String canonicalString = httpMethod + "\n" + "\n" + contentType + "\n" + date + "\n" + canonicalizedHeaders + CanonicalizedResource;
-		try{
-			signWithHmacSha1(yourSecretAccessKeyID,canonicalString);
-		}catch (UnsupportedEncodingException e){
-			e.printStackTrace();
-		}
-	
-	}
 
+import org.omg.CosNaming.IstringHelper;
+
+
+public class SignDemo {
+	
+	private static final String SIGN_SEP = "\n";
+	
+	private static final String OBS_PREFIX = "x-obs-";
+	
+	private static final String DEFAULT_ENCODING = "UTF-8";
+	
+	private static final List<String> SUB_RESOURCES = Collections.unmodifiableList(Arrays.asList(
+			"CDNNotifyConfiguration", "acl", "append", "attname", "backtosource", "cors", "customdomain", "delete",
+			"deletebucket", "directcoldaccess", "encryption", "inventory", "length", "lifecycle", "location", "logging",
+			"metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy", "position", "quota",
+			"rename", "replication", "requestPayment", "response-cache-control", "response-content-disposition",
+			"response-content-encoding", "response-content-language", "response-content-type", "response-expires",
+			"restore", "select", " storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
+			"uploadId", "uploads", "versionId", "versioning", "versions", "website", "x-image-process",
+			"x-image-save-bucket", "x-image-save-object", "x-obs-security-token"));
+	
+	private String ak;
+	
+	private String sk;
+	
+	 public String urlEncode(String input) throws UnsupportedEncodingException
+    {
+		return URLEncoder.encode(input, DEFAULT_ENCODING)
+        .replaceAll("%7E", "~") //for browser
+        .replaceAll("%2F", "/");
+    }
+	
+	private String join(List<?> items, String delimiter)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < items.size(); i++)
+        {
+	String item = items.get(i).toString();
+            sb.append(item);
+            if (i < items.size() - 1)
+            {
+                sb.append(delimiter);
+            }
+        }
+        return sb.toString();
+    }
+	
+	private boolean isValid(String input) {
+		return input != null && !input.equals("");
+	}
+	
+	public String hamcSha1(String input) throws NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
+		SecretKeySpec signingKey = new SecretKeySpec(this.sk.getBytes(DEFAULT_ENCODING), "HmacSHA1");
+		Mac mac = Mac.getInstance("HmacSHA1");
+		mac.init(signingKey);
+		return Base64.getEncoder().encodeToString(mac.doFinal(input.getBytes(DEFAULT_ENCODING)));
+	}
+	
+	private String stringToSign(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
+			String bucketName, String objectName) throws Exception{
+		String contentMd5 = "";
+		String contentType = "";
+		String date = "";
+		
+		TreeMap<String, String> canonicalizedHeaders = new TreeMap<String, String>();
+		
+		String key;
+		List<String> temp = new ArrayList<String>();
+		for(Map.Entry<String, String[]> entry : headers.entrySet()) {
+			key = entry.getKey();
+			if(key == null || entry.getValue() == null || entry.getValue().length == 0) {
+				continue;
+			}
+			
+			key = key.trim().toLowerCase(Locale.ENGLISH);
+			if(key.equals("content-md5")) {
+				contentMd5 = entry.getValue()[0];
+				continue;
+			}
+			
+			if(key.equals("content-type")) {
+				contentType = entry.getValue()[0];
+				continue;
+			}
+			
+			if(key.equals("date")) {
+				date = entry.getValue()[0];
+				continue;
+			}
+			
+			if(key.startsWith(OBS_PREFIX)) {
+				
+				for(String value : entry.getValue()) {
+					if(value != null) {
+						temp.add(value.trim());
+					}
+				}
+				canonicalizedHeaders.put(key, this.join(temp, ","));
+				temp.clear();
+			}
+		}
+		
+		if(canonicalizedHeaders.containsKey("x-obs-date")) {
+			date = "";
+		}
+		
+		
+		// handle method/content-md5/content-type/date
+		StringBuilder stringToSign = new StringBuilder();
+		stringToSign.append(httpMethod).append(SIGN_SEP)
+			.append(contentMd5).append(SIGN_SEP)
+			.append(contentType).append(SIGN_SEP)
+			.append(date).append(SIGN_SEP);
+			
+		// handle canonicalizedHeaders
+		for(Map.Entry<String, String> entry : canonicalizedHeaders.entrySet()) {
+			stringToSign.append(entry.getKey()).append(":").append(entry.getValue()).append(SIGN_SEP);
+		}
+		
+		// handle CanonicalizedResource
+		stringToSign.append("/");
+		if(this.isValid(bucketName)) {
+			stringToSign.append(bucketName).append("/");
+			if(this.isValid(objectName)) {
+				stringToSign.append(this.urlEncode(objectName));
+			}
+		}
+		
+		TreeMap<String, String> canonicalizedResource = new TreeMap<String, String>();
+		for(Map.Entry<String, String> entry : queries.entrySet()) {
+			key = entry.getKey();
+			if(key == null) {
+				continue;
+			}
+			
+			if(SUB_RESOURCES.contains(key)) {
+				canonicalizedResource.put(key, entry.getValue());
+			}
+		}
+		
+		if(canonicalizedResource.size() > 0) {
+			stringToSign.append("?");
+			for(Map.Entry<String, String> entry : canonicalizedResource.entrySet()) {
+				stringToSign.append(this.urlEncode(entry.getKey()));
+				if(this.isValid(entry.getValue())) {
+					stringToSign.append("=").append(this.urlEncode(entry.getValue()));
+				}
+			}
+		}
+		
+//		System.out.println(String.format("StringToSign:%s%s", SIGN_SEP, stringToSign.toString()));
+		
+		return stringToSign.toString();
+	}
+	
+	public String headerSignature(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
+			String bucketName, String objectName) throws Exception {
+
+		//1. stringToSign
+		String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName);
+		
+		//2. signature
+		return String.format("OBS %s:%s", this.ak, this.hamcSha1(stringToSign));
+	}
+	
+	
+	public String querySignature(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
+			String bucketName, String objectName, long expires) throws Exception {
+		if(headers.containsKey("x-obs-date")) {
+			headers.put("x-obs-date", new String[] {String.valueOf(expires)});
+		}else {
+			headers.put("date", new String[] {String.valueOf(expires)});
+		}
+		//1. stringToSign
+		String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName);
+		
+		//2. signature
+		return this.urlEncode(this.hamcSha1(stringToSign));
+	}
+	
+	public static void main(String[] args) throws Exception {
+		
+		SignDemo demo = new SignDemo();
+		demo.ak = "<your-access-key-id>";
+		demo.sk = "<your-securet-key-id>";
+		
+		String bucketName = "bucket-test";
+		String objectName = "hello.jpg";
+		Map<String, String[]> headers = new HashMap<String, String[]>();
+		headers.put("date", new String[] {"Sat, 12 Oct 2015 08:12:38 GMT"});
+		headers.put("x-obs-acl", new String[] {"public-read"});
+		headers.put("x-obs-meta-key1", new String[] {"value1"});
+		headers.put("x-obs-meta-key2", new String[] {"value2", "value3"});
+		Map<String, String> queries = new HashMap<String, String>();
+		queries.put("acl", null);
+		
+		System.out.println(demo.headerSignature("PUT", headers, queries, bucketName, objectName));
+	}
+	
 }
 ```
 
