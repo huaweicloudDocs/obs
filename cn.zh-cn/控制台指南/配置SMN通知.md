@@ -30,7 +30,7 @@
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row12616447"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p15299288"><a name="p15299288"></a><a name="p15299288"></a>名称</p>
+    <tbody><tr id="row12616447"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p15299288"><a name="p15299288"></a><a name="p15299288"></a>事件通知名称</p>
     </td>
     <td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p31282850"><a name="p31282850"></a><a name="p31282850"></a>新增事件的名称，用户自定义。若不填写，系统将默认自动生成一个全局唯一ID作为名称。</p>
     </td>
