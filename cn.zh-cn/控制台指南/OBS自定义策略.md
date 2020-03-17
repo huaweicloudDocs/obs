@@ -1,6 +1,6 @@
 # OBS自定义策略<a name="obs_03_0121"></a>
 
-如果系统预置的OBS权限，不满足您的授权要求，可以创建自定义策略。自定义策略中可以添加的授权项（Action）请参考[桶相关授权项](https://support.huaweicloud.com/api-obs/zh-cn_topic_0173616349.html)和[对象相关授权项](https://support.huaweicloud.com/api-obs/zh-cn_topic_0174453173.html)。
+如果系统预置的OBS权限，不满足您的授权要求，可以创建自定义策略。自定义策略中可以添加的授权项（Action）请参考[桶相关授权项](https://support.huaweicloud.com/api-obs/obs_04_0111.html)和[对象相关授权项](https://support.huaweicloud.com/api-obs/obs_04_0112.html)。
 
 目前华为云支持以下两种方式创建自定义策略：
 
@@ -147,7 +147,7 @@
 
     拒绝策略需要同时配合其他策略使用，否则没有实际作用。用户被授予的策略中，一个授权项的作用如果同时存在Allow和Deny，则遵循**Deny优先原则**。
 
-    如果您给用户授予OBS Operator的系统策略，但不希望用户拥有OBS Operator中定义的上传对象的权限，您可以创建一条拒绝上传对象的自定义策略，然后同时将OBS Operator和拒绝策略授予用户，根据Deny优先原则，则用户可以执行除了上传对象外OBS Operator允许的所有操作。拒绝策略示例如下：
+    如果您给用户授予OBS OperateAccess的系统策略，但不希望用户拥有OBS OperateAccess中定义的上传对象的权限，您可以创建一条拒绝上传对象的自定义策略，然后同时将OBS OperateAccess和拒绝策略授予用户，根据Deny优先原则，则用户可以执行除了上传对象外OBS OperateAccess允许的所有操作。拒绝策略示例如下：
 
     ```
     { 

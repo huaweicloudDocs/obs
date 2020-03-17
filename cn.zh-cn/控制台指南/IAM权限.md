@@ -72,7 +72,7 @@ IAM权限主要面向对同账号下IAM用户授权的场景：
 <td class="cellrowborder" valign="top" width="77.91%" headers="mcps1.2.3.1.2 "><p id="p17113185672413"><a name="p17113185672413"></a><a name="p17113185672413"></a>策略授权语句，描述策略的详细信息，包含Effect（作用）、Action（授权项）、Resource（资源）和Condition（条件）。其中Condition为可选。</p>
 <div class="p" id="p151471577233"><a name="p151471577233"></a><a name="p151471577233"></a><a name="ul1802181615716"></a><a name="ul1802181615716"></a><ul id="ul1802181615716"><li>Effect（作用）<p id="p1880291618711"><a name="p1880291618711"></a><a name="p1880291618711"></a>作用包含两种：Allow（允许）和Deny（Deny），系统预置策略仅包含允许的授权语句，自定义策略中可以同时包含允许和拒绝的授权语句，当策略中既有允许又有拒绝的授权语句时，遵循Deny优先的原则。</p>
 </li><li>Action（授权项）<p id="p14803201610710"><a name="p14803201610710"></a><a name="p14803201610710"></a>对资源的具体操作权限，格式为：<strong id="b192646334347"><a name="b192646334347"></a><a name="b192646334347"></a>服务名:资源类型:操作</strong>，支持单个或多个操作权限，支持通配符号*，通配符号表示所有。OBS只有两种资源类型：bucket和object。</p>
-<p id="p14722126133617"><a name="p14722126133617"></a><a name="p14722126133617"></a>详细的Action描述请参见<a href="https://support.huaweicloud.com/api-obs/zh-cn_topic_0173616349.html" target="_blank" rel="noopener noreferrer">桶相关授权项</a>和<a href="https://support.huaweicloud.com/api-obs/zh-cn_topic_0174453173.html" target="_blank" rel="noopener noreferrer">对象相关授权项</a>。</p>
+<p id="p14722126133617"><a name="p14722126133617"></a><a name="p14722126133617"></a>详细的Action描述请参见<a href="https://support.huaweicloud.com/api-obs/obs_04_0111.html" target="_blank" rel="noopener noreferrer">桶相关授权项</a>和<a href="https://support.huaweicloud.com/api-obs/obs_04_0112.html" target="_blank" rel="noopener noreferrer">对象相关授权项</a>。</p>
 </li><li>Resource（资源）<p id="p1323103805814"><a name="p1323103805814"></a><a name="p1323103805814"></a>策略所作用的资源，格式为：<strong id="b3224387586"><a name="b3224387586"></a><a name="b3224387586"></a>服务名:region:domainId:资源类型:资源路径</strong>，支持通配符号*，通配符号表示所有。在JSON视图中，不带Resource表示对所有资源生效。</p>
 <p id="p171041029163018"><a name="p171041029163018"></a><a name="p171041029163018"></a>Resource支持以下字符：-_0-9a-zA-Z*./\，如果Resource中包含不支持的字符，请采用通配符号*。</p>
 <p id="p8573162614402"><a name="p8573162614402"></a><a name="p8573162614402"></a>OBS是全局级服务，<strong id="b7753174784018"><a name="b7753174784018"></a><a name="b7753174784018"></a>region</strong>填“*”；domainId表示资源拥有者的账号ID，建议填写“*”简单地表示所填资源的账号ID。</p>
@@ -92,7 +92,7 @@ IAM权限主要面向对同账号下IAM用户授权的场景：
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-   Resource（资源）级别细粒度授权特性会逐步在各个区域上线，需要使用该特性时请确保桶所在区域已经支持。  
->-   Resource（资源）级别细粒度授权特性目前处于公测阶段，如需使用，请提交工单到OBS，申请开通Resource（资源）级别细粒度授权特性白名单。  
+>-   Resource（资源）级别细粒度授权特性目前处于公测阶段，如需使用，请[提交工单](https://console.huaweicloud.com/ticket/?locale=zh-cn#/ticketindex/business?productTypeId=2a129f7ed0b543c6b92d73e2c26aa590&subTypeId=-1&type=2)到OBS，申请开通Resource（资源）级别细粒度授权特性白名单。  
 
 ## IAM权限鉴权<a name="section477513429495"></a>
 

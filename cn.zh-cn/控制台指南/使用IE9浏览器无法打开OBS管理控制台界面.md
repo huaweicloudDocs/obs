@@ -1,4 +1,4 @@
-# 使用IE9浏览器无法打开OBS管理控制台界面<a name="zh-cn_topic_0045828993"></a>
+# 使用IE9浏览器无法打开OBS管理控制台界面<a name="obs_03_0344"></a>
 
 ## 问题<a name="section64363694"></a>
 

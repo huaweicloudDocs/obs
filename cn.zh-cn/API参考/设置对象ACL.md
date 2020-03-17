@@ -1,4 +1,4 @@
-# 设置对象ACL<a name="ZH-CN_TOPIC_0100846778"></a>
+# 设置对象ACL<a name="obs_04_0089"></a>
 
 ## 功能介绍<a name="section5584184924715"></a>
 

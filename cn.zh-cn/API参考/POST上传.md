@@ -1,4 +1,4 @@
-# POST上传<a name="ZH-CN_TOPIC_0100846776"></a>
+# POST上传<a name="obs_04_0081"></a>
 
 ## 功能介绍<a name="section1534875573"></a>
 
@@ -197,7 +197,7 @@ Upload to OBS
 </tr>
 <tr id="row23452063"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p20568952"><a name="p20568952"></a><a name="p20568952"></a>x-obs-acl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p55472450"><a name="p55472450"></a><a name="p55472450"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write；public-read-delivered ; public-read-write-delivered（各策略详细说明见<a href="https://support.huaweicloud.com/devg-obs/zh-cn_topic_0101104050.html" target="_blank" rel="noopener noreferrer">使用头域设置ACL</a>）。</p>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p55472450"><a name="p55472450"></a><a name="p55472450"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write；public-read-delivered ; public-read-write-delivered（各策略详细说明见<a href="https://support.huaweicloud.com/devg-obs/obs_06_0043.html" target="_blank" rel="noopener noreferrer">使用头域设置ACL</a>）。</p>
 <p id="p64083493"><a name="p64083493"></a><a name="p64083493"></a>类型：字符串。</p>
 <p id="p39880527"><a name="p39880527"></a><a name="p39880527"></a>示例：</p>
 <p id="p23380424"><a name="p23380424"></a><a name="p23380424"></a>POLICY中：{"acl": "public-read" },</p>

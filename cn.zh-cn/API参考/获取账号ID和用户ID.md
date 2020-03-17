@@ -1,4 +1,4 @@
-# 获取账号ID和用户ID<a name="ZH-CN_TOPIC_0173616352"></a>
+# 获取账号ID和用户ID<a name="obs_04_0117"></a>
 
 在调用接口的时候，部分请求中需要指定账号ID（AccountID）和用户ID（UserID），所以需要先在控制台上获取。获取步骤如下：
 

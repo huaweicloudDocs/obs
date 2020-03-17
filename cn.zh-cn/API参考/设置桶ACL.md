@@ -1,4 +1,4 @@
-# 设置桶ACL<a name="ZH-CN_TOPIC_0100846744"></a>
+# 设置桶ACL<a name="obs_04_0030"></a>
 
 ## 功能介绍<a name="section5584184924715"></a>
 
@@ -6,7 +6,7 @@ OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建�
 
 OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL\(access control list\) 。
 
-使用桶ACL进行权限控制请参考《对象存储服务开发指南》的[权限控制](https://support.huaweicloud.com/devg-obs/zh-cn_topic_0132788578.html)章节。
+使用桶ACL进行权限控制请参考《对象存储服务开发指南》的[权限控制](https://support.huaweicloud.com/devg-obs/obs_06_0038.html)章节。
 
 ## 请求消息样式<a name="section8518944"></a>
 

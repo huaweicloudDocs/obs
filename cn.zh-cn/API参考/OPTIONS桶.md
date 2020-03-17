@@ -1,4 +1,4 @@
-# OPTIONS桶<a name="ZH-CN_TOPIC_0100846768"></a>
+# OPTIONS桶<a name="obs_04_0077"></a>
 
 ## 功能介绍<a name="section5584184924715"></a>
 

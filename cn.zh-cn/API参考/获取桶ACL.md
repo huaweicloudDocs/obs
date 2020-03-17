@@ -1,4 +1,4 @@
-# 获取桶ACL<a name="ZH-CN_TOPIC_0100846754"></a>
+# 获取桶ACL<a name="obs_04_0031"></a>
 
 ## 功能介绍<a name="section5584184924715"></a>
 

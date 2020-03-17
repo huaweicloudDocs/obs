@@ -1,4 +1,4 @@
-# 桶策略和ACL的关系<a name="zh-cn_topic_0066088967"></a>
+# 桶策略和ACL的关系<a name="obs_03_0325"></a>
 
 ## 桶ACL和桶策略的映射关系<a name="section9370125413594"></a>
 

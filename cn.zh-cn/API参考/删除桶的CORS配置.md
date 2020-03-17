@@ -1,4 +1,4 @@
-# 删除桶的CORS配置<a name="ZH-CN_TOPIC_0100846773"></a>
+# 删除桶的CORS配置<a name="obs_04_0076"></a>
 
 ## 功能介绍<a name="section5584184924715"></a>
 

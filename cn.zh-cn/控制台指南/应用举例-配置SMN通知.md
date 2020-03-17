@@ -1,4 +1,4 @@
-# 应用举例：配置SMN通知<a name="zh-cn_topic_0066088964"></a>
+# 应用举例：配置SMN通知<a name="obs_03_0333"></a>
 
 ## 背景知识<a name="section65368539"></a>
 

@@ -1,4 +1,4 @@
-# API概览<a name="ZH-CN_TOPIC_0100846747"></a>
+# API概览<a name="obs_04_0005"></a>
 
 ## 桶基础操作接口<a name="section23599591419"></a>
 

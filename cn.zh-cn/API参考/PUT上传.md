@@ -1,4 +1,4 @@
-# PUT上传<a name="ZH-CN_TOPIC_0100846775"></a>
+# PUT上传<a name="obs_04_0080"></a>
 
 ## 功能介绍<a name="section5584184924715"></a>
 
@@ -80,7 +80,7 @@ Date: date
 </tr>
 <tr id="row4475483"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p26969841"><a name="p26969841"></a><a name="p26969841"></a>x-obs-acl</p>
 </td>
-<td class="cellrowborder" valign="top" width="66%" headers="mcps1.2.4.1.2 "><p id="p37073483"><a name="p37073483"></a><a name="p37073483"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write（各策略详细说明见<a href="https://support.huaweicloud.com/devg-obs/zh-cn_topic_0101104050.html" target="_blank" rel="noopener noreferrer">使用头域设置ACL</a>）。</p>
+<td class="cellrowborder" valign="top" width="66%" headers="mcps1.2.4.1.2 "><p id="p37073483"><a name="p37073483"></a><a name="p37073483"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write（各策略详细说明见<a href="https://support.huaweicloud.com/devg-obs/obs_06_0043.html" target="_blank" rel="noopener noreferrer">使用头域设置ACL</a>）。</p>
 <p id="p50162129"><a name="p50162129"></a><a name="p50162129"></a>类型：字符串</p>
 <p id="p48805985"><a name="p48805985"></a><a name="p48805985"></a>说明：字符串形式的预定义策略。</p>
 <p id="p331411337426"><a name="p331411337426"></a><a name="p331411337426"></a>实例x-obs-acl: public-read。</p>

@@ -1,4 +1,4 @@
-# Header中携带签名<a name="ZH-CN_TOPIC_0100846723"></a>
+# Header中携带签名<a name="obs_04_0010"></a>
 
 OBS的所有API接口都可以通过在header中携带签名方式来进行身份认证，也是最常用的身份认证方式。
 

@@ -4,5 +4,5 @@
 
 OBS通过IAM预置了一组条件键，例如，您可以先使用obs:SourceIp条件键检查请求者的IP地址，然后再允许执行操作。
 
-OBS支持的条件键和运算符与桶策略的Condition一致，在IAM配置时需要在前面加上“obs:”。详细的Condition介绍请参见[Policy格式](https://support.huaweicloud.com/devg-obs/zh-cn_topic_0118394684.html)。
+OBS支持的条件键和运算符与桶策略的Condition一致，在IAM配置时需要在前面加上“obs:”。详细的Condition介绍请参见[Policy格式](https://support.huaweicloud.com/devg-obs/obs_06_0048.html)。
 
