@@ -184,17 +184,6 @@ Upload to OBS
 <td class="cellrowborder" valign="top" width="9.180918091809183%" headers="mcps1.2.4.1.3 "><p id="p9114242135313"><a name="p9114242135313"></a><a name="p9114242135313"></a>否</p>
 </td>
 </tr>
-<tr id="row17310606"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p59981823"><a name="p59981823"></a><a name="p59981823"></a>expires</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p26689526"><a name="p26689526"></a><a name="p26689526"></a>表示上传对象的超期时间，单位是毫秒，具体参考RFC 2616。OBS将此参数值保存下来，当用户下载此对象或HEAD Object时，在响应头中携带此参数。</p>
-<p id="p38879142"><a name="p38879142"></a><a name="p38879142"></a>类型：字符串。</p>
-<p id="p14367960"><a name="p14367960"></a><a name="p14367960"></a>示例：</p>
-<p id="p62202782"><a name="p62202782"></a><a name="p62202782"></a>POLICY中：{" expires ": "1000" }</p>
-<p id="p22954127"><a name="p22954127"></a><a name="p22954127"></a>HTML中：&lt;input type="text" name=" expires " value="1000" /&gt;</p>
-</td>
-<td class="cellrowborder" valign="top" width="9.180918091809183%" headers="mcps1.2.4.1.3 "><p id="p47345027"><a name="p47345027"></a><a name="p47345027"></a>否</p>
-</td>
-</tr>
 <tr id="row23452063"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p20568952"><a name="p20568952"></a><a name="p20568952"></a>x-obs-acl</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p55472450"><a name="p55472450"></a><a name="p55472450"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write；public-read-delivered ; public-read-write-delivered（各策略详细说明见<a href="https://support.huaweicloud.com/devg-obs/obs_06_0043.html" target="_blank" rel="noopener noreferrer">使用头域设置ACL</a>）。</p>
@@ -266,8 +255,9 @@ Upload to OBS
 <p id="p14325287"><a name="p14325287"></a><a name="p14325287"></a>Content-Type,</p>
 <p id="p61818720"><a name="p61818720"></a><a name="p61818720"></a>Content-Disposition,</p>
 <p id="p19497574"><a name="p19497574"></a><a name="p19497574"></a>Content-Encoding</p>
+<p id="p92111354122920"><a name="p92111354122920"></a><a name="p92111354122920"></a>Expires</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p35799650"><a name="p35799650"></a><a name="p35799650"></a>这4个参数是HTTP标准消息头，OBS将这些参数记录下来，当用户下载此对象或Head Object时，在响应消息头中携带这些参数。</p>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p35799650"><a name="p35799650"></a><a name="p35799650"></a>这5个参数是HTTP标准消息头，OBS将这些参数记录下来，当用户下载此对象或Head Object时，在响应消息头中携带这些参数。</p>
 <p id="p53761394"><a name="p53761394"></a><a name="p53761394"></a>类型：字符串。</p>
 <p id="p14090498"><a name="p14090498"></a><a name="p14090498"></a>示例：</p>
 <p id="p59705619"><a name="p59705619"></a><a name="p59705619"></a>POLICY中：["starts-with", "$Content-Type", "text/"],</p>
@@ -512,7 +502,7 @@ Content-Disposition: form-data; name="content-type"
 text/plain
 -----------------------------7db143f50da2
 Content-Disposition: form-data; name="expires"
-1000
+WED, 01 Jul 2015 04:16:15 GMT
 -----------------------------7db143f50da2
 Content-Disposition: form-data; name="AccessKeyId"
 14RZT432N80TGDF2Y2G2

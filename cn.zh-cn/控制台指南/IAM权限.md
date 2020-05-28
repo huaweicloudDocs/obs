@@ -92,7 +92,7 @@ IAM权限主要面向对同账号下IAM用户授权的场景：
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-   Resource（资源）级别细粒度授权特性会逐步在各个区域上线，需要使用该特性时请确保桶所在区域已经支持。  
->-   Resource（资源）级别细粒度授权特性目前处于公测阶段，如需使用，请[提交工单](https://console.huaweicloud.com/ticket/?locale=zh-cn#/ticketindex/business?productTypeId=2a129f7ed0b543c6b92d73e2c26aa590&subTypeId=-1&type=2)到OBS，申请开通Resource（资源）级别细粒度授权特性白名单。  
+>-   使用Resource（资源）级别细粒度授权特性前，请[提交工单](https://console.huaweicloud.com/ticket/?locale=zh-cn#/ticketindex/business?productTypeId=2a129f7ed0b543c6b92d73e2c26aa590&subTypeId=-1&type=2)到OBS，申请开通Resource（资源）级别细粒度授权特性白名单。  
 
 ## IAM权限鉴权<a name="section477513429495"></a>
 

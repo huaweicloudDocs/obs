@@ -9,7 +9,6 @@
 权限根据授权的精细程度，分为[角色](https://support.huaweicloud.com/usermanual-iam/iam_01_0601.html)和[策略](https://support.huaweicloud.com/usermanual-iam/iam_01_0017.html)。角色以服务为粒度，是IAM最初提供的一种根据用户的工作职能定义权限的粗粒度授权机制。策略以API接口为粒度进行权限拆分，授权更加精细，可以精确到某个操作、资源和条件，能够满足企业对权限最小化的安全管控要求。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->-   基于策略的访问控制是针对需要精细化控制权限的用户设计的一种授权方式，当前处于公测阶段，推荐您开通，开通后可永久免费使用，开通方法请参见：[申请基于策略的访问控制公测](https://support.huaweicloud.com/usermanual-iam/iam_01_019.html)。  
 >-   如果您要允许或是禁止某个接口的操作权限，请使用策略。  
 >-   由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的角色后，大概需要等待13分钟角色才能生效；授予OBS相关的策略后，大概需要等待5分钟策略才能生效。  
 
