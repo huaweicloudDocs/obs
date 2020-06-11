@@ -45,7 +45,7 @@ StringToSign =
 </tr>
 <tr id="row14909112213405"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p132581298408"><a name="p132581298408"></a><a name="p132581298408"></a>Content-MD5</p>
 </td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p102601629204016"><a name="p102601629204016"></a><a name="p102601629204016"></a>按照RFC 1864标准计算出消息体的MD5摘要字符串，即消息体128-bit MD5值经过base64编码后得到的字符串，具体请参见<a href="#table12510133817416">表6</a>以及表下方的计算方法示例。</p>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p102601629204016"><a name="p102601629204016"></a><a name="p102601629204016"></a>按照RFC 1864标准计算出消息体的MD5摘要字符串，即消息体128-bit MD5值经过base64编码后得到的字符串，可以为空。具体请参见<a href="#table12510133817416">表6</a>以及表下方的计算方法示例。</p>
 </td>
 </tr>
 <tr id="row1824493"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p13566274"><a name="p13566274"></a><a name="p13566274"></a>Content-Type</p>
