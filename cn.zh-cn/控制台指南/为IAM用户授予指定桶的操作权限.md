@@ -1,8 +1,12 @@
-# 桶拥有者为IAM用户授予桶权限<a name="obs_03_0080"></a>
+# 为IAM用户授予指定桶的操作权限<a name="obs_03_0080"></a>
 
-在主账号下创建一个IAM用户，IAM用户不加入任何用户组，该IAM用户没有任何权限。桶拥有者（主账号）可以通过配置桶策略授予IAM用户桶的权限。
+在主账号下创建一个IAM用户，IAM用户不加入任何用户组，该IAM用户没有任何权限。桶拥有者（主账号）或者拥有设置桶策略权限的账号及IAM用户可以通过配置桶策略授予IAM用户桶的权限。
 
-下面示例中，主账号授予IAM用户访问桶和上传对象的权限。
+下面示例以授予IAM用户访问桶和上传对象的权限为例。
+
+## 须知<a name="section5420122610176"></a>
+
+通过本示例，被授权的IAM用户可以通过Browser+、API或SDK访问被授权的桶并上传对象，但无法在OBS控制台访问。如果想要实现控制台访问，还需要通过[自定义策略](https://support.huaweicloud.com/usermanual-iam/iam_01_0605.html)将IAM用户加入针对OBS所有资源拥有**obs:bucket:ListAllMyBuckets**权限的用户组，即授予IAM用户列举桶的权限，才能保证在进入控制台后能看到被授权的桶。
 
 ## 操作步骤<a name="section13279211683"></a>
 
@@ -11,7 +15,7 @@
 3.  在左侧导航栏，单击“访问权限控制”，进入权限管理页面。
 4.  单击“桶策略\>高级桶策略”。
 5.  单击“创建桶策略”，系统弹出“创建桶策略”对话框。
-6.  配置如下参数，授予IAM用户访问桶的权限。
+6.  配置如下参数，授予IAM用户访问桶（列举对象）的权限。
 
     **表 1**  授予访问桶的权限的参数配置
 
@@ -39,7 +43,7 @@
     </tr>
     <tr id="row653285374414"><td class="cellrowborder" valign="top" width="23.189999999999998%" headers="mcps1.2.3.1.1 "><p id="p753212538444"><a name="p753212538444"></a><a name="p753212538444"></a>资源</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.81%" headers="mcps1.2.3.1.2 "><a name="ul964933612542"></a><a name="ul964933612542"></a><ul id="ul964933612542"><li>包含</li><li>资源名称不配置</li></ul>
+    <td class="cellrowborder" valign="top" width="76.81%" headers="mcps1.2.3.1.2 "><a name="ul964933612542"></a><a name="ul964933612542"></a><ul id="ul964933612542"><li>包含</li><li>选择“配置到整个桶”</li></ul>
     </td>
     </tr>
     <tr id="row18790945165418"><td class="cellrowborder" valign="top" width="23.189999999999998%" headers="mcps1.2.3.1.1 "><p id="p12791194519544"><a name="p12791194519544"></a><a name="p12791194519544"></a>动作</p>
@@ -83,12 +87,15 @@
     </tr>
     <tr id="row126721226135618"><td class="cellrowborder" valign="top" width="22.98%" headers="mcps1.2.3.1.1 "><p id="p0673122685615"><a name="p0673122685615"></a><a name="p0673122685615"></a>资源</p>
     </td>
-    <td class="cellrowborder" valign="top" width="77.02%" headers="mcps1.2.3.1.2 "><a name="ul11674152619564"></a><a name="ul11674152619564"></a><ul id="ul11674152619564"><li>包含</li><li>资源名称：*</li></ul>
+    <td class="cellrowborder" valign="top" width="77.02%" headers="mcps1.2.3.1.2 "><a name="ul11674152619564"></a><a name="ul11674152619564"></a><ul id="ul11674152619564"><li>包含</li><li>选择“指定资源”</li><li>资源名称：*</li></ul>
     </td>
     </tr>
     <tr id="row167522618569"><td class="cellrowborder" valign="top" width="22.98%" headers="mcps1.2.3.1.1 "><p id="p1367692611568"><a name="p1367692611568"></a><a name="p1367692611568"></a>动作</p>
     </td>
     <td class="cellrowborder" valign="top" width="77.02%" headers="mcps1.2.3.1.2 "><a name="ul176761226135619"></a><a name="ul176761226135619"></a><ul id="ul176761226135619"><li>包含</li><li>PutObject</li></ul>
+    <div class="note" id="note1250310062911"><a name="note1250310062911"></a><a name="note1250310062911"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p550314042918"><a name="p550314042918"></a><a name="p550314042918"></a>本例仅授予上传对象权限。可以根据业务需要选择多个动作，同时授予其他操作权限。<span class="parmvalue" id="parmvalue10238191320303"><a name="parmvalue10238191320303"></a><a name="parmvalue10238191320303"></a>“*”</span>代表所有操作。</p>
+    <p id="p131981634163011"><a name="p131981634163011"></a><a name="p131981634163011"></a>支持的动作及含义请参见<a href="动作.md">动作</a>。</p>
+    </div></div>
     </td>
     </tr>
     </tbody>

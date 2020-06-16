@@ -20,7 +20,7 @@ OBS支持通过ACL对[表1](#table177445813209)所示用户或用户组授予桶
 <tbody><tr id="row122361958192016"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p1223615586209"><a name="p1223615586209"></a><a name="p1223615586209"></a>特定用户</p>
 </td>
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p1377083924318"><a name="p1377083924318"></a><a name="p1377083924318"></a>ACL支持通过账号授予桶/对象的访问权限。授予账号权限后，账号下所有具有<span id="ph6770113934313"><a name="ph6770113934313"></a><a name="ph6770113934313"></a>OBS</span>资源权限的IAM用户都可以拥有此桶/对象的访问权限。</p>
-<p id="p223612587202"><a name="p223612587202"></a><a name="p223612587202"></a>当需要为不同IAM用户授予不同的权限时，可以通过桶策略配置，具体操作请参见<a href="桶拥有者为IAM用户授予桶权限.md">桶拥有者为IAM用户授予桶权限</a>。</p>
+<p id="p223612587202"><a name="p223612587202"></a><a name="p223612587202"></a>当需要为不同IAM用户授予不同的权限时，可以通过桶策略配置，具体操作请参见<a href="为IAM用户授予指定桶的操作权限.md">为IAM用户授予指定桶的操作权限</a>。</p>
 </td>
 </tr>
 <tr id="row14236115815207"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p4237195812018"><a name="p4237195812018"></a><a name="p4237195812018"></a>拥有者</p>
