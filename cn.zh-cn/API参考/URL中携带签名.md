@@ -210,8 +210,8 @@ http\(s\)://examplebucket.obs.cn-north-4.myhuaweicloud.com/objectkey?AccessKeyId
 
 curl  http\(s\)://examplebucket.obs.cn-north-4.myhuaweicloud.com/objectkey?AccessKeyId=AccessKeyID\\&Expires=1532779451\\&Signature=0Akylf43Bm3mD1bh2rM3dmVp1Bo%3D  -X GET -o output
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->如果想要在浏览器中使用URL中携带签名生成的预定于URL，则计算签名时不要使用“Content-MD5”、“Content-Type”、“CanonicalizedHeaders”计算签名，否则浏览器不能携带这些参数，请求发送到服务端之后，会提示签名错误。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>如果想要在浏览器中使用URL中携带签名生成的预定于URL，则计算签名时不要使用“Content-MD5”、“Content-Type”、“CanonicalizedHeaders”计算签名，否则浏览器不能携带这些参数，请求发送到服务端之后，会提示签名错误。
 
 ## Java中签名的计算方法<a name="section131611926171613"></a>
 

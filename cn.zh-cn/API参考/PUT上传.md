@@ -4,8 +4,8 @@
 
 上传对象操作是指在指定的桶内增加一个对象，执行该操作需要用户拥有桶的写权限。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->同一个桶中存储的对象名是唯一的，在桶未开启多版本的情况下，重复上传同名对象，前一次上传的对象将被后一次上传的对象覆盖。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>同一个桶中存储的对象名是唯一的，在桶未开启多版本的情况下，重复上传同名对象，前一次上传的对象将被后一次上传的对象覆盖。
 
 如果在指定的桶内已经有相同的对象键值的对象，用户上传的新对象会覆盖原来的对象；为了确保数据在传输过程中没有遭到破坏，用户可以在请求消息头中加入Content-MD5参数。在这种情况下，OBS收到上传的对象后，会对对象进行MD5校验，如果不一致则返回出错信息。
 
@@ -57,6 +57,9 @@ Date: date
 ## 请求消息头<a name="section57448112"></a>
 
 该请求可以使用附加的消息头，具体如[表1](#table21799862)所示。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>OBS支持在上传对象时在请求里携带HTTP协议规定的6个请求头：Cache-Control、Expires、Content-Encoding、Content-Disposition、Content-Type、Content-Language。如果上传Object时设置了这些请求头，OBS会直接将这些头域的值保存下来。这6个值也可以通过OBS提供的修改对象元数据API接口进行修改。在该Object被下载或者HEAD的时候，这些保存的值将会被设置到对应的HTTP头域中返回客户端。
 
 **表 1**  请求消息头
 
