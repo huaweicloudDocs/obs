@@ -38,11 +38,6 @@ OBS支持通过ACL对[表1](#table177445813209)所示用户或用户组授予桶
 </div></div>
 </td>
 </tr>
-<tr id="row112391958122020"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p1123911582207"><a name="p1123911582207"></a><a name="p1123911582207"></a>注册用户组</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p6239185816209"><a name="p6239185816209"></a><a name="p6239185816209"></a>注册用户组代表所有注册了云服务的账号（仅指账号，不包括通过IAM创建的用户组或用户）。注册用户必须要经过身份认证（目前主要通过AK/SK进行身份认证），才可以获取对应的访问权限。例如，当注册用户组被授予桶写入权限后，世界上任何已通过身份验证的云服务账号，都可以向您的桶上传、覆盖和删除对象。</p>
-</td>
-</tr>
 <tr id="row1123945814203"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p19239165817208"><a name="p19239165817208"></a><a name="p19239165817208"></a>日志投递用户组</p>
 <div class="note" id="note0623203504215"><a name="note0623203504215"></a><a name="note0623203504215"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p12623113515421"><a name="p12623113515421"></a><a name="p12623113515421"></a>仅桶ACL支持。</p>
 </div></div>
@@ -136,8 +131,8 @@ OBS支持通过ACL对[表1](#table177445813209)所示用户或用户组授予桶
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->每一次对桶/对象的授权操作都将覆盖桶/对象已有的权限列表，而不会对其新增权限。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>每一次对桶/对象的授权操作都将覆盖桶/对象已有的权限列表，而不会对其新增权限。
 
 ## 桶ACL使用场景<a name="section7479813113513"></a>
 

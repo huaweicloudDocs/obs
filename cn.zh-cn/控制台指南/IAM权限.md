@@ -90,9 +90,9 @@ IAM权限主要面向对同账号下IAM用户授权的场景：
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   Resource（资源）级别细粒度授权特性会逐步在各个区域上线，需要使用该特性时请确保桶所在区域已经支持。  
->-   使用Resource（资源）级别细粒度授权特性前，请[提交工单](https://console.huaweicloud.com/ticket/?locale=zh-cn#/ticketindex/business?productTypeId=2a129f7ed0b543c6b92d73e2c26aa590&subTypeId=-1&type=2)到OBS，申请开通Resource（资源）级别细粒度授权特性白名单。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   Resource（资源）级别细粒度授权特性会逐步在各个区域上线，需要使用该特性时请确保桶所在区域已经支持。
+>-   使用Resource（资源）级别细粒度授权特性前，请[提交工单](https://console.huaweicloud.com/ticket/?locale=zh-cn#/ticketindex/business?productTypeId=2a129f7ed0b543c6b92d73e2c26aa590&subTypeId=-1&type=2)到OBS，申请开通Resource（资源）级别细粒度授权特性白名单。
 
 ## IAM权限鉴权<a name="section477513429495"></a>
 
@@ -101,8 +101,8 @@ IAM权限遵循Deny优先的原则。在用户访问资源时，权限检查逻�
 **图 2**  系统鉴权逻辑图<a name="fig1757455075016"></a>  
 ![](figures/系统鉴权逻辑图.png "系统鉴权逻辑图")
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->每条策略做评估时，Action之间是或\(or\)的关系。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>每条策略做评估时，Action之间是或\(or\)的关系。
 
 1.  用户访问系统，发起操作请求。
 2.  系统评估用户被授予的访问策略，鉴权开始。
