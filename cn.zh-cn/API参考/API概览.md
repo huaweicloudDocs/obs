@@ -245,6 +245,21 @@
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p8963174210578"><a name="p8963174210578"></a><a name="p8963174210578"></a>删除指定桶的归档对象直读配置信息。</p>
 </td>
 </tr>
+<tr id="row5573653195215"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p115732533521"><a name="p115732533521"></a><a name="p115732533521"></a><a href="设置镜像回源规则.md">设置镜像回源规则</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p8573145325213"><a name="p8573145325213"></a><a name="p8573145325213"></a>设置指定桶的镜像回源规则。</p>
+</td>
+</tr>
+<tr id="row48591756185215"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p885913560521"><a name="p885913560521"></a><a name="p885913560521"></a><a href="获取镜像回源规则.md">获取镜像回源规则</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p138591756125215"><a name="p138591756125215"></a><a name="p138591756125215"></a>获取指定桶的镜像回源规则。</p>
+</td>
+</tr>
+<tr id="row97624588525"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p187621586524"><a name="p187621586524"></a><a name="p187621586524"></a><a href="删除镜像回源规则.md">删除镜像回源规则</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p19762175810523"><a name="p19762175810523"></a><a name="p19762175810523"></a>删除指定桶的镜像回源规则。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -435,6 +450,100 @@
 <tr id="row10287649"><td class="cellrowborder" valign="top" width="40.65%" headers="mcps1.2.3.1.1 "><p id="p52856884"><a name="p52856884"></a><a name="p52856884"></a><a href="取消多段上传任务.md">取消多段上传任务</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="59.35%" headers="mcps1.2.3.1.2 "><p id="p72960363010"><a name="p72960363010"></a><a name="p72960363010"></a>取消一个多段上传的任务。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+## Data+接口<a name="section436942617615"></a>
+
+**表 6**  Data+接口
+
+<a name="table17646496610"></a>
+<table><thead align="left"><tr id="row1765144919611"><th class="cellrowborder" valign="top" width="40.660000000000004%" id="mcps1.2.3.1.1"><p id="p166515497618"><a name="p166515497618"></a><a name="p166515497618"></a>接口</p>
+</th>
+<th class="cellrowborder" valign="top" width="59.34%" id="mcps1.2.3.1.2"><p id="p1658495617"><a name="p1658495617"></a><a name="p1658495617"></a>说明</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1165194918615"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p106511496611"><a name="p106511496611"></a><a name="p106511496611"></a><a href="创建工作流.md">创建工作流</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p6944812341"><a name="p6944812341"></a><a name="p6944812341"></a>本接口用于直接创建Data+工作流。</p>
+</td>
+</tr>
+<tr id="row10657492610"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p17652049062"><a name="p17652049062"></a><a name="p17652049062"></a><a href="查询工作流详情.md">查询工作流详情</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p1465114912610"><a name="p1465114912610"></a><a name="p1465114912610"></a>本接口用于根据工作流名称查询工作流详细信息。</p>
+</td>
+</tr>
+<tr id="row56516496613"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p0659495617"><a name="p0659495617"></a><a name="p0659495617"></a><a href="删除工作流.md">删除工作流</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p206510491663"><a name="p206510491663"></a><a name="p206510491663"></a>本接口用于标记删除工作流。</p>
+</td>
+</tr>
+<tr id="row11651491615"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p565449261"><a name="p565449261"></a><a name="p565449261"></a><a href="更新工作流.md">更新工作流</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p146510494619"><a name="p146510494619"></a><a name="p146510494619"></a>本接口用于更新工作流参数值。</p>
+</td>
+</tr>
+<tr id="row1465184915610"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p16518491867"><a name="p16518491867"></a><a name="p16518491867"></a><a href="查询工作流列表.md">查询工作流列表</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p196524918617"><a name="p196524918617"></a><a name="p196524918617"></a>本接口用于查询工作流列表。</p>
+</td>
+</tr>
+<tr id="row2065184920613"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p565849062"><a name="p565849062"></a><a name="p565849062"></a><a href="API异步启动工作流.md">API异步启动工作流</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p186510491063"><a name="p186510491063"></a><a name="p186510491063"></a>本接口用于API方式异步启动已有工作流，产生工作流实例。</p>
+</td>
+</tr>
+<tr id="row1765154916615"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p196594916610"><a name="p196594916610"></a><a name="p196594916610"></a><a href="查询工作流实例列表.md">查询工作流实例列表</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p186514915614"><a name="p186514915614"></a><a name="p186514915614"></a>本接口用于查询用户工作流的实例列表。</p>
+</td>
+</tr>
+<tr id="row065174918612"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p2656499620"><a name="p2656499620"></a><a name="p2656499620"></a><a href="查询工作流实例.md">查询工作流实例</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p14658494610"><a name="p14658494610"></a><a name="p14658494610"></a>本接口用于查询指定工作流实例详细。</p>
+</td>
+</tr>
+<tr id="row3651449765"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p156515496614"><a name="p156515496614"></a><a name="p156515496614"></a><a href="恢复失败状态的工作流实例.md">恢复失败状态的工作流实例</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p2412012132510"><a name="p2412012132510"></a><a name="p2412012132510"></a>本接口用于恢复一个执行失败状态的工作流实例。恢复后，工作流实例将从上次失败的状态处继续执行，而工作流步骤中已经执行成功的状态不会再执行。</p>
+</td>
+</tr>
+<tr id="row1365649569"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p1465124919616"><a name="p1465124919616"></a><a name="p1465124919616"></a><a href="开通授权.md">开通授权</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p428512341638"><a name="p428512341638"></a><a name="p428512341638"></a>本接口用于开通授权，由OBS服务自动帮助用户创建工作流运行时需要的函数服务权限，以及函数服务运行时的权限。</p>
+</td>
+</tr>
+<tr id="row365154917620"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p20651049465"><a name="p20651049465"></a><a name="p20651049465"></a><a href="查询授权.md">查询授权</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p129703181444"><a name="p129703181444"></a><a name="p129703181444"></a>本接口用于查询授权，查询由OBS服务自动帮助用户创建工作流运行时需要的函数服务权限，以及函数服务运行时的权限。</p>
+</td>
+</tr>
+<tr id="row13651649366"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p66584914616"><a name="p66584914616"></a><a name="p66584914616"></a><a href="查询Action模板详情.md">查询Action模板详情</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p63491832195413"><a name="p63491832195413"></a><a name="p63491832195413"></a>本接口用于按名称查询Action模板。</p>
+</td>
+</tr>
+<tr id="row7651249263"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p116534914619"><a name="p116534914619"></a><a name="p116534914619"></a><a href="查询Action模板列表.md">查询Action模板列表</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p831314441014"><a name="p831314441014"></a><a name="p831314441014"></a>本接口用于查询已有预置Action模板列表。</p>
+</td>
+</tr>
+<tr id="row116515495611"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p06519491266"><a name="p06519491266"></a><a name="p06519491266"></a><a href="配置桶触发器.md">配置桶触发器</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p6917145620518"><a name="p6917145620518"></a><a name="p6917145620518"></a>本接口用于在桶上绑定工作流触发器。</p>
+</td>
+</tr>
+<tr id="row1265549865"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p16594919619"><a name="p16594919619"></a><a name="p16594919619"></a><a href="查询桶触发器.md">查询桶触发器</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p1776364313916"><a name="p1776364313916"></a><a name="p1776364313916"></a>本接口用于查询桶上绑定工作流触发器。</p>
+</td>
+</tr>
+<tr id="row2659491669"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p6651949764"><a name="p6651949764"></a><a name="p6651949764"></a><a href="删除桶触发器.md">删除桶触发器</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p114526527126"><a name="p114526527126"></a><a name="p114526527126"></a>本接口用于删除在桶上绑定工作流触发器。</p>
 </td>
 </tr>
 </tbody>

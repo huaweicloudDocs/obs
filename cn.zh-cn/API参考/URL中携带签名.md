@@ -119,7 +119,7 @@ StringToSign =
 <tr id="row42990474"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p59676394"><a name="p59676394"></a><a name="p59676394"></a>CanonicalizedHeaders</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1949763"><a name="p1949763"></a><a name="p1949763"></a>HTTP请求头域中的OBS请求头字段，即以“x-obs-”作为前辍的头域，如“x-obs-date，x-obs-acl，x-obs-meta-*”。</p>
-<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>请求头字段中关键字的的所有字符要转为小写，需要添加多个字段时，要将所有字段按照关键字的字典序从小到大进行排序。</li><li>在添加请求头字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要先将重名字段的值（这里是name1和name2）以逗号分隔，合并成x-obs-meta-name:name1,name2。</li><li>头域中的请求头字段中的关键字不允许含有非ASCII码或不可识别字符；请求头字段中的值也不建议使用非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。</li><li>当请求头字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个请求头字段最后都需要另起新行。</li></ol>
+<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>请求头字段中关键字的所有字符要转为小写，需要添加多个字段时，要将所有字段按照关键字的字典序从小到大进行排序。</li><li>在添加请求头字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要先将重名字段的值（这里是name1和name2）以逗号分隔，合并成x-obs-meta-name:name1,name2。</li><li>头域中的请求头字段中的关键字不允许含有非ASCII码或不可识别字符；请求头字段中的值也不建议使用非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。</li><li>当请求头字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个请求头字段最后都需要另起新行。</li></ol>
 </td>
 </tr>
 <tr id="row7450793"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p66643399"><a name="p66643399"></a><a name="p66643399"></a>CanonicalizedResource</p>
@@ -186,9 +186,8 @@ URL中的Signature计算方法和Header中携带的Authorization签名计算方�
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12133293414"><a name="p12133293414"></a><a name="p12133293414"></a>GET \n</p>
 <p id="p2137294411"><a name="p2137294411"></a><a name="p2137294411"></a>\n</p>
 <p id="p181352954119"><a name="p181352954119"></a><a name="p181352954119"></a>\n</p>
-<p id="p713329174115"><a name="p713329174115"></a><a name="p713329174115"></a><span>x-obs-security-token:</span>YwkaRTbdY8g7q....\n</p>
 <p id="p151392964112"><a name="p151392964112"></a><a name="p151392964112"></a>1532779451\n</p>
-<p id="p31318296418"><a name="p31318296418"></a><a name="p31318296418"></a>/examplebucket/objectkey</p>
+<p id="p31318296418"><a name="p31318296418"></a><a name="p31318296418"></a>/examplebucket/objectkey?<span>x-obs-security-token:</span>YwkaRTbdY8g7q....</p>
 </td>
 </tr>
 </tbody>
@@ -211,7 +210,7 @@ http\(s\)://examplebucket.obs.cn-north-4.myhuaweicloud.com/objectkey?AccessKeyId
 curl  http\(s\)://examplebucket.obs.cn-north-4.myhuaweicloud.com/objectkey?AccessKeyId=AccessKeyID\\&Expires=1532779451\\&Signature=0Akylf43Bm3mD1bh2rM3dmVp1Bo%3D  -X GET -o output
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->如果想要在浏览器中使用URL中携带签名生成的预定于URL，则计算签名时不要使用“Content-MD5”、“Content-Type”、“CanonicalizedHeaders”计算签名，否则浏览器不能携带这些参数，请求发送到服务端之后，会提示签名错误。
+>如果想要在浏览器中使用URL中携带签名生成的预定义URL，则计算签名时不要使用只能携带在头域部分的“Content-MD5”、“Content-Type”、“CanonicalizedHeaders”来计算签名。否则浏览器不能携带这些参数，请求发送到服务端之后，会提示签名错误。
 
 ## Java中签名的计算方法<a name="section131611926171613"></a>
 
@@ -248,7 +247,7 @@ public class SignDemo {
 			"CDNNotifyConfiguration", "acl", "append", "attname", "backtosource", "cors", "customdomain", "delete",
 			"deletebucket", "directcoldaccess", "encryption", "inventory", "length", "lifecycle", "location", "logging",
 			"metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy", "position", "quota",
-			"rename", "replication", "requestPayment", "response-cache-control", "response-content-disposition",
+			"rename", "replication", "response-cache-control", "response-content-disposition",
 			"response-content-encoding", "response-content-language", "response-content-type", "response-expires",
 			"restore", "select", " storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
 			"uploadId", "uploads", "versionId", "versioning", "versions", "website", "x-image-process",
