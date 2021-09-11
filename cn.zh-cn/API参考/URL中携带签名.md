@@ -39,7 +39,7 @@ Host: bucketname.obs.cn-north-4.myhuaweicloud.com
 </tr>
 <tr id="row8913420"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p50898414"><a name="p50898414"></a><a name="p50898414"></a>Expires</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p29130856"><a name="p29130856"></a><a name="p29130856"></a>临时授权失效的时间；临时授权失效的时间为24小时，非临时的授权时间可设置的最长时间为1年，但是如果含有了临时的AK，其授权失效时间最大值也只能为24小时；UTC时间，1970年1月1日零时之后的指定的Expires时间内有效（以秒为单位）。</p>
+<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p29130856"><a name="p29130856"></a><a name="p29130856"></a>临时授权失效的时间；临时授权失效的时间为24小时，但是如果含有了临时的AK，其授权失效时间最大值也只能为24小时；UTC时间，1970年1月1日零时之后的指定的Expires时间内有效（以秒为单位）。</p>
 <p id="p60851118"><a name="p60851118"></a><a name="p60851118"></a>类型：字符串。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.3 "><p id="p29993536"><a name="p29993536"></a><a name="p29993536"></a>是</p>
@@ -55,7 +55,8 @@ Host: bucketname.obs.cn-north-4.myhuaweicloud.com
 </tr>
 <tr id="row142296248158"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p1722982419150"><a name="p1722982419150"></a><a name="p1722982419150"></a><span>x-obs-security-token</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p1322942441515"><a name="p1322942441515"></a><a name="p1322942441515"></a><span>使用临时AK/SK鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-obs-security-token”字段</span></p>
+<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p1322942441515"><a name="p1322942441515"></a><a name="p1322942441515"></a><span>使用临时AK/SK鉴权时，临时AK/SK和securitytoken必须同时使用，请求头中需要添加“x-obs-security-token”字段</span>；</p>
+<p id="p917413528398"><a name="p917413528398"></a><a name="p917413528398"></a>获取临时AK/SK和securitytoken参考<a href="https://support.huaweicloud.com/api-iam/iam_04_0002.html" target="_blank" rel="noopener noreferrer">获取临时AK/SK和securitytoken</a>。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.3 "><p id="p192295249152"><a name="p192295249152"></a><a name="p192295249152"></a>否</p>
 </td>
@@ -107,7 +108,7 @@ StringToSign =
 </tr>
 <tr id="row1824493"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p13566274"><a name="p13566274"></a><a name="p13566274"></a>Content-Type</p>
 </td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p25126432"><a name="p25126432"></a><a name="p25126432"></a>内容类型，用于指定 消息类型，例如： text/plain。</p>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p25126432"><a name="p25126432"></a><a name="p25126432"></a>内容类型，用于指定消息类型，例如： text/plain。</p>
 <p id="p24811297"><a name="p24811297"></a><a name="p24811297"></a>当请求中不带该头域时，该参数按照空字符串处理。</p>
 </td>
 </tr>
@@ -127,7 +128,7 @@ StringToSign =
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p29406249"><a name="p29406249"></a><a name="p29406249"></a>表示HTTP请求所指定的OBS资源，构造方式如下：</p>
 <p id="p63329656"><a name="p63329656"></a><a name="p63329656"></a>&lt;桶名+对象名&gt;+[子资源]+ [子资源2] + ...</p>
 <a name="ol135483613475"></a><a name="ol135483613475"></a><ol id="ol135483613475"><li>桶名和对象名。<a name="ul157841072717"></a><a name="ul157841072717"></a><ul id="ul157841072717"><li>通过桶绑定的自定义域名访问OBS，桶名由自定义域名表示，则为"/obs.ccc.com/object"，其中“obs.ccc.com”为桶绑定的自定义域名。如果没有对象名，如列举桶，则为"/obs.ccc.com/"；</li><li>不是通过桶绑定的自定义域名访问OBS的场景，则为"/bucket/object"，如果没有对象名，如列举桶，则为"/bucket/"。如果桶名也没有，则为“/”。</li></ul>
-</li><li>如果有子资源，则将子资源添加进来，例如?acl，?logging。<p id="p167755915411"><a name="p167755915411"></a><a name="p167755915411"></a>OBS支持各种子资源，包括：CDNNotifyConfiguration, acl, append, attname, backtosource, cors, customdomain, delete, deletebucket, directcoldaccess, encryption, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, orchestration, partNumber, policy, position, quota, rename, replication, requestPayment, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, restore, select,  storageClass, storagePolicy, storageinfo, tagging, torrent, truncate, uploadId, uploads, versionId, versioning, versions, website, x-image-process, x-image-save-bucket, x-image-save-object, x-obs-security-token。</p>
+</li><li>如果有子资源，则将子资源添加进来，例如?acl，?logging。<p id="p167755915411"><a name="p167755915411"></a><a name="p167755915411"></a>OBS支持各种子资源，包括：CDNNotifyConfiguration, acl, append, attname, backtosource, cors, customdomain, delete, deletebucket, directcoldaccess, encryption, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, partNumber, policy, position, quota, rename, replication, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, restore, storageClass, storagePolicy, storageinfo, tagging, torrent, truncate, uploadId, uploads, versionId, versioning, versions, website, x-image-process, x-image-save-bucket, x-image-save-object, x-obs-security-token。</p>
 </li><li>如果有多个子资源，在包含这些子资源时，需要首先将这些子资源按照其关键字的字典序从小到大排列，并使用<strong id="b1580113415404"><a name="b1580113415404"></a><a name="b1580113415404"></a>“&amp;”</strong>拼接。</li></ol>
 <div class="note" id="note196756717914"><a name="note196756717914"></a><a name="note196756717914"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul116221356133916"></a><a name="ul116221356133916"></a><ul id="ul116221356133916"><li>子资源通常是唯一的，不建议请求的URL包含多个相同关键字的子资源（例如，key=value1&amp;key=value2），如果存在这种情况，OBS服务端签名时只会计算第一个子资源且也只有第一个子资源的值会对实际业务产生作用；</li><li>以获取对象（GetObject）接口为例，假设桶名为bucket-test，对象名为object-test，对象的版本号为xxx，获取时需要重写Content-Type为text/plain，那么签名计算出的CanonicalizedResource为：/bucket-test/object-test?response-content-type=text/plain&amp;versionId=xxx。</li></ul>
 </div></div>
@@ -187,7 +188,7 @@ URL中的Signature计算方法和Header中携带的Authorization签名计算方�
 <p id="p2137294411"><a name="p2137294411"></a><a name="p2137294411"></a>\n</p>
 <p id="p181352954119"><a name="p181352954119"></a><a name="p181352954119"></a>\n</p>
 <p id="p151392964112"><a name="p151392964112"></a><a name="p151392964112"></a>1532779451\n</p>
-<p id="p31318296418"><a name="p31318296418"></a><a name="p31318296418"></a>/examplebucket/objectkey?<span>x-obs-security-token:</span>YwkaRTbdY8g7q....</p>
+<p id="p31318296418"><a name="p31318296418"></a><a name="p31318296418"></a>/examplebucket/objectkey?<span>x-obs-security-token=</span>YwkaRTbdY8g7q....</p>
 </td>
 </tr>
 </tbody>
@@ -249,7 +250,7 @@ public class SignDemo {
 			"metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy", "position", "quota",
 			"rename", "replication", "response-cache-control", "response-content-disposition",
 			"response-content-encoding", "response-content-language", "response-content-type", "response-expires",
-			"restore", "select", " storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
+			"restore", " storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
 			"uploadId", "uploads", "versionId", "versioning", "versions", "website", "x-image-process",
 			"x-image-save-bucket", "x-image-save-object", "x-obs-security-token"));
 	
@@ -375,11 +376,13 @@ public class SignDemo {
 		if(canonicalizedResource.size() > 0) {
 			stringToSign.append("?");
 			for(Map.Entry<String, String> entry : canonicalizedResource.entrySet()) {
-				stringToSign.append(this.urlEncode(entry.getKey()));
+				stringToSign.append(entry.getKey());
 				if(this.isValid(entry.getValue())) {
-					stringToSign.append("=").append(this.urlEncode(entry.getValue()));
+					stringToSign.append("=").append(entry.getValue());
 				}
+                                stringToSign.append("&");
 			}
+                        stringToSign.deleteCharAt(stringToSign.length()-1);
 		}
 		
 //		System.out.println(String.format("StringToSign:%s%s", SIGN_SEP, stringToSign.toString()));
@@ -397,7 +400,6 @@ public class SignDemo {
 		return String.format("OBS %s:%s", this.ak, this.hamcSha1(stringToSign));
 	}
 	
-	
 	public String querySignature(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
 			String bucketName, String objectName, long expires) throws Exception {
 		if(headers.containsKey("x-obs-date")) {
@@ -411,24 +413,52 @@ public class SignDemo {
 		//2. signature
 		return this.urlEncode(this.hamcSha1(stringToSign));
 	}
-	
+
+        public String getURL(String endpoint, Map<String, String> queries,
+                String bucketName, String objectName, String signature, long expires) {
+                StringBuilder URL = new StringBuilder();
+                URL.append("https://").append(bucketName).append(".").append(endpoint).append("/").        
+                    append(objectName).append("?");    
+                String key;    
+                for (Map.Entry<String, String> entry : queries.entrySet()) {        
+                    key = entry.getKey();        
+                    if (key == null) {
+                        continue;        
+                    }
+                    if (SUB_RESOURCES.contains(key)) {            
+                        String value = entry.getValue();            
+                        URL.append(key);            
+                        if (value != null) {                
+                            URL.append("=").append(value).append("&");            
+                        } else {                
+                            URL.append("&");            
+                        }        
+                    }    
+                }    
+                URL.append("AccessKeyId=").append(this.ak).append("&Expires=").append(expires).        
+                    append("&Signature=").append(signature);    
+                return URL.toString();
+        }
+
 	public static void main(String[] args) throws Exception {
 		
 		SignDemo demo = new SignDemo();
 		demo.ak = "<your-access-key-id>";
-		demo.sk = "<your-securet-key-id>";
+		demo.sk = "<your-secret-key-id>";
+                String endpoint = "<your-endpoint>";
 		
 		String bucketName = "bucket-test";
 		String objectName = "hello.jpg";
+                // 若直接使用URL在浏览器地址栏中访问，无法带上头域，此处headers加入头域会导致签名不匹配，使用headers需要客户端处理
 		Map<String, String[]> headers = new HashMap<String, String[]>();
-		headers.put("date", new String[] {"Sat, 12 Oct 2015 08:12:38 GMT"});
-		headers.put("x-obs-acl", new String[] {"public-read"});
-		headers.put("x-obs-meta-key1", new String[] {"value1"});
-		headers.put("x-obs-meta-key2", new String[] {"value2", "value3"});
 		Map<String, String> queries = new HashMap<String, String>();
-		queries.put("acl", null);
 		
-		System.out.println(demo.headerSignature("PUT", headers, queries, bucketName, objectName));
+                // 请求消息参数Expires，设置24小时后失效
+                long expires = (System.currentTimeMillis() + 86400000L) / 1000;
+                String signature = demo.querySignature("GET", headers, queries, bucketName, objectName, expires);
+                System.out.println(signature);
+                String URL = demo.getURL(endpoint, queries, bucketName, objectName, signature, expires);
+                System.out.println(URL);
 	}
 	
 }

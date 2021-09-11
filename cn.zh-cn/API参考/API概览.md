@@ -260,6 +260,21 @@
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p19762175810523"><a name="p19762175810523"></a><a name="p19762175810523"></a>删除指定桶的镜像回源规则。</p>
 </td>
 </tr>
+<tr id="row159324586498"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p793318584494"><a name="p793318584494"></a><a name="p793318584494"></a><a href="设置在线解压策略.md">设置在线解压策略</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p2933658124910"><a name="p2933658124910"></a><a name="p2933658124910"></a>设置指定桶的ZIP文件解压规则。</p>
+</td>
+</tr>
+<tr id="row1998411212506"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p10985192195016"><a name="p10985192195016"></a><a name="p10985192195016"></a><a href="获取在线解压策略.md">获取在线解压策略</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p898520210509"><a name="p898520210509"></a><a name="p898520210509"></a>获取指定桶的ZIP文件解压规则。</p>
+</td>
+</tr>
+<tr id="row595131165019"><td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.3.1.1 "><p id="p189519125012"><a name="p189519125012"></a><a name="p189519125012"></a><a href="删除在线解压策略.md">删除在线解压策略</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p85932051144619"><a name="p85932051144619"></a><a name="p85932051144619"></a>删除指定桶的ZIP文件解压规则。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

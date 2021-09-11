@@ -179,7 +179,7 @@ Content-Length: 825
     <AllowedMethod>HEAD</AllowedMethod>  
     <AllowedMethod>PUT</AllowedMethod>  
     <AllowedMethod>DELETE</AllowedMethod>  
-    <AllowedOrigin>obs.myhuaweicloud.com</AllowedOrigin>  
+    <AllowedOrigin>obs.cn-north-4.myhuaweicloud.com</AllowedOrigin>  
     <AllowedOrigin>obs.example.com</AllowedOrigin>  
     <AllowedOrigin>www.example.com</AllowedOrigin>  
     <AllowedHeader>AllowedHeader_1</AllowedHeader>  

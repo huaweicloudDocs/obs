@@ -50,21 +50,22 @@ StringToSign =
 </tr>
 <tr id="row1824493"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p13566274"><a name="p13566274"></a><a name="p13566274"></a>Content-Type</p>
 </td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p25126432"><a name="p25126432"></a><a name="p25126432"></a>内容类型，用于指定 消息类型，例如： text/plain。</p>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p25126432"><a name="p25126432"></a><a name="p25126432"></a>内容类型，用于指定消息类型，例如： text/plain。</p>
 <p id="p24811297"><a name="p24811297"></a><a name="p24811297"></a>当请求中不带该头域时，该参数按照空字符串处理，见<a href="#table14775325212511">表2</a>。</p>
 </td>
 </tr>
 <tr id="row63558046"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p28804613404"><a name="p28804613404"></a><a name="p28804613404"></a>Date</p>
 </td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p10901346204019"><a name="p10901346204019"></a><a name="p10901346204019"></a>生成请求的时间，该时间格式遵循RFC 1123；</p>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p10901346204019"><a name="p10901346204019"></a><a name="p10901346204019"></a>生成请求的时间，该时间格式遵循RFC 1123；该时间与当前服务器的时间超过15分钟时服务端返回403。</p>
 <p id="p792134614016"><a name="p792134614016"></a><a name="p792134614016"></a>当有自定义字段x-obs-date时，该参数按照空字符串处理；见<a href="#table12510133817416">表6</a>。</p>
 <p id="p99420463401"><a name="p99420463401"></a><a name="p99420463401"></a>如果进行临时授权方式操作（如临时授权方式获取对象内容等操作）时，该参数不需要。</p>
+<p id="p1647620213584"><a name="p1647620213584"></a><a name="p1647620213584"></a></p>
 </td>
 </tr>
 <tr id="row42990474"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p59676394"><a name="p59676394"></a><a name="p59676394"></a>CanonicalizedHeaders</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1949763"><a name="p1949763"></a><a name="p1949763"></a>HTTP请求头域中的OBS请求头字段，即以“x-obs-”作为前辍的头域，如“x-obs-date，x-obs-acl，x-obs-meta-*”。</p>
-<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>请求头字段中关键字的所有字符要转为小写，需要添加多个字段时，要将所有字段按照关键字的字典序从小到大进行排序。</li><li>在添加请求头字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要先将重名字段的值（这里是name1和name2）以逗号分隔，合并成x-obs-meta-name:name1,name2。</li><li>头域中的请求头字段中的关键字不允许含有非ASCII码或不可识别字符；请求头字段中的值也不建议使用非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。</li><li>当请求头字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个请求头字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
+<a name="ol145715617477"></a><a name="ol145715617477"></a><ol id="ol145715617477"><li>请求头字段中关键字的所有字符要转为小写（但内容值需要区分大小写，如“x-obs-storage-class:STANDARD”），需要添加多个字段时，要将所有字段按照关键字的字典序从小到大进行排序。</li><li>在添加请求头字段时，如果有重名的字段，则需要进行合并。如：x-obs-meta-name:name1和x-obs-meta-name:name2，则需要先将重名字段的值（这里是name1和name2）以逗号分隔，合并成x-obs-meta-name:name1,name2。</li><li>头域中的请求头字段中的关键字不允许含有非ASCII码或不可识别字符；请求头字段中的值也不建议使用非ASCII码或不可识别字符，如果一定要使用非ASCII码或不可识别字符，需要客户端自行做编解码处理，可以采用URL编码或者Base64编码，服务端不会做解码处理。</li><li>当请求头字段中含有无意义空格或table键时，需要摒弃。例如：x-obs-meta-name: name（name前带有一个无意义空格），需要转换为：x-obs-meta-name:name</li><li>每一个请求头字段最后都需要另起新行，见<a href="#table46456687212511">表4</a></li></ol>
 </td>
 </tr>
 <tr id="row7450793"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p66643399"><a name="p66643399"></a><a name="p66643399"></a>CanonicalizedResource</p>
@@ -72,7 +73,7 @@ StringToSign =
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p29406249"><a name="p29406249"></a><a name="p29406249"></a>表示HTTP请求所指定的OBS资源，构造方式如下：</p>
 <p id="p63329656"><a name="p63329656"></a><a name="p63329656"></a>&lt;桶名+对象名&gt;+[子资源1] + [子资源2] + ...</p>
 <a name="ol135483613475"></a><a name="ol135483613475"></a><ol id="ol135483613475"><li>桶名和对象名。<a name="ul157841072717"></a><a name="ul157841072717"></a><ul id="ul157841072717"><li>通过桶绑定的自定义域名访问OBS，桶名由自定义域名表示，则为"/obs.ccc.com/object"，其中“obs.ccc.com”为桶绑定的自定义域名。如果没有对象名，如列举桶，则为"/obs.ccc.com/"；</li><li>不是通过桶绑定的自定义域名访问OBS的场景，则为"/bucket/object"，如果没有对象名，如列举桶，则为"/bucket/"。如果桶名也没有，则为“/”。</li></ul>
-</li><li>如果有子资源，则将子资源添加进来，例如?acl，?logging。<p id="p1193056145515"><a name="p1193056145515"></a><a name="p1193056145515"></a>OBS支持各种子资源，包括：CDNNotifyConfiguration, acl, append, attname, backtosource, cors, customdomain, delete, deletebucket, directcoldaccess, encryption, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, orchestration, partNumber, policy, position, quota, rename, replication, requestPayment, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, restore, select,  storageClass, storagePolicy, storageinfo, tagging, torrent, truncate, uploadId, uploads, versionId, versioning, versions, website, x-image-process, x-image-save-bucket, x-image-save-object, x-obs-security-token。</p>
+</li><li>如果有子资源，则将子资源添加进来，例如?acl，?logging。<p id="p1193056145515"><a name="p1193056145515"></a><a name="p1193056145515"></a>OBS支持各种子资源，包括：CDNNotifyConfiguration, acl, append, attname, backtosource, cors, customdomain, delete, deletebucket, directcoldaccess, encryption, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, partNumber, policy, position, quota, rename, replication, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, restore, storageClass, storagePolicy, storageinfo, tagging, torrent, truncate, uploadId, uploads, versionId, versioning, versions, website, x-image-process, x-image-save-bucket, x-image-save-object, x-obs-security-token。</p>
 </li><li>如果有多个子资源，在包含这些子资源时，需要首先将这些子资源按照其关键字的字典序从小到大排列，并使用<strong id="b1580113415404"><a name="b1580113415404"></a><a name="b1580113415404"></a>“&amp;”</strong>拼接。</li></ol>
 <div class="note" id="note1239815267372"><a name="note1239815267372"></a><a name="note1239815267372"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul116221356133916"></a><a name="ul116221356133916"></a><ul id="ul116221356133916"><li>子资源通常是唯一的，不建议请求的URL包含多个相同关键字的子资源（例如，key=value1&amp;key=value2），如果存在这种情况，OBS服务端签名时只会计算第一个子资源且也只有第一个子资源的值会对实际业务产生作用；</li><li>以获取对象（GetObject）接口为例，假设桶名为bucket-test，对象名为object-test，对象的版本号为xxx，获取时需要重写Content-Type为text/plain，那么签名计算出的CanonicalizedResource为：/bucket-test/object-test?response-content-type=text/plain&amp;versionId=xxx。</li></ul>
 </div></div>
@@ -334,7 +335,8 @@ public class SignDemo {
     {
 		return URLEncoder.encode(input, DEFAULT_ENCODING)
         .replaceAll("%7E", "~") //for browser
-        .replaceAll("%2F", "/");
+        .replaceAll("%2F", "/")
+        .replaceAll("%20", "+");
     }
 	
 	private String join(List<?> items, String delimiter)
@@ -448,9 +450,9 @@ public class SignDemo {
 		if(canonicalizedResource.size() > 0) {
 			stringToSign.append("?");
 			for(Map.Entry<String, String> entry : canonicalizedResource.entrySet()) {
-				stringToSign.append(this.urlEncode(entry.getKey()));
+				stringToSign.append(entry.getKey());
 				if(this.isValid(entry.getValue())) {
-					stringToSign.append("=").append(this.urlEncode(entry.getValue()));
+					stringToSign.append("=").append(entry.getValue());
 				}
 			}
 		}
@@ -489,7 +491,7 @@ public class SignDemo {
 		
 		SignDemo demo = new SignDemo();
 		demo.ak = "<your-access-key-id>";
-		demo.sk = "<your-securet-key-id>";
+		demo.sk = "<your-secret-key-id>";
 		
 		String bucketName = "bucket-test";
 		String objectName = "hello.jpg";

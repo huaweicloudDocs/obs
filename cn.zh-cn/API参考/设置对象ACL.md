@@ -4,7 +4,7 @@
 
 OBS支持对对象的操作进行权限控制。默认情况下，只有对象的创建者才有该对象的读写权限。用户也可以设置其他的访问策略，比如对一个对象可以设置公共访问策略，允许所有人对其都有读权限。SSE-KMS方式加密的对象即使设置了ACL，跨租户也不生效。
 
-OBS用户在上传对象时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的对象更改或者获取ACL\(access control list\) 。
+OBS用户在上传对象时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的对象更改或者获取ACL\(access control list\) 。一个对象的ACL最多支持100条Grant授权。
 
 本节将介绍如何更改对象ACL，改变对象的访问权限。
 
@@ -81,12 +81,45 @@ Authorization: authorization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row21463316"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p60807051"><a name="p60807051"></a><a name="p60807051"></a>ID</p>
+<tbody><tr id="row81162241151"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p011612411158"><a name="p011612411158"></a><a name="p011612411158"></a>Owner</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.839999999999996%" headers="mcps1.2.4.1.2 "><p id="p611620248154"><a name="p611620248154"></a><a name="p611620248154"></a>桶的所有者信息，包含ID。</p>
+<p id="p7278511155"><a name="p7278511155"></a><a name="p7278511155"></a>类型：XML。</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p811612418156"><a name="p811612418156"></a><a name="p811612418156"></a>是</p>
+</td>
+</tr>
+<tr id="row21463316"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p60807051"><a name="p60807051"></a><a name="p60807051"></a>ID</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.839999999999996%" headers="mcps1.2.4.1.2 "><p id="p26424127"><a name="p26424127"></a><a name="p26424127"></a>用户DomainId。</p>
 <p id="p36490555"><a name="p36490555"></a><a name="p36490555"></a>类型：字符串。</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p2944980"><a name="p2944980"></a><a name="p2944980"></a>否</p>
+<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p2944980"><a name="p2944980"></a><a name="p2944980"></a>是</p>
+</td>
+</tr>
+<tr id="row28071611121611"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p380716119168"><a name="p380716119168"></a><a name="p380716119168"></a>Grant</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.839999999999996%" headers="mcps1.2.4.1.2 "><p id="p138073114168"><a name="p138073114168"></a><a name="p138073114168"></a><span>用于标记用户及用户的权限。</span>单个对象的ACL，Grant元素不能超过100个。</p>
+<p id="p1963323112169"><a name="p1963323112169"></a><a name="p1963323112169"></a>类型：XML。</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p168071011121614"><a name="p168071011121614"></a><a name="p168071011121614"></a>否</p>
+</td>
+</tr>
+<tr id="row4485119164"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p10435131616"><a name="p10435131616"></a><a name="p10435131616"></a><span>Grantee</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="41.839999999999996%" headers="mcps1.2.4.1.2 "><p id="p4445114169"><a name="p4445114169"></a><a name="p4445114169"></a><span>记录用户信息。</span></p>
+<p id="p53916815177"><a name="p53916815177"></a><a name="p53916815177"></a><span>类型：XML。</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p55155378177"><a name="p55155378177"></a><a name="p55155378177"></a>否</p>
+</td>
+</tr>
+<tr id="row894715455174"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p15947204519171"><a name="p15947204519171"></a><a name="p15947204519171"></a><span>Canned</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="41.839999999999996%" headers="mcps1.2.4.1.2 "><p id="p315337111814"><a name="p315337111814"></a><a name="p315337111814"></a>向所有人授予权限。</p>
+<p id="p515397121813"><a name="p515397121813"></a><a name="p515397121813"></a>取值范围：Everyone。</p>
+<p id="p1415347201812"><a name="p1415347201812"></a><a name="p1415347201812"></a>类型：枚举类型。</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p642792581816"><a name="p642792581816"></a><a name="p642792581816"></a>否</p>
 </td>
 </tr>
 <tr id="row4036034411024"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p4238406111028"><a name="p4238406111028"></a><a name="p4238406111028"></a>Delivered</p>
@@ -103,6 +136,14 @@ Authorization: authorization
 <p id="p28990484"><a name="p28990484"></a><a name="p28990484"></a>类型：枚举类型。</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p66527890"><a name="p66527890"></a><a name="p66527890"></a>否</p>
+</td>
+</tr>
+<tr id="row410314511813"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p61031045101817"><a name="p61031045101817"></a><a name="p61031045101817"></a><span>AccessControlList</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="41.839999999999996%" headers="mcps1.2.4.1.2 "><p id="p19103145161813"><a name="p19103145161813"></a><a name="p19103145161813"></a><span>访问控制列表，包含Grant、 Grantee、Permission三个元素。</span></p>
+<p id="p11789616194"><a name="p11789616194"></a><a name="p11789616194"></a><span>类型：XML。</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="32.65%" headers="mcps1.2.4.1.3 "><p id="p1971561191916"><a name="p1971561191916"></a><a name="p1971561191916"></a>是</p>
 </td>
 </tr>
 </tbody>
@@ -159,7 +200,7 @@ Date: WED, 01 Jul 2015 04:42:34 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:8xAODun1ofjkwHm8YhtN0QEcy9M=
 Content-Length: 727
 
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">
+<AccessControlPolicy xmlns="http://obs.cn-north-4.myhuaweicloud.com/doc/2015-06-30/">
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 
   </Owner>  

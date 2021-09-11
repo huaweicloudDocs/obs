@@ -1,6 +1,6 @@
 # 服务端加密SSE-KMS方式<a name="obs_04_0106"></a>
 
-SSE-KMS方式，OBS使用KMS（Key Management Service）服务提供的密钥进行服务端加密。用户首次向区域中的桶上传SSE-KMS 加密的对象时，OBS将自动为您创建一个默认客户主密钥，客户主密钥用于加密和解密KMS提供的密钥。SSE-KMS方式不支持用户自建密钥。Bucket ACL/Policy不支持SSE-KMS加密对象进行跨租户授权访问。
+SSE-KMS方式，OBS使用KMS（Key Management Service）服务提供的密钥进行服务端加密。用户首次向区域中的桶上传SSE-KMS加密的对象时，OBS将自动为您创建一个默认客户主密钥，客户主密钥用于加密和解密KMS提供的密钥。SSE-KMS方式不支持用户自建密钥。Bucket ACL/Policy不支持SSE-KMS加密对象进行跨租户授权访问。
 
 SSE-KMS方式新增加两个头域来支持SSE-KMS加密。
 
@@ -27,7 +27,8 @@ SSE-KMS方式新增加两个头域来支持SSE-KMS加密。
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p456853193912"><a name="p456853193912"></a><a name="p456853193912"></a>SSE-KMS方式下使用该头域，该头域表示加密对象使用的主密钥，如果用户没有提供该头域，那么默认的主密钥将会被使用。</p>
 <p id="p12882047173716"><a name="p12882047173716"></a><a name="p12882047173716"></a>类型：字符串</p>
 <p id="p6679135313114"><a name="p6679135313114"></a><a name="p6679135313114"></a>支持两种格式的描述方式：</p>
-<p id="p17964154220128"><a name="p17964154220128"></a><a name="p17964154220128"></a>1. regionID:domainID(租户ID):key/key_id 或者</p>
+<p id="p73846412422"><a name="p73846412422"></a><a name="p73846412422"></a>1. regionID:domainID(租户ID):key/key_id</p>
+<p id="p17964154220128"><a name="p17964154220128"></a><a name="p17964154220128"></a>或者</p>
 <p id="p090816596123"><a name="p090816596123"></a><a name="p090816596123"></a>2.key_id</p>
 <p id="p558627121315"><a name="p558627121315"></a><a name="p558627121315"></a>其中regionID是使用密钥所属region的ID；domainID是使用密钥所属租户的租户ID；key_id是从<span>数据加密服务</span>创建的密钥ID。</p>
 <p id="p17830152818144"><a name="p17830152818144"></a><a name="p17830152818144"></a>示例：</p>
@@ -40,8 +41,8 @@ SSE-KMS方式新增加两个头域来支持SSE-KMS加密。
 
 该新增的两个头域可以应用于如下接口：
 
--   PUT 上传对象
--   POST 上传对象（需要将x-obs-server-side-encryption和x-obs-server-side-encryption-kms-key-id放到表单中，而不是头域中）
+-   PUT上传对象
+-   POST上传对象（需要将x-obs-server-side-encryption和x-obs-server-side-encryption-kms-key-id放到表单中，而不是头域中）
 -   复制对象 （新增的头域针对目标对象）
 -   初始化上传段任务
 

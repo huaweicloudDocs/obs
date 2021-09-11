@@ -75,7 +75,7 @@ Content-Type: application/xml
 </tr>
 <tr id="row32122205"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p51761783"><a name="p51761783"></a><a name="p51761783"></a>ID</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p31954877"><a name="p31954877"></a><a name="p31954877"></a>用户所示租户的租户Id。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p31954877"><a name="p31954877"></a><a name="p31954877"></a>用户所属租户的租户Id。</p>
 <p id="p19158445"><a name="p19158445"></a><a name="p19158445"></a>类型：字符串。</p>
 </td>
 </tr>
@@ -145,7 +145,7 @@ Date: WED, 01 Jul 2015 02:39:28 GMT
 Content-Length: 784
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">
+<AccessControlPolicy xmlns="http://obs.cn-north-4.myhuaweicloud.com/doc/2015-06-30/">
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 
   </Owner>  

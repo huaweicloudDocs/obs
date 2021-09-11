@@ -4,6 +4,18 @@
 
 请参见章节  [OPTIONS桶](OPTIONS桶.md)。
 
+## 与OPTIONS桶的区别<a name="section9125142514612"></a>
+
+OPTIONS对象需在URL中指定对象名；OPTIONS桶提交的URL为桶域名，无需指定对象名。两者的请求行分别为：
+
+```
+OPTIONS /object HTTP/1.1
+```
+
+```
+OPTIONS / HTTP/1.1
+```
+
 ## 请求消息样式<a name="section20503664"></a>
 
 ```

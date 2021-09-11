@@ -4,9 +4,9 @@
 
 OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建者才有该桶的读写权限。用户也可以设置其他的访问策略，比如对一个桶可以设置公共访问策略，允许所有人对其都有读权限。
 
-OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL\(access control list\) 。
+OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL\(access control list\) 。一个桶的ACL最多支持100条Grant授权。
 
-使用桶ACL进行权限控制请参考《对象存储服务开发指南》的[权限控制](https://support.huaweicloud.com/devg-obs/obs_06_0038.html)章节。
+使用桶ACL进行权限控制请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
 
 ## 请求消息样式<a name="section8518944"></a>
 
@@ -85,7 +85,7 @@ Content-Length: length
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p18161633"><a name="p18161633"></a><a name="p18161633"></a>桶的所有者信息，包含ID。</p>
 <p id="p29236970"><a name="p29236970"></a><a name="p29236970"></a>类型：XML。</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p19384352"><a name="p19384352"></a><a name="p19384352"></a>否</p>
+<td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p19384352"><a name="p19384352"></a><a name="p19384352"></a>是</p>
 </td>
 </tr>
 <tr id="row40241448"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p38331852"><a name="p38331852"></a><a name="p38331852"></a>ID</p>
@@ -93,12 +93,12 @@ Content-Length: length
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p17872337"><a name="p17872337"></a><a name="p17872337"></a>被授权用户的租户Id。</p>
 <p id="p26633311"><a name="p26633311"></a><a name="p26633311"></a>类型：字符串。</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p9814616"><a name="p9814616"></a><a name="p9814616"></a>否</p>
+<td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p9814616"><a name="p9814616"></a><a name="p9814616"></a>是</p>
 </td>
 </tr>
 <tr id="row12128409"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p42877090"><a name="p42877090"></a><a name="p42877090"></a>Grant</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p50492235"><a name="p50492235"></a><a name="p50492235"></a>用于标记用户及用户的权限。</p>
+<td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p50492235"><a name="p50492235"></a><a name="p50492235"></a>用于标记用户及用户的权限。单个桶的ACL，Grant元素不能超过100个。</p>
 <p id="p51776931"><a name="p51776931"></a><a name="p51776931"></a>类型：XML。</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p33181855"><a name="p33181855"></a><a name="p33181855"></a>否</p>
@@ -143,7 +143,7 @@ Content-Length: length
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p65026180"><a name="p65026180"></a><a name="p65026180"></a>访问控制列表，包含Grant、 Grantee、Permission三个元素。</p>
 <p id="p48364710"><a name="p48364710"></a><a name="p48364710"></a>类型：XML。</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p25227453"><a name="p25227453"></a><a name="p25227453"></a>否</p>
+<td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p25227453"><a name="p25227453"></a><a name="p25227453"></a>是</p>
 </td>
 </tr>
 </tbody>
@@ -180,7 +180,7 @@ Date: WED, 01 Jul 2015 02:37:22 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:iqSPeUBl66PwXDApxjRKk6hlcN4=
 Content-Length: 727
 
-<AccessControlPolicy xmlns="http://obs.myhuaweicloud.com/doc/2015-06-30/">
+<AccessControlPolicy xmlns="http://obs.cn-north-4.myhuaweicloud.com/doc/2015-06-30/">
   
   <Owner> 
     <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID> 

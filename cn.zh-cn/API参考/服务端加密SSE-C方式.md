@@ -2,7 +2,7 @@
 
 SSE-C方式，OBS使用用户提供的密钥和密钥的MD5值进行服务端加密。
 
-OBS 不存储您提供的加密密钥，如果您丢失加密密钥，则会无法获取该对象。SSE-C方式新增加六个头域来支持SSE-C加密。
+OBS不存储您提供的加密密钥，如果您丢失加密密钥，则会无法获取该对象。SSE-C方式新增加六个头域来支持SSE-C加密。
 
 使用SSE-C方式加密对象，您必须使用下面的三个头域。
 
@@ -23,13 +23,13 @@ OBS 不存储您提供的加密密钥，如果您丢失加密密钥，则会无�
 </tr>
 <tr id="row1112515375428"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p143416261434"><a name="p143416261434"></a><a name="p143416261434"></a>x-obs-server-side-encryption-customer-key</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p104351326134318"><a name="p104351326134318"></a><a name="p104351326134318"></a>SSE-C方式下使用该头域，该头域表示加密对象使用的密钥。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p104351326134318"><a name="p104351326134318"></a><a name="p104351326134318"></a>SSE-C方式下使用该头域，该头域表示加密对象使用的密钥，头域值是256位或者512位密钥的base64编码。</p>
 <p id="p16437132617435"><a name="p16437132617435"></a><a name="p16437132617435"></a>示例：x-obs-server-side-encryption-customer-key:K7QkYpBkM5+hcs27fsNkUnNVaobncnLht/rCB2o/9Cw=</p>
 </td>
 </tr>
 <tr id="row151254372427"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1944018267432"><a name="p1944018267432"></a><a name="p1944018267432"></a>x-obs-server-side-encryption-customer-key-MD5</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p144252654312"><a name="p144252654312"></a><a name="p144252654312"></a>SSE-C方式下使用该头域，该头域表示加密对象使用的密钥的MD5值。MD5值用于验证密钥传输过程中没有出错。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p144252654312"><a name="p144252654312"></a><a name="p144252654312"></a>SSE-C方式下使用该头域，该头域表示加密对象使用的密钥的MD5值，头域值是加密密钥MD5值的base64编码。MD5值用于验证密钥传输过程中没有出错。</p>
 <p id="p10442192613436"><a name="p10442192613436"></a><a name="p10442192613436"></a>示例：x-obs-server-side-encryption-customer-key-MD5:4XvB3tbNTN+tIEVa0/fGaQ==</p>
 </td>
 </tr>
@@ -38,8 +38,8 @@ OBS 不存储您提供的加密密钥，如果您丢失加密密钥，则会无�
 
 该新增的三个头域可以应用于如下接口：
 
--   PUT 上传对象
--   POST 上传对象
+-   PUT上传对象
+-   POST上传对象
 -   复制对象（新增的头域针对目标对象）
 -   获取对象元数据
 -   获取对象内容
@@ -66,7 +66,7 @@ OBS 不存储您提供的加密密钥，如果您丢失加密密钥，则会无�
 </tr>
 <tr id="row510705704518"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p32759143"><a name="p32759143"></a><a name="p32759143"></a>x-obs-copy-source-server-side-encryption-customer-key</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p36244931"><a name="p36244931"></a><a name="p36244931"></a>SSE-C方式下使用该头域，该头域表示解密源对象使用的密钥。用于解密源对象。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p36244931"><a name="p36244931"></a><a name="p36244931"></a>SSE-C方式下使用该头域，该头域表示解密源对象使用的密钥。</p>
 <p id="p57768927"><a name="p57768927"></a><a name="p57768927"></a>示例：x-obs-copy-source-server-side-encryption-customer-algorithm：K7QkYpBkM5+hcs27fsNkUnNVaobncnLht/rCB2o/9Cw=</p>
 </td>
 </tr>

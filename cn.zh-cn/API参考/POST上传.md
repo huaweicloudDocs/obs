@@ -5,9 +5,9 @@
 上传对象操作是指在指定的桶内增加一个对象，执行该操作需要用户拥有桶的写权限。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->同一个桶中存储的对象名是唯一的，在桶未开启多版本的情况下，重复上传同名对象，前一次上传的对象将被后一次上传的对象覆盖。
+>同一个桶中存储的对象名是唯一的。
 
-如果在指定的桶内已经有相同的对象键值的对象，用户上传的新对象会覆盖原来的对象；为了确保数据在传输过程中没有遭到破坏，用户可以在请求消息头中加入Content-MD5参数。在这种情况下，OBS收到上传的对象后，会对对象进行MD5校验，如果不一致则返回出错信息。用户还可以在上传对象时指定x-obs-acl参数，设置对象的权限控制策略。
+在桶未开启多版本的情况下，如果在指定的桶内已经有相同的对象键值的对象，用户上传的新对象会覆盖原来的对象；为了确保数据在传输过程中没有遭到破坏，用户可以在表单域中加入Content-MD5参数。在这种情况下，OBS收到上传的对象后，会对对象进行MD5校验，如果不一致则返回出错信息。用户还可以在上传对象时指定x-obs-acl参数，设置对象的权限控制策略。
 
 用户除了可以用PUT直接上传对象外，还可以使用POST上传对象。
 
@@ -47,40 +47,50 @@ Accept-Encoding: encoding
 Accept-Charset: character_set
 Keep-Alive: 300 
 Connection: keep-alive 
-Content-Type: multipart/form-data; boundary=-9431149156168 
+Content-Type: multipart/form-data; boundary=9431149156168 
 Content-Length: length
 
 
 --9431149156168 
 Content-Disposition: form-data; name="key" 
+
 acl 
 --9431149156168 
-Content-Disposition: form-data; name="success_action_redirect" 
+Content-Disposition: form-data; name="success_action_redirect"
+ 
 success_redirect 
 --9431149156168 
 Content-Disposition: form-data; name="content-Type" 
+
 content_type 
 --9431149156168 
 Content-Disposition: form-data; name="x-obs-meta-uuid" 
+
 uuid 
 --9431149156168 
 Content-Disposition: form-data; name="x-obs-meta-tag" 
+
 metadata 
 --9431149156168 
 Content-Disposition: form-data; name="AccessKeyId" 
+
 access-key-id 
 --9431149156168 
 Content-Disposition: form-data; name="policy" 
+
 encoded_policy 
 --9431149156168 
 Content-Disposition: form-data; name="signature" 
+
 signature= 
 --9431149156168 
 Content-Disposition: form-data; name="file"; filename="MyFilename" 
 Content-Type: image/jpeg 
+
 file_content 
 --9431149156168 
 Content-Disposition: form-data; name="submit" 
+
 Upload to OBS 
 --9431149156168--
 ```
@@ -174,6 +184,14 @@ Upload to OBS
 <td class="cellrowborder" valign="top" width="9.180918091809183%" headers="mcps1.2.4.1.3 "><p id="p16836481"><a name="p16836481"></a><a name="p16836481"></a>是</p>
 </td>
 </tr>
+<tr id="row026063319302"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p9260233123017"><a name="p9260233123017"></a><a name="p9260233123017"></a>signature</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p1526019339302"><a name="p1526019339302"></a><a name="p1526019339302"></a><span>根据StringToSign计算出的签名字符串。</span></p>
+<p id="p106094963211"><a name="p106094963211"></a><a name="p106094963211"></a>类型：字符串</p>
+</td>
+<td class="cellrowborder" valign="top" width="9.180918091809183%" headers="mcps1.2.4.1.3 "><p id="p45121221183218"><a name="p45121221183218"></a><a name="p45121221183218"></a>是</p>
+</td>
+</tr>
 <tr id="row1411464215313"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p191141242135310"><a name="p191141242135310"></a><a name="p191141242135310"></a>token</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p12955112314016"><a name="p12955112314016"></a><a name="p12955112314016"></a>用来统一指明请求发起者的Access Key，请求签名和请求的安全策略。token的优先级高于单独指定的Access Key，请求签名和请求的安全策略。</p>
@@ -186,7 +204,7 @@ Upload to OBS
 </tr>
 <tr id="row23452063"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p20568952"><a name="p20568952"></a><a name="p20568952"></a>x-obs-acl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p55472450"><a name="p55472450"></a><a name="p55472450"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write；public-read-delivered ; public-read-write-delivered（各策略详细说明见<a href="https://support.huaweicloud.com/devg-obs/obs_06_0043.html" target="_blank" rel="noopener noreferrer">使用头域设置ACL</a>）。</p>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p55472450"><a name="p55472450"></a><a name="p55472450"></a>创建对象时，可以加上此消息头设置对象的权限控制策略，使用的策略为预定义的常用策略，包括：private；public-read；public-read-write；public-read-delivered ; public-read-write-delivered（各策略详细说明见<a href="https://support.huaweicloud.com/perms-cfg-obs/obs_40_0005.html" target="_blank" rel="noopener noreferrer">ACL</a>章节的“使用头域设置ACL”）。</p>
 <p id="p64083493"><a name="p64083493"></a><a name="p64083493"></a>类型：字符串。</p>
 <p id="p39880527"><a name="p39880527"></a><a name="p39880527"></a>示例：</p>
 <p id="p23380424"><a name="p23380424"></a><a name="p23380424"></a>POLICY中：{"acl": "public-read" },</p>
@@ -280,13 +298,32 @@ Upload to OBS
 </tr>
 <tr id="row62219078"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p6580564"><a name="p6580564"></a><a name="p6580564"></a>x-obs-meta-*</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p63263715"><a name="p63263715"></a><a name="p63263715"></a>创建对象时，可以在HTTP请求中加入“x-obs-meta-”消息头或以“x-obs-meta-”开头的消息头，用来加入自定义的元数据，以便对对象进行自定义管理。当用户获取此对象或查询此对象元数据时，加入的自定义元数据将会在返回消息的消息头中出现。</p>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p63263715"><a name="p63263715"></a><a name="p63263715"></a>创建对象时，可以在HTTP请求中加入“x-obs-meta-”消息头或以“x-obs-meta-”开头的消息头，用来加入自定义的元数据，以便对对象进行自定义管理。当用户获取此对象或查询此对象元数据时，加入的自定义元数据将会在返回消息的消息头中出现。更多说明详见<a href="https://support.huaweicloud.com/ugobs-obs/obs_41_0025.html" target="_blank" rel="noopener noreferrer">对象自定义元数据介绍</a>。</p>
 <p id="p32502531"><a name="p32502531"></a><a name="p32502531"></a>类型：字符串。</p>
 <p id="p24087323"><a name="p24087323"></a><a name="p24087323"></a>示例：</p>
 <p id="p15459317"><a name="p15459317"></a><a name="p15459317"></a>POLICY中：{" x-obs-meta-test ": " test metadata " },</p>
 <p id="p4916131"><a name="p4916131"></a><a name="p4916131"></a>HTML中：&lt;input type="text" name=" x-obs-meta-test " value=" test metadata " /&gt;</p>
 </td>
 <td class="cellrowborder" valign="top" width="9.180918091809183%" headers="mcps1.2.4.1.3 "><p id="p62662307"><a name="p62662307"></a><a name="p62662307"></a>否</p>
+</td>
+</tr>
+<tr id="row123451324134712"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p4346324184714"><a name="p4346324184714"></a><a name="p4346324184714"></a>x-obs-persistent-headers</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p131182482477"><a name="p131182482477"></a><a name="p131182482477"></a><span>创建对象时，可以在</span><span>HTTP</span><span>请求中加入</span><span>“x-obs-persistent-headers”</span><span>消息头，用来加入一个或多个自定义的响应头，当用户获取此对象或查询此对象元数据时，加入的自定义响应头将会在返回消息的头域中出现。</span></p>
+<p id="p84948414535"><a name="p84948414535"></a><a name="p84948414535"></a><span>类型：字符串。</span></p>
+<p id="p1353812159536"><a name="p1353812159536"></a><a name="p1353812159536"></a><span>格式：</span><span>x-obs-persistent-headers: key1:base64_encode(value1),key2:base64_encode(value2)....</span></p>
+<p id="p16502951155516"><a name="p16502951155516"></a><a name="p16502951155516"></a><span>说明：其中</span><span>key1/key2</span><span>等为自定义</span><span>header</span><span>，若含有非</span><span>ASCII</span><span>码或不可识别字符，可以采用</span><span>URL</span><span>编码或者</span><span>Base64</span><span>编码，服务端只会作为字符串处理，不会做解码。</span><span>value1/value2</span><span>等为对应自定义</span><span>header</span><span>的值，</span><span>base64_encode</span><span>指做</span><span>base64</span><span>编码，即将自定义</span><span>header</span><span>和对应值的</span><span>base64</span><span>编码作为一个</span><span>key-value</span><span>对用</span><span>“:”</span><span>连接，然后用</span><span>“,”</span><span>将所有的</span><span>key-value</span><span>对连接起来，放在</span><span>x-obs-persistent-headers</span><span>这个</span><span>header</span><span>中即可，服务端会对上传的value做解码处理。</span></p>
+<p id="p177331724175311"><a name="p177331724175311"></a><a name="p177331724175311"></a><span>示例：</span></p>
+<p id="p85819101103"><a name="p85819101103"></a><a name="p85819101103"></a><span>POLICY</span><span>中：</span><span>{"x-obs-persistent-headers": "key1:dmFsdWUx,key2:dmFsdWUy" },</span></p>
+<p id="p658710100"><a name="p658710100"></a><a name="p658710100"></a><span>HTML</span><span>中：</span><span>&lt;</span><span>input type="text" name="x-obs-persistent-headers" value="key1:dmFsdWUx,key2:dmFsdWUy" /</span><span>&gt;</span></p>
+<p id="p295283133319"><a name="p295283133319"></a><a name="p295283133319"></a><span>下载此对象或获取此对象元数据时：返回两个头域分别为</span><span>“key1:value1”</span><span>与</span><span>“key2:value2”</span></p>
+<p id="p021318214576"><a name="p021318214576"></a><a name="p021318214576"></a><span>约束：</span></p>
+<p id="p321319217572"><a name="p321319217572"></a><a name="p321319217572"></a><span>1. </span><span>通过该方式指定的自定义响应头不能以</span><span>“x-obs-”</span><span>为前缀，比如可以指定</span><span>“key1”</span><span>，但是不能指定</span><span>“x-obs-key1”</span></p>
+<p id="p521312119578"><a name="p521312119578"></a><a name="p521312119578"></a><span>2. </span><span>不能指定</span><span>http</span><span>标准头，例如</span><span>host/content-md5/origin/range/Content-Disposition</span><span>等</span></p>
+<p id="p221302117570"><a name="p221302117570"></a><a name="p221302117570"></a><span>3. </span><span>此头域和自定义元数据总长度不能超过</span><span>8KB</span></p>
+<p id="p16213321185717"><a name="p16213321185717"></a><a name="p16213321185717"></a><span>4. </span><span>如果传入相同</span><span>key</span><span>，将</span><span>value</span><span>以</span><span>“,”</span><span>拼接后放入同一个</span><span>key</span><span>中返回</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="9.180918091809183%" headers="mcps1.2.4.1.3 "><p id="p1734642410477"><a name="p1734642410477"></a><a name="p1734642410477"></a>否</p>
 </td>
 </tr>
 <tr id="row27089856"><td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.1 "><p id="p46794728"><a name="p46794728"></a><a name="p46794728"></a>success_action_status</p>
@@ -324,7 +361,8 @@ Upload to OBS
 <td class="cellrowborder" valign="top" width="61.22612261226122%" headers="mcps1.2.4.1.2 "><p id="p36758634"><a name="p36758634"></a><a name="p36758634"></a>SSE-KMS方式下使用该头域，该头域表示主密钥，如果用户没有提供该头域，那么默认的主密钥将会被使用。</p>
 <p id="p62392252"><a name="p62392252"></a><a name="p62392252"></a>类型：字符串</p>
 <p id="p6679135313114"><a name="p6679135313114"></a><a name="p6679135313114"></a>支持两种格式的描述方式：</p>
-<p id="p17964154220128"><a name="p17964154220128"></a><a name="p17964154220128"></a>1. regionID:domainID(租户ID):key/key_id 或者</p>
+<p id="p1611719113354"><a name="p1611719113354"></a><a name="p1611719113354"></a>1. regionID:domainID(租户ID):key/key_id</p>
+<p id="p17964154220128"><a name="p17964154220128"></a><a name="p17964154220128"></a>或者</p>
 <p id="p090816596123"><a name="p090816596123"></a><a name="p090816596123"></a>2.key_id</p>
 <p id="p558627121315"><a name="p558627121315"></a><a name="p558627121315"></a>其中regionID是使用密钥所属region的ID；domainID是使用密钥所属租户的租户ID；key_id是从<span>数据加密服务</span>创建的密钥ID。</p>
 <p id="p17830152818144"><a name="p17830152818144"></a><a name="p17830152818144"></a>示例：</p>
@@ -449,7 +487,8 @@ ETag: etag
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.3.1.2 "><p id="p9672051"><a name="p9672051"></a><a name="p9672051"></a>如果服务端加密是SSE-KMS方式，响应包含该头域，该头域表示主密钥。</p>
 <p id="p10474191820349"><a name="p10474191820349"></a><a name="p10474191820349"></a>类型：字符串</p>
-<p id="p204741187343"><a name="p204741187343"></a><a name="p204741187343"></a>格式为： regionID:domainID(租户ID):key/key_id. 其中regionID是使用密钥所属region的ID；domainID是使用密钥所属租户的租户ID；key_id是本次加密使用的密钥ID。</p>
+<p id="p11972162218372"><a name="p11972162218372"></a><a name="p11972162218372"></a>格式为： regionID:domainID(租户ID):key/key_id</p>
+<p id="p204741187343"><a name="p204741187343"></a><a name="p204741187343"></a>其中regionID是使用密钥所属region的ID；domainID是使用密钥所属租户的租户ID；key_id是本次加密使用的密钥ID。</p>
 <p id="p10474718183413"><a name="p10474718183413"></a><a name="p10474718183413"></a>示例： x-obs-server-side-encryption-kms-key-id：cn-north-4:domainiddomainiddomainiddoma0001:key/4f1cd4de-ab64-4807-920a-47fc42e7f0d0</p>
 </td>
 </tr>
@@ -486,40 +525,49 @@ ETag: etag
 POST / HTTP/1.1
 Date: WED, 01 Jul 2015 04:15:23 GMT
 Host: examplebucket.obs.cn-north-4.myhuaweicloud.com
-Content-Type: multipart/form-data; boundary=---------------------------7db143f50da2
+Content-Type: multipart/form-data; boundary=7db143f50da2
 Content-Length: 2424
 Origin: www.example.com
 Access-Control-Request-Headers:acc_header_1
 
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="key"
+
 object01
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="acl"
+
 public-read
------------------------------7db143f50da2 
+--7db143f50da2 
 Content-Disposition: form-data; name="content-type"
+
 text/plain
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="expires"
+
 WED, 01 Jul 2015 04:16:15 GMT
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="AccessKeyId"
+
 14RZT432N80TGDF2Y2G2
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="policy"
+
 ew0KICAiZXhwaXJhdGlvbiI6ICIyMDE1LTA3LTAxVDEyOjAwOjAwLjAwMFoiLA0KICAiY29uZGl0aW9ucyI6IFsNCiAgICB7ImJ1Y2tldCI6ICJleG1hcGxlYnVja2V0IiB9LA0KICAgIHsiYWNsIjogInB1YmxpYy1yZWFkIiB9LA0KICAgIHsiRXhwaXJlcyI6ICIxMDAwIiB9LA0KICAgIFsiZXEiLCAiJGtleSIsICJvYmplY3QwMSJdLA0KICAgIFsic3RhcnRzLXdpdGgiLCAiJENvbnRlbnQtVHlwZSIsICJ0ZXh0LyJdLA0KICBdDQp9DQo=
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="signature"
+
 Vk6rwO0Nq09BLhvNSIYwSJTRQ+k=
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="file"; filename="C:\Testtools\UpLoadFiles\object\1024Bytes.txt"
 Content-Type: text/plain
+
 01234567890
------------------------------7db143f50da2
+--7db143f50da2
 Content-Disposition: form-data; name="submit"
+
 Upload
------------------------------7db143f50da2--
+--7db143f50da2--
 ```
 
 ## 响应示例1<a name="section76081155815"></a>
@@ -545,7 +593,7 @@ ETag: "ab7abb0da4bca5323ab6119bb5dcd296"
 
 **带x-obs-acl头域并指定存储类型，重定向头域，上传对象**
 
-编码前，policy 的内容为
+编码前，policy的内容为
 
 ```
 {

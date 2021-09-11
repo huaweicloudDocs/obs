@@ -8,7 +8,7 @@
 
 ```
 POST /v2/workflows/{graph_name} HTTP/1.1
-Host: obs.cn-north-1.myhuaweicloud.com 
+Host: obs.cn-north-4.myhuaweicloud.com 
 Authorization: authorization
 Content-Type: application/json
 Content-Length: length
@@ -165,7 +165,7 @@ json body
 
 ```
 POST /v2/workflows/{graph_name} HTTP/1.1
-Host: obs.cn-north-1.myhuaweicloud.com 
+Host: obs.cn-north-4.myhuaweicloud.com 
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:sc2PM13Wlfcoc/YZLK0MwsI2Zpo=
 Content-Type: application/json
 Content-Length: 100

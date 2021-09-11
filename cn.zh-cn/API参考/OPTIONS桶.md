@@ -8,6 +8,18 @@ OBS允许在桶内保存静态的网页资源，在正确的使用下，OBS的�
 
 要处理OPTIONS，OBS的桶必须已经配置CORS，关于CORS的使用说明，请参见章节  [设置桶的CORS配置](设置桶的CORS配置.md)。
 
+## 与OPTIONS对象的区别<a name="section9125142514612"></a>
+
+OPTIONS对象需在URL中指定对象名；OPTIONS桶提交的URL为桶域名，无需指定对象名。两者的请求行分别为：
+
+```
+OPTIONS /object HTTP/1.1
+```
+
+```
+OPTIONS / HTTP/1.1
+```
+
 ## 请求消息样式<a name="section40480049"></a>
 
 ```
