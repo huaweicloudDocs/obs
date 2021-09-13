@@ -83,6 +83,6 @@ try {
 }
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->您可以使用多线程并发执行上传/下载/复制操作，以提高效率。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>您可以使用多线程并发执行上传/下载/复制操作，以提高效率。
 

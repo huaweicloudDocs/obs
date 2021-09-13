@@ -1,6 +1,9 @@
 # 安装SDK<a name="obs_21_0105"></a>
 
-方式一，使用Maven中央仓库下载安装 OBS Java SDK，支持使用maven配置和gradle配置，步骤如下：
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>开发过程中，您有任何问题可以在github上[提交issue](https://github.com/huaweicloud/huaweicloud-sdk-java-obs/issues)，或者在[华为云对象存储服务论坛](https://bbs.huaweicloud.com/forum/forum-620-1.html)中发帖求助。[接口参考文档](https://obssdk.obs.cn-north-1.myhuaweicloud.com/apidoc/cn/java/index.html)详细介绍了每个接口的参数和使用方法。
+
+方式一，使用Maven中央仓库下载安装OBS Java SDK，支持使用maven配置和gradle配置，步骤如下：
 
 -   使用maven配置
 
@@ -11,7 +14,7 @@
     <dependency>
        <groupId>com.huaweicloud</groupId>
        <artifactId>esdk-obs-java</artifactId>
-       <version>3.19.7</version>
+       <version>[3.21.8,)</version>
     </dependency>
     ```
 
@@ -20,7 +23,7 @@
     打开gradle工程的build.gradle，在“dependencies”中加入以下配置：
 
     ```
-    api 'com.huaweicloud:esdk-obs-java:3.19.7'
+    api 'com.huaweicloud:esdk-obs-java:3.21.8'
     ```
 
 
@@ -35,19 +38,24 @@
     ```
     <!-- OBS Java SDK -->
     <dependency>
-       <groupId>com.huawei.storage</groupId>
+       <groupId>com.huaweicloud</groupId>
        <artifactId>esdk-obs-java</artifactId>
-       <version>3.19.7</version>
+       <version>[3.21.8,)</version>
     </dependency>
     ```
 
 6.  运行Maven命令（如：mvn package）下载SDK。
 
-方式三，在Eclipse Java项目中导入JAR包，步骤如下：
+方式三，自行编译 Jar 包，步骤如下：
 
-1.  [下载](SDK下载.md)OBS Java SDK开发包。
-2.  解压该开发包。
-3.  将解压后的libs文件夹下所有的JAR包拷贝到您的项目中。
-4.  在Eclipse中选择您的工程，右击选择 Properties \> Java Build Path \> Add JARs。
-5.  选中您在第3步拷贝的所有JAR文件，单击“确定”，完成JAR包的导入。
+1.  由  [SDK下载](SDK下载.md)  下载源码并解压。
+2.  配置本地  Java 环境与 Maven 环境。
+3.  通过命令行进入源码解压目录。
+4.  运行如下命令
+
+    ```
+    mvn clean package -Dmaven.test.skip=true -f pom-java.xml
+    ```
+
+5.  构建产物位于解压目录中 target 目录下。
 

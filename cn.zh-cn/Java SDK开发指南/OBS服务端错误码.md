@@ -505,7 +505,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.3 "><p id="p1513517400466"><a name="p1513517400466"></a><a name="p1513517400466"></a>请求中带的签名与系统计算得到的签名不一致。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p113544044618"><a name="p113544044618"></a><a name="p113544044618"></a>检查你的Secret Access Key 和签名计算方法。</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p113544044618"><a name="p113544044618"></a><a name="p113544044618"></a>检查你的Secret Access Key和签名计算方法。</p>
 </td>
 </tr>
 <tr id="row76585388468"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="p16135940124612"><a name="p16135940124612"></a><a name="p16135940124612"></a>403 Forbidden</p>
@@ -603,6 +603,7 @@
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.2 "><p id="p44535794712"><a name="p44535794712"></a><a name="p44535794712"></a>MethodNotAllowed</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.3 "><p id="p74536774716"><a name="p74536774716"></a><a name="p74536774716"></a>指定的方法不允许操作在请求的资源上。</p>
+<p id="p1525513515437"><a name="p1525513515437"></a><a name="p1525513515437"></a>对应返回的Message为：Specified method is not supported.</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p164534734716"><a name="p164534734716"></a><a name="p164534734716"></a>方法不允许。</p>
 </td>

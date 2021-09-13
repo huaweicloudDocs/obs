@@ -61,7 +61,7 @@ OBS服务端遵照HTTP规范，在接口调用完成均会返回标准的HTTP状
     </td>
     <td class="cellrowborder" valign="top" width="33.15331533153316%" headers="mcps1.1.4.1.2 "><p id="p223373614283"><a name="p223373614283"></a><a name="p223373614283"></a>拒绝访问</p>
     </td>
-    <td class="cellrowborder" valign="top" width="42.94429442944294%" headers="mcps1.1.4.1.3 "><a name="ul3752114484720"></a><a name="ul3752114484720"></a><ul id="ul3752114484720"><li>客户端请求中携带的签名和服务端计算出的签名不匹配（一般是AK/SK错误）；</li><li>权限不足（账号对请求的资源无权限）；</li><li>账号欠费；</li><li>桶的空间不足（出现在对桶设置了配额的场景）；</li><li>无效的AK；</li><li>客户端时间和服务端时间相差过大（客户端所在机器的时间与NTP服务不同步）；</li></ul>
+    <td class="cellrowborder" valign="top" width="42.94429442944294%" headers="mcps1.1.4.1.3 "><a name="ul3752114484720"></a><a name="ul3752114484720"></a><ul id="ul3752114484720"><li>客户端请求中携带的签名和服务端计算出的签名不匹配（一般是AK/SK错误）；</li><li>权限不足（帐号对请求的资源无权限）；</li><li>帐号欠费；</li><li>桶的空间不足（出现在对桶设置了配额的场景）；</li><li>无效的AK；</li><li>客户端时间和服务端时间相差过大（客户端所在机器的时间与NTP服务不同步）；</li></ul>
     </td>
     </tr>
     <tr id="row112336361284"><td class="cellrowborder" valign="top" width="23.9023902390239%" headers="mcps1.1.4.1.1 "><p id="p162331736142810"><a name="p162331736142810"></a><a name="p162331736142810"></a>404 Not Found</p>

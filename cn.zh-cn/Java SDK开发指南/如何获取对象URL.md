@@ -18,8 +18,8 @@ System.out.println("\t" + result.getObjectUrl());
 
 方式二，按**https://**_**桶名.域名/文件夹目录层级/对象名**的方式进行拼接。_
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   如果该对象存在于桶的根目录下，则链接地址将不需要有文件夹目录层级；  
->-   各区域对应的域名可以从[这里](https://developer.huaweicloud.com/endpoint?OBS)的终端节点查看。  
->-   例如需访问区域为“华北-北京一”的桶名为“testbucket”中“test”文件夹下对象名为“test.txt”的对象，则该对象的URL为https://testbucket.obs.cn-north-1.myhuaweicloud.com/test/test.txt。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   如果该对象存在于桶的根目录下，则链接地址将不需要有文件夹目录层级；
+>-   各区域对应的域名可以从[这里](https://developer.huaweicloud.com/endpoint?OBS)的终端节点查看。
+>-   例如需访问区域为“华北-北京四”的桶名为“testbucket”中“test”文件夹下对象名为“test.txt”的对象，则该对象的URL为https://testbucket.obs.cn-north-4.myhuaweicloud.com/test/test.txt。
 

@@ -1,4 +1,7 @@
-# 使用URL进行授权访问<a name="obs_21_0901"></a>
+# 通过临时URL访问OBS<a name="obs_21_0901"></a>
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>开发过程中，您有任何问题可以在github上[提交issue](https://github.com/huaweicloud/huaweicloud-sdk-java-obs/issues)，或者在[华为云对象存储服务论坛](https://bbs.huaweicloud.com/forum/forum-620-1.html)中发帖求助。[接口参考文档](https://obssdk.obs.cn-north-1.myhuaweicloud.com/apidoc/cn/java/index.html)详细介绍了每个接口的参数和使用方法。
 
 OBS客户端支持通过访问密钥、请求方法类型、请求参数等信息生成一个在Query参数中携带鉴权信息的URL，可将该URL提供给其他用户进行临时访问。在生成URL时，您需要指定URL的有效期来限制访客用户的访问时长。
 
@@ -594,12 +597,12 @@ OBS客户端支持通过访问密钥、请求方法类型、请求参数等信�
 </tbody>
 </table>
 
-通过OBS Java SDK实现URL授权访问的步骤如下：
+通过OBS Java SDK生成临时URL访问OBS的步骤如下：
 
 1.  通过ObsClient.createTemporarySignature生成带签名信息的URL。
 2.  使用任意HTTP库发送HTTP/HTTPS请求，访问OBS服务。
 
-以下代码展示了如何使用URL进行授权访问，包括：创建桶、上传对象、下载对象、列举对象、删除对象。
+以下代码展示了如何使用临时URL进行授权访问，包括：创建桶、上传对象、下载对象、列举对象、删除对象。
 
 ## 创建桶<a name="section8517109534"></a>
 
@@ -625,7 +628,7 @@ for (Map.Entry<String, String> entry : response.getActualSignedRequestHeaders().
 }
 // 使用PUT请求创建桶
 String location = "your bucket location";
-Request httpRequest = builder.url(response.getSignedUrl()).put(RequestBody.create(null, "<CreateBucketConfiguration><LocationConstraint>" + location + "</LocationConstraint></CreateBucketConfiguration>".getBytes())).build();
+Request httpRequest = builder.url(response.getSignedUrl()).put(RequestBody.create(null, "<CreateBucketConfiguration><Location>" + location + "</Location></CreateBucketConfiguration>".getBytes())).build();
 OkHttpClient httpClient = new OkHttpClient.Builder().followRedirects(false).retryOnConnectionFailure(false)
               .cache(null).build();
 
@@ -854,7 +857,7 @@ ObsClient obsClient = new ObsClient(ak, sk, endPoint);
 // URL有效期，3600秒
 long expireSeconds = 3600L;
 
-TemporarySignatureRequest request = new TemporarySignatureRequest(HttpMethodEnum.POST, expireSeconds);
+TemporarySignatureRequest request = new TemporarySignatureRequest(HttpMethodEnum.PUT, expireSeconds);
 request.setBucketName("bucketname");
 request.setObjectKey("objectname");
 
@@ -1075,7 +1078,7 @@ if (res.body() != null) {
 res.close();
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   HttpMethodEnum是OBS Java SDK定义的枚举类型，代表请求方法类型。  
->-   加密秘钥的计算方式，可以参考章节：[如何生成SSE-C方式的加密秘钥](如何生成SSE-C方式的加密秘钥.md)。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   HttpMethodEnum是OBS Java SDK定义的枚举类型，代表请求方法类型。
+>-   加密秘钥的计算方式，可以参考章节：[如何生成SSE-C方式的加密秘钥](如何生成SSE-C方式的加密秘钥.md)。
 

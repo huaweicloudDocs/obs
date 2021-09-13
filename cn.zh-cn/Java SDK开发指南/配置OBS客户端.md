@@ -1,5 +1,8 @@
 # 配置OBS客户端<a name="obs_21_0203"></a>
 
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>开发过程中，您有任何问题可以在github上[提交issue](https://github.com/huaweicloud/huaweicloud-sdk-java-obs/issues)，或者在[华为云对象存储服务论坛](https://bbs.huaweicloud.com/forum/forum-620-1.html)中发帖求助。[接口参考文档](https://obssdk.obs.cn-north-1.myhuaweicloud.com/apidoc/cn/java/index.html)详细介绍了每个接口的参数和使用方法。
+
 当使用配置类（ObsConfiguration）创建OBS客户端（ObsClient）时，您可通过ObsConfiguration配置类对ObsClient进行配置，可配置代理、连接超时、最大连接数等参数。通过ObsConfiguration可以设置的参数见下表：
 
 <a name="table10831182114445"></a>
@@ -71,7 +74,7 @@
 </tr>
 <tr id="row15833621134411"><td class="cellrowborder" valign="top" width="22.772277227722775%" headers="mcps1.1.5.1.1 "><p id="p68331421164412"><a name="p68331421164412"></a><a name="p68331421164412"></a>endPoint</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.732673267326735%" headers="mcps1.1.5.1.2 "><p id="p1183382110444"><a name="p1183382110444"></a><a name="p1183382110444"></a>连接OBS的服务地址。可包含协议类型、域名、端口号。示例：https://your-endpoint:443。</p>
+<td class="cellrowborder" valign="top" width="26.732673267326735%" headers="mcps1.1.5.1.2 "><p id="p1183382110444"><a name="p1183382110444"></a><a name="p1183382110444"></a>连接OBS的服务地址。可包含协议类型、域名、端口号。示例：https://your-endpoint:443。（出于安全性考虑，建议使用https协议）</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.663366336633665%" headers="mcps1.1.5.1.3 "><p id="p19833132114442"><a name="p19833132114442"></a><a name="p19833132114442"></a>ObsConfiguration.setEndPoint</p>
 </td>
@@ -103,15 +106,6 @@
 <td class="cellrowborder" valign="top" width="33.663366336633665%" headers="mcps1.1.5.1.3 "><p id="p2762162918151"><a name="p2762162918151"></a><a name="p2762162918151"></a>ObsConfiguration.setVerifyResponseContentType</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.831683168316832%" headers="mcps1.1.5.1.4 "><p id="p184682044316"><a name="p184682044316"></a><a name="p184682044316"></a>默认</p>
-</td>
-</tr>
-<tr id="row106540991712"><td class="cellrowborder" valign="top" width="22.772277227722775%" headers="mcps1.1.5.1.1 "><p id="p1065417941713"><a name="p1065417941713"></a><a name="p1065417941713"></a>uploadStreamRetryBufferSize</p>
-</td>
-<td class="cellrowborder" valign="top" width="26.732673267326735%" headers="mcps1.1.5.1.2 "><p id="p178201793617"><a name="p178201793617"></a><a name="p178201793617"></a>上传流对象时使用的缓存大小（单位：字节）。默认为512KB。</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.663366336633665%" headers="mcps1.1.5.1.3 "><p id="p1765518917177"><a name="p1765518917177"></a><a name="p1765518917177"></a>ObsConfiguration.setUploadStreamRetryBufferSize</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.831683168316832%" headers="mcps1.1.5.1.4 "><p id="p3182510618"><a name="p3182510618"></a><a name="p3182510618"></a>N/A</p>
 </td>
 </tr>
 <tr id="row133933491190"><td class="cellrowborder" valign="top" width="22.772277227722775%" headers="mcps1.1.5.1.1 "><p id="p16393124951913"><a name="p16393124951913"></a><a name="p16393124951913"></a>readBufferSize</p>
@@ -161,7 +155,7 @@
 </tr>
 <tr id="row16421154464211"><td class="cellrowborder" valign="top" width="22.772277227722775%" headers="mcps1.1.5.1.1 "><p id="p12732952143117"><a name="p12732952143117"></a><a name="p12732952143117"></a>trustManagerFactory</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.732673267326735%" headers="mcps1.1.5.1.2 "><p id="p773265212313"><a name="p773265212313"></a><a name="p773265212313"></a>用于生成 javax.net.ssl.TrustManager的工厂。默认为空。</p>
+<td class="cellrowborder" valign="top" width="26.732673267326735%" headers="mcps1.1.5.1.2 "><p id="p773265212313"><a name="p773265212313"></a><a name="p773265212313"></a>用于生成javax.net.ssl.TrustManager的工厂。默认为空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.663366336633665%" headers="mcps1.1.5.1.3 "><p id="p1573225212316"><a name="p1573225212316"></a><a name="p1573225212316"></a>ObsConfiguration.setTrustManagerFactory</p>
 </td>
@@ -225,10 +219,10 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   建议值为N/A的表示需要根据实际情况进行设置。  
->-   如需提高文件上传下载性能，在网络带宽满足的情况下，可对socketWriteBufferSize，sockeReadBufferSize，readBufferSize，writeBufferSize四个参数进行调优。  
->-   如网络状况不佳，建议增大connectionTimeout和socketTimeout的值。  
->-   如果设置的endPoint不带协议类型，则默认使用HTTPS协议。  
->-   出于DNS解析性能和OBS服务可靠性的考虑，不允许将endPoint设置为IP，必须使用域名访问OBS服务。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   建议值为N/A的表示需要根据实际情况进行设置。
+>-   如需提高文件上传下载性能，在网络带宽满足的情况下，可对socketWriteBufferSize，sockeReadBufferSize，readBufferSize，writeBufferSize四个参数进行调优。
+>-   如网络状况不佳，建议增大connectionTimeout和socketTimeout的值。
+>-   如果设置的endPoint不带协议类型，则默认使用HTTPS协议。
+>-   出于DNS解析性能和OBS服务可靠性的考虑，不允许将endPoint设置为IP，必须使用域名访问OBS服务。
 
