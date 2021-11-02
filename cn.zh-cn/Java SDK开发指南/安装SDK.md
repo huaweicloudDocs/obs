@@ -10,21 +10,34 @@
     打开maven工程的pom.xml，在“<dependencies\>”节点中加入以下配置：
 
     ```
-           
     <dependency>
        <groupId>com.huaweicloud</groupId>
-       <artifactId>esdk-obs-java</artifactId>
+       <artifactId>esdk-obs-java-bundle</artifactId>
        <version>[3.21.8,)</version>
     </dependency>
+    <!--若您的项目对三方依赖占用空间大小较为敏感，可使用下方代码引用非 bundle 版 SDK。具体差别见说明-->
+    <!--<dependency>-->
+    <!--	<groupId>com.huaweicloud</groupId>-->
+    <!--	<artifactId>esdk-obs-java</artifactId>-->
+    <!--	<version>[3.21.8,)</version>-->
+    <!--</dependency>-->
     ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >esdk-obs-java-bundle 与 esdk-obs-java 的源代码相同，区别在于 Bundle 版将所有三方依赖打包并重定向至包内，不再依赖外部三方包，可避免因依赖冲突导致的问题，相应的 Bundle 版 SDK 占用的空间也更大（7M+）。在使用 esdk-obs-java 的过程中遇到依赖冲突问题时，可参考  [依赖缺失和依赖冲突的解决](依赖缺失和依赖冲突的解决.md)  解决。
 
 -   使用gradle配置
 
     打开gradle工程的build.gradle，在“dependencies”中加入以下配置：
 
     ```
-    api 'com.huaweicloud:esdk-obs-java:3.21.8'
+    api 'com.huaweicloud:esdk-obs-java-bundle:3.21.8'
+    // 若您的项目对三方依赖占用空间大小较为敏感，可使用下方代码引用非 bundle 版 SDK。具体差别见说明
+    // api 'com.huaweicloud:esdk-obs-java:3.21.8'
     ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >esdk-obs-java-bundle 与 esdk-obs-java 的源代码相同，区别在于 Bundle 版将所有三方依赖打包并重定向至包内，不再依赖外部三方包，可避免因依赖冲突导致的问题，相应的 Bundle 版 SDK 占用的空间也更大（7M+）。在使用 esdk-obs-java 的过程中遇到依赖冲突问题时，可参考  [依赖缺失和依赖冲突的解决](依赖缺失和依赖冲突的解决.md)  解决。
 
 
 方式二，使用镜像库下载安装OBS Java SDK，以Maven为例，步骤如下：
@@ -36,13 +49,21 @@
 5.  打开Maven工程的pom.xml，在“<dependencies\>”节点中加入以下配置：
 
     ```
-    <!-- OBS Java SDK -->
     <dependency>
        <groupId>com.huaweicloud</groupId>
-       <artifactId>esdk-obs-java</artifactId>
+       <artifactId>esdk-obs-java-bundle</artifactId>
        <version>[3.21.8,)</version>
     </dependency>
+    <!--若您的项目对三方依赖占用空间大小较为敏感，可使用下方代码引用非 bundle 版 SDK。具体差别见说明-->
+    <!--<dependency>-->
+    <!--	<groupId>com.huaweicloud</groupId>-->
+    <!--	<artifactId>esdk-obs-java</artifactId>-->
+    <!--	<version>[3.21.8,)</version>-->
+    <!--</dependency>-->
     ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >esdk-obs-java-bundle 与 esdk-obs-java 的源代码相同，区别在于 Bundle 版将所有三方依赖打包并重定向至包内，不再依赖外部三方包，可避免因依赖冲突导致的问题，相应的 Bundle 版 SDK 占用的空间也更大（7M+）。在使用 esdk-obs-java 的过程中遇到依赖冲突问题时，可参考  [依赖缺失和依赖冲突的解决](依赖缺失和依赖冲突的解决.md)  解决。
 
 6.  运行Maven命令（如：mvn package）下载SDK。
 
