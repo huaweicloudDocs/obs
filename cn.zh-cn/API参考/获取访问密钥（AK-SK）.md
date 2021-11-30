@@ -1,5 +1,8 @@
 # 获取访问密钥（AK/SK）<a name="obs_04_0116"></a>
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>IAM用户若希望使用AK/SK访问OBS，必须要帐号为其开启“编程访问”。开启方法请参见[查看或修改IAM用户信息](https://support.huaweicloud.com/usermanual-iam/iam_02_0002.html)。
+
 在调用接口的时候，需要使用AK/SK进行签名验证。AK/SK获取步骤如下：
 
 1.  登录控制台。

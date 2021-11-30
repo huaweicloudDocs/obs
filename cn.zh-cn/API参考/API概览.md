@@ -536,12 +536,12 @@
 <td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p129703181444"><a name="p129703181444"></a><a name="p129703181444"></a>本接口用于查询授权，查询由OBS服务自动帮助用户创建工作流运行时需要的函数服务权限，以及函数服务运行时的权限。</p>
 </td>
 </tr>
-<tr id="row13651649366"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p66584914616"><a name="p66584914616"></a><a name="p66584914616"></a><a href="查询Action模板详情.md">查询Action模板详情</a></p>
+<tr id="row13651649366"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p66584914616"><a name="p66584914616"></a><a name="p66584914616"></a><a href="查询华为云算子模板详情.md">查询华为云算子模板详情</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p63491832195413"><a name="p63491832195413"></a><a name="p63491832195413"></a>本接口用于按名称查询Action模板。</p>
 </td>
 </tr>
-<tr id="row7651249263"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p116534914619"><a name="p116534914619"></a><a name="p116534914619"></a><a href="查询Action模板列表.md">查询Action模板列表</a></p>
+<tr id="row7651249263"><td class="cellrowborder" valign="top" width="40.660000000000004%" headers="mcps1.2.3.1.1 "><p id="p116534914619"><a name="p116534914619"></a><a name="p116534914619"></a><a href="查询华为云算子模板列表.md">查询华为云算子模板列表</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="59.34%" headers="mcps1.2.3.1.2 "><p id="p831314441014"><a name="p831314441014"></a><a name="p831314441014"></a>本接口用于查询已有预置Action模板列表。</p>
 </td>

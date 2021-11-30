@@ -471,7 +471,3 @@ public class SignDemo {
 1.  计算签名的接口包含在sign.h头文件中。
 2.  计算签名的示例代码在main.c文件中。
 
-## 签名计算工具<a name="section19121175184814"></a>
-
-OBS提供[可视化签名工具](https://obs-community.obs.cn-north-1.myhuaweicloud.com/sign/query_signature.html)，帮助您轻松完成签名计算。
-
