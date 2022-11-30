@@ -3,7 +3,7 @@
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >开发过程中，您有任何问题可以在github上[提交issue](https://github.com/huaweicloud/huaweicloud-sdk-java-obs/issues)，或者在[华为云对象存储服务论坛](https://bbs.huaweicloud.com/forum/forum-620-1.html)中发帖求助。[接口参考文档](https://obssdk.obs.cn-north-1.myhuaweicloud.com/apidoc/cn/java/index.html)详细介绍了每个接口的参数和使用方法。
 
-OBS客户端（ObsClient）是访问OBS服务的Java客户端，它为调用者提供一系列与OBS服务进行交互的接口，用于管理、操作桶（Bucket）和对象（Object）等OBS服务上的资源。使用OBS Java SDK向OBS发起请求，您需要初始化一个ObsClient实例，并根据需要修改ObsConfiguration的默认配置项。
+OBS客户端（ObsClient）是访问OBS服务的Java客户端，它为调用者提供一系列与OBS服务进行交互的接口，用于管理、操作桶（Bucket）和对象（Object）等OBS服务上的资源。使用OBS Java SDK向OBS发起请求，您需要初始化一个ObsClient实例，并根据需要修改ObsConfiguration的默认配置项。您可以参考[终端节点（Endpoint）](https://support.huaweicloud.com/productdesc-obs/obs_03_0152.html)，了解Endpoint的获取方式。
 
 -   直接使用服务地址创建OBS客户端（ObsClient），所有配置均为默认值，且后续不支持修改。
     -   永久访问密钥（AK/SK）创建OBS客户端的代码如下:
@@ -86,10 +86,11 @@ OBS客户端（ObsClient）是访问OBS服务的Java客户端，它为调用者�
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
-        >当应用程序部署在ECS服务器上时，使用以上方式创建的OBS客户端会从ECS服务器自动获取临时访问密钥和定期自动刷新。
+        >当应用程序部署在ECS服务器上时，并且ECS绑定了IAM对ECS的云服务委托，并给委托配置OBS权限，使用以上方式ObsClient会从ECS服务器自动获取临时访问密钥和定期自动刷新。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
-        >请确保服务端和应用程序部署所在环境的UTC时间一致，否则可能会导致临时访问密钥无法及时刷新。
+        >1.  请确保服务端和应用程序部署所在环境的UTC时间一致，否则可能会导致临时访问密钥无法及时刷新。
+        >2.  使用该方式创建客户端时，SDK会请求固定IP（169.254.169.254）的API获取临时AKSK，具体请参见[在ECS上获取Security Key](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0166.html#section7)。
 
 
 
@@ -138,9 +139,10 @@ obsClient.close();
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->-   您的工程中可以有多个ObsClient，也可以只有一个ObsClient。
+>-   建议整个代码工程全局使用一个ObsClient客户端，只在程序初始化时创建一次，因为创建多个ObsClient客户端在高并发场景下会影响性能。
+>-   在使用临时aksk时，aksk会有过期时间，可调用ObsClient.refresh\("yourAccessKey", "yourSecretKey", "yourSecurityToken"\)刷新ObsClient的aksk，不必重新创建ObsClient。
 >-   ObsClient是线程安全的，可在并发场景下使用。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->ObsClient在调用ObsClient.close方法关闭后不能再次使用。
+>ObsClient在调用ObsClient.close方法关闭后不能再次使用，保证全局使用一个ObsClient客户端的情况下，不建议主动关闭ObsClient客户端。
 

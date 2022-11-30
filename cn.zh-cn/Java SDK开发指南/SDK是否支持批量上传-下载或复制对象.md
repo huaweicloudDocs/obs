@@ -10,7 +10,8 @@
 以批量上传对象为例，示例代码如下：
 
 ```
-String endPoint = "https://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 final String bucketName = "bucketname";

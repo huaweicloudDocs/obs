@@ -13,11 +13,6 @@
 
 -   版本修订记录信息：[ChangeLog](https://github.com/huaweicloud/huaweicloud-sdk-java-obs/blob/master/README_CN.MD)。
 -   推荐使用的JDK版本：JDK 8 以上版本。
--   第三方依赖：**与旧版本（2.1.x）不完全兼容，统一使用okhttp3替代httpclient4.x**。
--   命名空间：与旧版本（2.1.x）保持兼容，对外的接口都包含在com.obs.services，com.obs.services.model和com.obs.services.exception三个包中。
--   接口函数：与旧版本（2.1.x）保持兼容。
-
-## 旧版本支持<a name="section15844174973318"></a>
 
 旧版本（2.x）已不再维护，建议尽快升级至最新版。
 

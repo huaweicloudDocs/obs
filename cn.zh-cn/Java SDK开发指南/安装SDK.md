@@ -13,7 +13,7 @@
     <dependency>
        <groupId>com.huaweicloud</groupId>
        <artifactId>esdk-obs-java-bundle</artifactId>
-       <version>[3.21.8,)</version>
+       <version>[3.21.11,)</version>
     </dependency>
     <!--若您的项目对三方依赖占用空间大小较为敏感，可使用下方代码引用非 bundle 版 SDK。具体差别见说明-->
     <!--<dependency>-->
@@ -24,7 +24,8 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >esdk-obs-java-bundle 与 esdk-obs-java 的源代码相同，区别在于 Bundle 版将所有三方依赖打包并重定向至包内，不再依赖外部三方包，可避免因依赖冲突导致的问题，相应的 Bundle 版 SDK 占用的空间也更大（7M+）。在使用 esdk-obs-java 的过程中遇到依赖冲突问题时，可参考  [依赖缺失和依赖冲突的解决](依赖缺失和依赖冲突的解决.md)  解决。
+    >-   esdk-obs-java-bundle 与 esdk-obs-java 的源代码相同，区别在于 Bundle 版将所有三方依赖打包并重定向至包内，不再依赖外部三方包，可避免因依赖冲突导致的问题，相应的 Bundle 版 SDK 占用的空间也更大（7M+）。在使用 esdk-obs-java 的过程中遇到依赖冲突问题时，可参考  [依赖缺失和依赖冲突的解决](依赖缺失和依赖冲突的解决.md)  解决。
+    >-   由于 Spring-boot 的依赖管理机制，会自动将 OBS SDK 所指定的依赖 okhttp 4.8.0 降级至 okhttp 3.x 版本，导致 SDK 不可用，当您的项目同时包含 Spring-boot 与非 bundle 版 SDK 时，请在您的 pom 文件中显式的引用 okhttp4.8.0 版本，点[这里](https://github.com/huaweicloud/huaweicloud-sdk-java-obs/blob/master/pom.xml)获取okhttp的maven坐标。
 
 -   使用gradle配置
 
@@ -52,13 +53,13 @@
     <dependency>
        <groupId>com.huaweicloud</groupId>
        <artifactId>esdk-obs-java-bundle</artifactId>
-       <version>[3.21.8,)</version>
+       <version>[3.21.11,)</version>
     </dependency>
     <!--若您的项目对三方依赖占用空间大小较为敏感，可使用下方代码引用非 bundle 版 SDK。具体差别见说明-->
     <!--<dependency>-->
     <!--	<groupId>com.huaweicloud</groupId>-->
     <!--	<artifactId>esdk-obs-java</artifactId>-->
-    <!--	<version>[3.21.8,)</version>-->
+    <!--	<version>[3.21.11,)</version>-->
     <!--</dependency>-->
     ```
 
@@ -66,6 +67,12 @@
     >esdk-obs-java-bundle 与 esdk-obs-java 的源代码相同，区别在于 Bundle 版将所有三方依赖打包并重定向至包内，不再依赖外部三方包，可避免因依赖冲突导致的问题，相应的 Bundle 版 SDK 占用的空间也更大（7M+）。在使用 esdk-obs-java 的过程中遇到依赖冲突问题时，可参考  [依赖缺失和依赖冲突的解决](依赖缺失和依赖冲突的解决.md)  解决。
 
 6.  运行Maven命令（如：mvn package）下载SDK。
+
+1.  下载OBS Java SDK开发包。
+2.  解压该开发包。
+3.  将解压后的libs文件夹下所有的JAR包拷贝到您的项目中。
+4.  在Eclipse中选择您的工程，右击选择Properties \> Java Build Path \> Add JARs。
+5.  选中您在第3步拷贝的所有JAR文件，单击“确定”，完成JAR包的导入。
 
 方式三，自行编译 Jar 包，步骤如下：
 
@@ -79,4 +86,6 @@
     ```
 
 5.  构建产物位于解压目录中 target 目录下。
+
+方式四，由  [SDK下载](SDK下载.md)  直接下载 Jar 包，并放置于本地工程的依赖路径。
 

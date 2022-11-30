@@ -226,3 +226,54 @@
 >-   如果设置的endPoint不带协议类型，则默认使用HTTPS协议。
 >-   出于DNS解析性能和OBS服务可靠性的考虑，不允许将endPoint设置为IP，必须使用域名访问OBS服务。
 
+## 配置 HTTP 代理<a name="section17688555618"></a>
+
+配置 HTTP 代理后， SDK 将会通过的代理访问服务端。
+
+```
+String endPoint = "https://your-endpoint";
+String ak = "*** Provide your Access Key ***";
+String sk = "*** Provide your Secret Key ***";
+
+String proxyUrl = "http://proxy.com";
+int proxyPort = 8080;
+String proxyUser = "userName";
+String proxyPassword = "password";
+ObsConfiguration config = new ObsConfiguration();
+config.setEndPoint(endPoint);
+config.setHttpProxy(proxyUrl, proxyPort, proxyUser, proxyPassword);
+ObsClient obsClient = new ObsClient(ak, sk,config);
+
+```
+
+## 配置 keyManagerFactory 验证服务端证书<a name="section4784938153314"></a>
+
+通过配置 KeyManagerFactory，可以在本地保存证书，并校验服务端返回证书是否正确。
+
+```
+String endPoint = "https://your-endpoint";
+String ak = "*** Provide your Access Key ***";
+String sk = "*** Provide your Secret Key ***";
+
+String jksPassword = "you-jks-password";
+String jksPath = "/path/to/your/keystore/file";
+KeyStore ks = KeyStore.getInstance("JKS");
+char[] passArray = jksPassword.toCharArray();
+FileInputStream inputStream = new FileInputStream(jksPath);
+ks.load(inputStream, passArray);
+KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+
+kmf.init(ks, passArray);
+ObsConfiguration config = new ObsConfiguration();
+config.setEndPoint(endPoint);
+config.setKeyManagerFactory(kmf);
+
+ObsClient obsClient = new ObsClient(ak, sk, config);
+```
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>本地证书保存格式应为 jks 格式，可以运行以下命令调用 Java 自带的 keytool 工具将 cer 证书转换为 jks 证书。
+>```
+>keytool -import -file your-cer-file.cer -keystore your-keystore-file.jks
+>```
+

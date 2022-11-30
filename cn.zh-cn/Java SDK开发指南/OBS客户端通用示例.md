@@ -40,7 +40,7 @@ catch (ObsException e)
         }
         catch (IOException e)
         {
-        }
+        } 
     }
 }
 ```

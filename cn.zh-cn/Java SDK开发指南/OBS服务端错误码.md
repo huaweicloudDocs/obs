@@ -409,6 +409,15 @@
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p1065637114610"><a name="p1065637114610"></a><a name="p1065637114610"></a>根据说明重试。</p>
 </td>
 </tr>
+<tr id="row195831271474"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="p66287146479"><a name="p66287146479"></a><a name="p66287146479"></a>400 Bad Request</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.2 "><p id="p1558477154712"><a name="p1558477154712"></a><a name="p1558477154712"></a>AZRedundancyTypeNotSupported</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.3 "><p id="p6934105513478"><a name="p6934105513478"></a><a name="p6934105513478"></a>当前region不支持此AZRedundancy的桶</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p2934165594714"><a name="p2934165594714"></a><a name="p2934165594714"></a>选择合适的AZ Redundancy创桶</p>
+</td>
+</tr>
 <tr id="row3544855134517"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="p186561376469"><a name="p186561376469"></a><a name="p186561376469"></a>400 Bad Request</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.2 "><p id="p6656107134620"><a name="p6656107134620"></a><a name="p6656107134620"></a>UserKeyMustBeSpecified</p>
@@ -642,6 +651,15 @@
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.3 "><p id="p108742034104716"><a name="p108742034104716"></a><a name="p108742034104716"></a>用户尝试删除的桶不为空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p1787410342474"><a name="p1787410342474"></a><a name="p1787410342474"></a>先删除桶中对象，然后再删桶。</p>
+</td>
+</tr>
+<tr id="row86939182173"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="p1469351815171"><a name="p1469351815171"></a><a name="p1469351815171"></a>409 Conflict</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.2 "><p id="p36931518181715"><a name="p36931518181715"></a><a name="p36931518181715"></a>FsObjectConflict</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.3 "><p id="p116938185174"><a name="p116938185174"></a><a name="p116938185174"></a>用户上传或创建文件失败</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.4 "><p id="p938082882614"><a name="p938082882614"></a><a name="p938082882614"></a>检查创建文件规则。例如是否在不允许覆盖的场景下覆盖文件、是否在POSIX语义下在文件下上传文件（将文件当作目录）</p>
 </td>
 </tr>
 <tr id="row191241329154711"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.5.1.1 "><p id="p8874934194717"><a name="p8874934194717"></a><a name="p8874934194717"></a>409 Conflict</p>

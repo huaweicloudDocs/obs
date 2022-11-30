@@ -602,12 +602,18 @@ OBS客户端支持通过访问密钥、请求方法类型、请求参数等信�
 1.  通过ObsClient.createTemporarySignature生成带签名信息的URL。
 2.  使用任意HTTP库发送HTTP/HTTPS请求，访问OBS服务。
 
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>如果遇到跨域报错、签名不匹配问题，请参考以下步骤排查问题：
+>1.  未配置跨域，需要在控制台配置CORS规则，请参考[配置桶允许跨域请求](https://support.huaweicloud.com/sdk-browserjs-devg-obs/obs_24_0107.html)。
+>2.  签名计算问题，请参考[URL中携带签名](https://support.huaweicloud.com/api-obs/obs_04_0011.html)排查签名参数是否正确；比如上传对象功能，后端将Content-Type参与计算签名生成授权URL，但是前端使用授权URL时没有设置Content-Type字段或者传入错误的值，此时会出现跨域错误。解决方案为：Content-Type字段前后端保持一致。
+
 以下代码展示了如何使用临时URL进行授权访问，包括：创建桶、上传对象、下载对象、列举对象、删除对象。
 
 ## 创建桶<a name="section8517109534"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -644,7 +650,8 @@ res.close();
 ## 上传对象<a name="section1057571281111"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -688,7 +695,8 @@ res.close();
 ## 下载对象<a name="section1382216339118"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -728,7 +736,8 @@ res.close();
 ## 列举对象<a name="section20628113717110"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -767,7 +776,8 @@ res.close();
 ## 删除对象<a name="section0796203914111"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -807,7 +817,8 @@ res.close();
 ## 初始化分段上传任务<a name="section57571639329"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -848,7 +859,8 @@ res.close();
 ## 上传段<a name="section43006123611"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -895,7 +907,8 @@ res.close();
 ## 列举已上传段<a name="section14449204412281"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -939,7 +952,8 @@ res.close();
 ## 合并段<a name="section27861832937"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -1000,7 +1014,8 @@ res.close();
 ## 获取图片转码的下载链接<a name="section112801918071"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 
@@ -1030,7 +1045,8 @@ res.close();
 ## 下载SSE-C加密类型的对象<a name="section195111828105617"></a>
 
 ```
-String endPoint = "http://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 

@@ -5,7 +5,8 @@
 方式一，接口查询，ObsClient上传对象后会返回PutObjectResult对象，通过调用该对象的getObjectUrl接口可获取上传对象的URL。示例代码如下：
 
 ```
-String endPoint = "https://your-endpoint";
+// Endpoint以北京四为例，其他地区请按实际情况填写。
+String endPoint = "https://obs.cn-north-4.myhuaweicloud.com";
 String ak = "*** Provide your Access Key ***";
 String sk = "*** Provide your Secret Key ***";
 // 创建ObsClient实例
