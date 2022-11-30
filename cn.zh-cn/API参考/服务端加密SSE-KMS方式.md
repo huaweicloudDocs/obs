@@ -18,14 +18,14 @@ SSE-KMS方式新增加两个头域来支持SSE-KMS加密。
 <tbody><tr id="row21701119392"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10565331133917"><a name="p10565331133917"></a><a name="p10565331133917"></a>x-obs-server-side-encryption</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11565431143913"><a name="p11565431143913"></a><a name="p11565431143913"></a>使用该头域表示服务端加密是SSE-KMS方式。对象使用SSE-KMS方式加密。</p>
-<p id="p8363154416375"><a name="p8363154416375"></a><a name="p8363154416375"></a>类型：字符串</p>
+<p id="p8363154416375"><a name="p8363154416375"></a><a name="p8363154416375"></a>类型：String</p>
 <p id="p12566173111399"><a name="p12566173111399"></a><a name="p12566173111399"></a>示例：x-obs-server-side-encryption：kms</p>
 </td>
 </tr>
 <tr id="row11701119396"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p125672313392"><a name="p125672313392"></a><a name="p125672313392"></a>x-obs-server-side-encryption-kms-key-id</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p456853193912"><a name="p456853193912"></a><a name="p456853193912"></a>SSE-KMS方式下使用该头域，该头域表示加密对象使用的主密钥，如果用户没有提供该头域，那么默认的主密钥将会被使用。</p>
-<p id="p12882047173716"><a name="p12882047173716"></a><a name="p12882047173716"></a>类型：字符串</p>
+<p id="p12882047173716"><a name="p12882047173716"></a><a name="p12882047173716"></a>类型：String</p>
 <p id="p6679135313114"><a name="p6679135313114"></a><a name="p6679135313114"></a>支持两种格式的描述方式：</p>
 <p id="p73846412422"><a name="p73846412422"></a><a name="p73846412422"></a>1. regionID:domainID(租户ID):key/key_id</p>
 <p id="p17964154220128"><a name="p17964154220128"></a><a name="p17964154220128"></a>或者</p>
@@ -155,7 +155,7 @@ x-obs-request-id: BB78000001648480AF3900CED7F15155
 ETag: "d8bffdfbab5345d91ac05141789d2477"
 x-obs-server-side-encryption: kms
 x-obs-server-side-encryption-kms-key-id: cn-north-4:783fc6652cf246c096ea836694f71855:key/522d6070-5ad3-4765-9737-9312ddc72cdb
-x-obs-id-2: oRAXhgwdTLc9wKVHqTLSmQB7I35D+32AAAUJAIAABAAAQAAEAABAAAQAAEAABCS
+x-obs-id-2: oRAXhgwdaLc9wKVHqTLSmQB7I35D+32AAAUJAIAABAAAQAAEAABAAAQAAEAABCS
 Date: Wed, 06 Jun 2018 09:10:29 GMT
 Content-Length: 0
 ```
@@ -181,7 +181,7 @@ x-obs-request-id: BB78000001648480AF3900CED7F15155
 ETag: "d8bffdfbab5345d91ac05141789d2477"
 x-obs-server-side-encryption: kms
 x-obs-server-side-encryption-kms-key-id: cn-north-4:783fc6652cf246c096ea836694f71855:key/522d6070-5ad3-4765-9737-9312ddc72cdb
-x-obs-id-2: oRAXhgwdTLc9wKVHqTLSmQB7I35D+32AAAUJAIAABAAAQAAEAABAAAQAAEAABCS
+x-obs-id-2: oRAXhgwdaLc9wKVHqTLSmQB7I35D+32AAAUJAIAABAAAQAAEAABAAAQAAEAABCS
 Date: Wed, 06 Jun 2018 09:10:29 GMT
 Content-Length: 0
 ```

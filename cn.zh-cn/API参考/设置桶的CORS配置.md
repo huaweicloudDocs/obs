@@ -22,7 +22,7 @@ Host: bucketname.obs.cn-north-4.myhuaweicloud.com
 Content-Length: length
 Date: date
 Authorization: authorization
-Content-SHA256: SHA256
+Content-MD5: MD5
 <?xml version="1.0" encoding="UTF-8"?> 
 <CORSConfiguration> 
     <CORSRule> 
@@ -55,13 +55,13 @@ Content-SHA256: SHA256
 </th>
 </tr>
 </thead>
-<tbody><tr id="row47723342"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p40385506"><a name="p40385506"></a><a name="p40385506"></a>Content-SHA256</p>
+<tbody><tr id="row131151538153117"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p5739124015311"><a name="p5739124015311"></a><a name="p5739124015311"></a>Content-MD5</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p112463514151"><a name="p112463514151"></a><a name="p112463514151"></a>按SHA安全加密标准计算出消息体的SHA256摘要字符串，即消息体256-bit SHA256值经过base64编码后得到的字符串。</p>
-<p id="p15246175111152"><a name="p15246175111152"></a><a name="p15246175111152"></a>类型：字符串</p>
-<p id="p192460518155"><a name="p192460518155"></a><a name="p192460518155"></a>示例：ogX9qClMrVJUBiUSIKDFM0qO41jJM0I5SCN55/OtMyI=</p>
+<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p99864193216"><a name="p99864193216"></a><a name="p99864193216"></a>按照RFC 1864标准计算出消息体的MD5摘要字符串，即消息体128-bit MD5值经过base64编码后得到的字符串。也支持设置Content-SHA256头域，其值为消息体256-bit SHA256值经过base64编码后得到的字符串，Content-MD5和Content-SHA256二选一。</p>
+<p id="p1981043326"><a name="p1981043326"></a><a name="p1981043326"></a>类型：String</p>
+<p id="p79817417329"><a name="p79817417329"></a><a name="p79817417329"></a>示例：n58IG6hfM7vqI4K0vnWpog==</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p25271071"><a name="p25271071"></a><a name="p25271071"></a>是</p>
+<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p14739124003114"><a name="p14739124003114"></a><a name="p14739124003114"></a>是</p>
 </td>
 </tr>
 </tbody>
@@ -85,7 +85,7 @@ Content-SHA256: SHA256
 <tbody><tr id="row3809297"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p40117626"><a name="p40117626"></a><a name="p40117626"></a>CORSConfiguration</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p28302272"><a name="p28302272"></a><a name="p28302272"></a>CORSRules的根节点，最大不超过64 KB。</p>
-<p id="p53393857"><a name="p53393857"></a><a name="p53393857"></a>类型：容器。</p>
+<p id="p53393857"><a name="p53393857"></a><a name="p53393857"></a>类型：Container</p>
 <p id="p10782666"><a name="p10782666"></a><a name="p10782666"></a>父节点：无。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p980736"><a name="p980736"></a><a name="p980736"></a>是</p>
@@ -94,7 +94,7 @@ Content-SHA256: SHA256
 <tr id="row8826632"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p43868588"><a name="p43868588"></a><a name="p43868588"></a>CORSRule</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p63694769"><a name="p63694769"></a><a name="p63694769"></a>CORS规则，CORSConfiguration下可最多包含100个规则。</p>
-<p id="p36382015"><a name="p36382015"></a><a name="p36382015"></a>类型：容器。</p>
+<p id="p36382015"><a name="p36382015"></a><a name="p36382015"></a>类型：Container</p>
 <p id="p59002687"><a name="p59002687"></a><a name="p59002687"></a>父节点：CORSConfiguration。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p14488317"><a name="p14488317"></a><a name="p14488317"></a>是</p>
@@ -103,8 +103,8 @@ Content-SHA256: SHA256
 <tr id="row63285989"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p25891503"><a name="p25891503"></a><a name="p25891503"></a>ID</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p16836989"><a name="p16836989"></a><a name="p16836989"></a>一条Rule的标识，由不超过255个字符的字符串组成。</p>
-<p id="p17315177"><a name="p17315177"></a><a name="p17315177"></a>类型：字符串。</p>
-<p id="p21618872"><a name="p21618872"></a><a name="p21618872"></a>父节点：Rule。</p>
+<p id="p17315177"><a name="p17315177"></a><a name="p17315177"></a>类型：String</p>
+<p id="p21618872"><a name="p21618872"></a><a name="p21618872"></a>父节点：CORSRule。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p6298183"><a name="p6298183"></a><a name="p6298183"></a>否</p>
 </td>
@@ -112,9 +112,9 @@ Content-SHA256: SHA256
 <tr id="row56683650"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p27972907"><a name="p27972907"></a><a name="p27972907"></a>AllowedMethod</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p51212956"><a name="p51212956"></a><a name="p51212956"></a>CORS规则允许的Method。</p>
-<p id="p58263423"><a name="p58263423"></a><a name="p58263423"></a>类型：字符串。</p>
+<p id="p58263423"><a name="p58263423"></a><a name="p58263423"></a>类型：String</p>
 <p id="p54608766"><a name="p54608766"></a><a name="p54608766"></a>有效值：GET、PUT、HEAD、POST 、DELETE</p>
-<p id="p21716848"><a name="p21716848"></a><a name="p21716848"></a>父节点：Rule。</p>
+<p id="p21716848"><a name="p21716848"></a><a name="p21716848"></a>父节点：CORSRule。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p14234302"><a name="p14234302"></a><a name="p14234302"></a>是</p>
 </td>
@@ -122,8 +122,8 @@ Content-SHA256: SHA256
 <tr id="row60999859"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p42041559"><a name="p42041559"></a><a name="p42041559"></a>AllowedOrigin</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p49923082"><a name="p49923082"></a><a name="p49923082"></a>CORS规则允许的Origin（表示域名的字符串），可以带一个匹配符”*”。每一个AllowedOrigin可以带最多一个“*”通配符。</p>
-<p id="p46654562"><a name="p46654562"></a><a name="p46654562"></a>类型：字符串。</p>
-<p id="p17237879"><a name="p17237879"></a><a name="p17237879"></a>父节点：Rule。</p>
+<p id="p46654562"><a name="p46654562"></a><a name="p46654562"></a>类型：String</p>
+<p id="p17237879"><a name="p17237879"></a><a name="p17237879"></a>父节点：CORSRule。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p54090948"><a name="p54090948"></a><a name="p54090948"></a>是</p>
 </td>
@@ -131,8 +131,8 @@ Content-SHA256: SHA256
 <tr id="row17056486"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p39398119"><a name="p39398119"></a><a name="p39398119"></a>AllowedHeader</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p37131036"><a name="p37131036"></a><a name="p37131036"></a>配置CORS请求中允许携带的“Access-Control-Request-Headers”头域。如果一个请求带了“Access-Control-Request-Headers”头域，则只有匹配上AllowedHeader中的配置才认为是一个合法的CORS请求。每一个AllowedHeader可以带最多一个“*”通配符，不可出现空格。</p>
-<p id="p65743869"><a name="p65743869"></a><a name="p65743869"></a>类型：字符串。</p>
-<p id="p54823917"><a name="p54823917"></a><a name="p54823917"></a>父节点：Rule。</p>
+<p id="p65743869"><a name="p65743869"></a><a name="p65743869"></a>类型：String</p>
+<p id="p54823917"><a name="p54823917"></a><a name="p54823917"></a>父节点：CORSRule。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p11552324"><a name="p11552324"></a><a name="p11552324"></a>否</p>
 </td>
@@ -141,8 +141,8 @@ Content-SHA256: SHA256
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p58688140"><a name="p58688140"></a><a name="p58688140"></a>客户端可以缓存的CORS响应时间，以秒为单位。</p>
 <p id="p58431217"><a name="p58431217"></a><a name="p58431217"></a>每个CORSRule可以包含至多一个MaxAgeSeconds，可以设置为负值。</p>
-<p id="p56118909"><a name="p56118909"></a><a name="p56118909"></a>类型：整数。</p>
-<p id="p35308137"><a name="p35308137"></a><a name="p35308137"></a>父节点：Rule。</p>
+<p id="p56118909"><a name="p56118909"></a><a name="p56118909"></a>类型：Integer</p>
+<p id="p35308137"><a name="p35308137"></a><a name="p35308137"></a>父节点：CORSRule。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p41386862"><a name="p41386862"></a><a name="p41386862"></a>否</p>
 </td>
@@ -150,8 +150,8 @@ Content-SHA256: SHA256
 <tr id="row36937440"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p39142691"><a name="p39142691"></a><a name="p39142691"></a>ExposeHeader</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p16441382"><a name="p16441382"></a><a name="p16441382"></a>CORS响应中带的附加头域，给客户端提供额外的信息，不可出现空格。</p>
-<p id="p13754711"><a name="p13754711"></a><a name="p13754711"></a>类型：字符串。</p>
-<p id="p56683537"><a name="p56683537"></a><a name="p56683537"></a>父节点：Rule。</p>
+<p id="p13754711"><a name="p13754711"></a><a name="p13754711"></a>类型：String</p>
+<p id="p56683537"><a name="p56683537"></a><a name="p56683537"></a>父节点：CORSRule。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p27963789"><a name="p27963789"></a><a name="p27963789"></a>否</p>
 </td>
@@ -189,7 +189,7 @@ Host: examplebucket.obs.cn-north-4.myhuaweicloud.com
 Accept: */*
 Date: WED, 01 Jul 2015 03:51:52 GMT
 Authorization: OBS H4IPJX0TQTHTHEBQQCEC:lq7BGoqE9yyhdEwE6KojJ7ysVxU=
-Content-SHA256: ogX9qClMrVJUBiUSIKDFM0qO41jJM0I5SCN55/OtMyI=
+Content-MD5: NGLzvw81f/A2C9PiGO0aZQ==
 Content-Length: 617
 
 <?xml version="1.0" encoding="utf-8"?>

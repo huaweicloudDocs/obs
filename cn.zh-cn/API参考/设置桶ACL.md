@@ -4,7 +4,7 @@
 
 OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建者才有该桶的读写权限。用户也可以设置其他的访问策略，比如对一个桶可以设置公共访问策略，允许所有人对其都有读权限。
 
-OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL\(access control list\) 。一个桶的ACL最多支持100条Grant授权。
+OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL\(access control list\) 。一个桶的ACL最多支持100条Grant授权。PUT接口为幂等的覆盖写语意，新设置的桶ACL将覆盖原有的桶ACL，如果需要修改或者删除某条ACL重新PUT一个新的桶ACL即可。
 
 使用桶ACL进行权限控制请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
 
@@ -56,8 +56,8 @@ Content-Length: length
 <tbody><tr id="row32875587"><td class="cellrowborder" valign="top" width="16.36163616361636%" headers="mcps1.2.4.1.1 "><p id="p45676910"><a name="p45676910"></a><a name="p45676910"></a>x-obs-acl</p>
 </td>
 <td class="cellrowborder" valign="top" width="59.17591759175917%" headers="mcps1.2.4.1.2 "><p id="p8842242"><a name="p8842242"></a><a name="p8842242"></a>通过canned ACL的方式来设置桶的ACL。</p>
-<p id="p45132965"><a name="p45132965"></a><a name="p45132965"></a>取值范围：private | public-read | public-read-write | public-read-delivered | public-read-write-delivered | bucket-owner-full-control</p>
-<p id="p12471314"><a name="p12471314"></a><a name="p12471314"></a>类型：字符串</p>
+<p id="p45132965"><a name="p45132965"></a><a name="p45132965"></a>取值范围：private | public-read | public-read-write | public-read-delivered | public-read-write-delivered</p>
+<p id="p12471314"><a name="p12471314"></a><a name="p12471314"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.462446244624463%" headers="mcps1.2.4.1.3 "><p id="p31891586"><a name="p31891586"></a><a name="p31891586"></a>否</p>
 </td>
@@ -83,7 +83,7 @@ Content-Length: length
 <tbody><tr id="row18158267"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p61533550"><a name="p61533550"></a><a name="p61533550"></a>Owner</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p18161633"><a name="p18161633"></a><a name="p18161633"></a>桶的所有者信息，包含ID。</p>
-<p id="p29236970"><a name="p29236970"></a><a name="p29236970"></a>类型：XML。</p>
+<p id="p29236970"><a name="p29236970"></a><a name="p29236970"></a>类型：XML</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p19384352"><a name="p19384352"></a><a name="p19384352"></a>是</p>
 </td>
@@ -91,7 +91,7 @@ Content-Length: length
 <tr id="row40241448"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p38331852"><a name="p38331852"></a><a name="p38331852"></a>ID</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p17872337"><a name="p17872337"></a><a name="p17872337"></a>被授权用户的租户Id。</p>
-<p id="p26633311"><a name="p26633311"></a><a name="p26633311"></a>类型：字符串。</p>
+<p id="p26633311"><a name="p26633311"></a><a name="p26633311"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p9814616"><a name="p9814616"></a><a name="p9814616"></a>是</p>
 </td>
@@ -99,7 +99,7 @@ Content-Length: length
 <tr id="row12128409"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p42877090"><a name="p42877090"></a><a name="p42877090"></a>Grant</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p50492235"><a name="p50492235"></a><a name="p50492235"></a>用于标记用户及用户的权限。单个桶的ACL，Grant元素不能超过100个。</p>
-<p id="p51776931"><a name="p51776931"></a><a name="p51776931"></a>类型：XML。</p>
+<p id="p51776931"><a name="p51776931"></a><a name="p51776931"></a>类型：XML</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p33181855"><a name="p33181855"></a><a name="p33181855"></a>否</p>
 </td>
@@ -107,7 +107,7 @@ Content-Length: length
 <tr id="row30201246"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p30381848"><a name="p30381848"></a><a name="p30381848"></a>Grantee</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p45010643"><a name="p45010643"></a><a name="p45010643"></a>记录用户信息。</p>
-<p id="p21983479"><a name="p21983479"></a><a name="p21983479"></a>类型：XML。</p>
+<p id="p21983479"><a name="p21983479"></a><a name="p21983479"></a>类型：XML</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p35831338"><a name="p35831338"></a><a name="p35831338"></a>否</p>
 </td>
@@ -116,24 +116,25 @@ Content-Length: length
 </td>
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p916103775218"><a name="p916103775218"></a><a name="p916103775218"></a>向所有人授予权限。</p>
 <p id="p121544984412"><a name="p121544984412"></a><a name="p121544984412"></a>取值范围：Everyone</p>
-<p id="p19164637145219"><a name="p19164637145219"></a><a name="p19164637145219"></a>类型：枚举类型。</p>
+<p id="p19164637145219"><a name="p19164637145219"></a><a name="p19164637145219"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p17361816115214"><a name="p17361816115214"></a><a name="p17361816115214"></a>否</p>
 </td>
 </tr>
 <tr id="row181794203527"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p1517952017528"><a name="p1517952017528"></a><a name="p1517952017528"></a>Delivered</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p417902025215"><a name="p417902025215"></a><a name="p417902025215"></a>桶的ACL是否向桶内对象传递。</p>
-<p id="p4656194515534"><a name="p4656194515534"></a><a name="p4656194515534"></a>类型：布尔类型。默认false。</p>
+<td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p417902025215"><a name="p417902025215"></a><a name="p417902025215"></a>桶的ACL是否向桶内对象传递。作用于桶内所有对象。</p>
+<p id="p418118891511"><a name="p418118891511"></a><a name="p418118891511"></a>类型：Boolean</p>
+<p id="p4656194515534"><a name="p4656194515534"></a><a name="p4656194515534"></a>默认：false</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p517912209528"><a name="p517912209528"></a><a name="p517912209528"></a>否</p>
 </td>
 </tr>
 <tr id="row54046594"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p15698002"><a name="p15698002"></a><a name="p15698002"></a>Permission</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p63578630"><a name="p63578630"></a><a name="p63578630"></a>授予的权限。</p>
+<td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p63578630"><a name="p63578630"></a><a name="p63578630"></a>授予的权限。详情参见<a href="https://support.huaweicloud.com/perms-cfg-obs/obs_40_0005.html#obs_40_0005__table28226836" target="_blank" rel="noopener noreferrer">桶ACL访问权限</a>。</p>
 <p id="p5666973716"><a name="p5666973716"></a><a name="p5666973716"></a>取值范围：READ | WRITE |  FULL_CONTROL</p>
-<p id="p49595399"><a name="p49595399"></a><a name="p49595399"></a>类型：枚举类型。</p>
+<p id="p49595399"><a name="p49595399"></a><a name="p49595399"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p57804348"><a name="p57804348"></a><a name="p57804348"></a>否</p>
 </td>
@@ -141,7 +142,7 @@ Content-Length: length
 <tr id="row50477085"><td class="cellrowborder" valign="top" width="35.709999999999994%" headers="mcps1.2.4.1.1 "><p id="p62112124"><a name="p62112124"></a><a name="p62112124"></a>AccessControlList</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86%" headers="mcps1.2.4.1.2 "><p id="p65026180"><a name="p65026180"></a><a name="p65026180"></a>访问控制列表，包含Grant、 Grantee、Permission三个元素。</p>
-<p id="p48364710"><a name="p48364710"></a><a name="p48364710"></a>类型：XML。</p>
+<p id="p48364710"><a name="p48364710"></a><a name="p48364710"></a>类型：XML</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.4.1.3 "><p id="p25227453"><a name="p25227453"></a><a name="p25227453"></a>是</p>
 </td>

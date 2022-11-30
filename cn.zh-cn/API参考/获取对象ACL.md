@@ -35,7 +35,7 @@ Authorization: authorization
 <tbody><tr id="row32974368"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.4.1.1 "><p id="p53678186"><a name="p53678186"></a><a name="p53678186"></a>acl</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.58%" headers="mcps1.2.4.1.2 "><p id="p52965837"><a name="p52965837"></a><a name="p52965837"></a>指定该请求是获取对象的acl。</p>
-<p id="p6930487"><a name="p6930487"></a><a name="p6930487"></a>类型：字符串。</p>
+<p id="p6930487"><a name="p6930487"></a><a name="p6930487"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.4.1.3 "><p id="p24498545"><a name="p24498545"></a><a name="p24498545"></a>是</p>
 </td>
@@ -43,7 +43,7 @@ Authorization: authorization
 <tr id="row19160315"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.4.1.1 "><p id="p8481687"><a name="p8481687"></a><a name="p8481687"></a>versionId</p>
 </td>
 <td class="cellrowborder" valign="top" width="57.58%" headers="mcps1.2.4.1.2 "><p id="p15928043"><a name="p15928043"></a><a name="p15928043"></a>指定对象的版本号。</p>
-<p id="p9134666"><a name="p9134666"></a><a name="p9134666"></a>类型：字符串。</p>
+<p id="p9134666"><a name="p9134666"></a><a name="p9134666"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.4.1.3 "><p id="p1710502"><a name="p1710502"></a><a name="p1710502"></a>否</p>
 </td>
@@ -125,37 +125,37 @@ Content-Type: application/xml
 <tbody><tr id="row64485412"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p55935922"><a name="p55935922"></a><a name="p55935922"></a>ID</p>
 </td>
 <td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p34515844"><a name="p34515844"></a><a name="p34515844"></a>用户的DomainId。</p>
-<p id="p42207147"><a name="p42207147"></a><a name="p42207147"></a>类型：字符串。</p>
+<p id="p42207147"><a name="p42207147"></a><a name="p42207147"></a>类型：String</p>
 </td>
 </tr>
 <tr id="row44320003"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p33150486"><a name="p33150486"></a><a name="p33150486"></a>AccessControlList</p>
 </td>
 <td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p834854"><a name="p834854"></a><a name="p834854"></a>访问控制列表，记录了对该桶有访问权限的用户列表。</p>
-<p id="p7513688"><a name="p7513688"></a><a name="p7513688"></a>类型：XML。</p>
+<p id="p7513688"><a name="p7513688"></a><a name="p7513688"></a>类型：XML</p>
 </td>
 </tr>
 <tr id="row514330"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p41660763"><a name="p41660763"></a><a name="p41660763"></a>Grant</p>
 </td>
 <td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p19078608"><a name="p19078608"></a><a name="p19078608"></a>用于标记用户及用户的权限。</p>
-<p id="p37489745"><a name="p37489745"></a><a name="p37489745"></a>类型：XML。</p>
+<p id="p37489745"><a name="p37489745"></a><a name="p37489745"></a>类型：XML</p>
 </td>
 </tr>
 <tr id="row1863393"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p16717176"><a name="p16717176"></a><a name="p16717176"></a>Grantee</p>
 </td>
 <td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p11913978"><a name="p11913978"></a><a name="p11913978"></a>记录用户信息。</p>
-<p id="p40116944"><a name="p40116944"></a><a name="p40116944"></a>类型：XML。</p>
+<p id="p40116944"><a name="p40116944"></a><a name="p40116944"></a>类型：XML</p>
 </td>
 </tr>
 <tr id="row236755121147"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p1561393711411"><a name="p1561393711411"></a><a name="p1561393711411"></a>Delivered</p>
 </td>
 <td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p5676939411411"><a name="p5676939411411"></a><a name="p5676939411411"></a>对象ACL是否继承桶的ACL。</p>
-<p id="p4116250211411"><a name="p4116250211411"></a><a name="p4116250211411"></a>类型：布尔类型。</p>
+<p id="p4116250211411"><a name="p4116250211411"></a><a name="p4116250211411"></a>类型：Boolean</p>
 </td>
 </tr>
 <tr id="row25508177"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p52896485"><a name="p52896485"></a><a name="p52896485"></a>Permission</p>
 </td>
 <td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p56756893"><a name="p56756893"></a><a name="p56756893"></a>指定的用户对该对象所具有的操作权限。</p>
-<p id="p41049994"><a name="p41049994"></a><a name="p41049994"></a>类型：字符串。</p>
+<p id="p41049994"><a name="p41049994"></a><a name="p41049994"></a>类型：String</p>
 </td>
 </tr>
 </tbody>

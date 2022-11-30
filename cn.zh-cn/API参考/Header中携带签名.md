@@ -320,10 +320,10 @@ public class SignDemo {
 	private static final List<String> SUB_RESOURCES = Collections.unmodifiableList(Arrays.asList(
 			"CDNNotifyConfiguration", "acl", "append", "attname", "backtosource", "cors", "customdomain", "delete",
 			"deletebucket", "directcoldaccess", "encryption", "inventory", "length", "lifecycle", "location", "logging",
-			"metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy", "position", "quota",
-			"rename", "replication", "response-cache-control", "response-content-disposition",
-			"response-content-encoding", "response-content-language", "response-content-type", "response-expires",
-			"restore", " storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
+			"metadata", "mirrorBackToSource", "modify", "name", "notification", "obscompresspolicy",  "orchestration", 
+                        "partNumber", "policy", "position", "quota","rename", "replication", "response-cache-control", 
+                        "response-content-disposition","response-content-encoding", "response-content-language", "response-content-type", 
+                        "response-expires","restore", "storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
 			"uploadId", "uploads", "versionId", "versioning", "versions", "website", "x-image-process",
 			"x-image-save-bucket", "x-image-save-object", "x-obs-security-token"));
 	
@@ -454,7 +454,9 @@ public class SignDemo {
 				if(this.isValid(entry.getValue())) {
 					stringToSign.append("=").append(entry.getValue());
 				}
+                                stringToSign.append("&");
 			}
+                        stringToSign.deleteCharAt(stringToSign.length()-1);
 		}
 		
 //		System.out.println(String.format("StringToSign:%s%s", SIGN_SEP, stringToSign.toString()));
@@ -526,7 +528,7 @@ httpMethod = "PUT"
 contentType = "application/xml"
 # "date" is the time when the request was actually generated
 date = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
-canonicalizedHeaders = "x-obs-acl:private"
+canonicalizedHeaders = "x-obs-acl:private\n"
 CanonicalizedResource = "/newbucketname2"
 canonical_string = httpMethod + "\n" + "\n" + contentType + "\n" + date + "\n" + canonicalizedHeaders + CanonicalizedResource
 if IS_PYTHON2:    
@@ -546,4 +548,16 @@ print encode_canonical
 
 1.  计算签名的接口包含在sign.h头文件中。
 2.  计算签名的示例代码在main.c文件中。
+
+## 签名不匹配报错处理<a name="section1712513019265"></a>
+
+若调用OBS API报如下错误：
+
+状态码：403 Forbidden
+
+错误码：SignatureDoesNotMatch
+
+错误信息：The request signature we calculated does not match the signature you provided. Check your key and signing method.
+
+请参考以下案例进行排查处理：[签名不匹配（SignatureDoesNotMatch）如何处理](https://support.huaweicloud.com/obs_faq/obs_faq_0173.html)
 

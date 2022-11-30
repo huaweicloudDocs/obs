@@ -32,15 +32,15 @@ Host: bucketname.obs.cn-north-4.myhuaweicloud.com
 <tbody><tr id="row9885913"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p62561513"><a name="p62561513"></a><a name="p62561513"></a>AccessKeyId</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p34317810"><a name="p34317810"></a><a name="p34317810"></a>签发者的AK信息。OBS根据AK确定签发者的身份，并认为URL就是签发者在访问。</p>
-<p id="p40424835"><a name="p40424835"></a><a name="p40424835"></a>类型：字符串。</p>
+<p id="p40424835"><a name="p40424835"></a><a name="p40424835"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.3 "><p id="p53186163"><a name="p53186163"></a><a name="p53186163"></a>是</p>
 </td>
 </tr>
 <tr id="row8913420"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p50898414"><a name="p50898414"></a><a name="p50898414"></a>Expires</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p29130856"><a name="p29130856"></a><a name="p29130856"></a>临时授权失效的时间；临时授权失效的时间为24小时，但是如果含有了临时的AK，其授权失效时间最大值也只能为24小时；UTC时间，1970年1月1日零时之后的指定的Expires时间内有效（以秒为单位）。</p>
-<p id="p60851118"><a name="p60851118"></a><a name="p60851118"></a>类型：字符串。</p>
+<td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p29130856"><a name="p29130856"></a><a name="p29130856"></a>临时授权失效的时间；UTC时间，1970年1月1日零时之后的指定的Expires时间内有效（以秒为单位）。</p>
+<p id="p60851118"><a name="p60851118"></a><a name="p60851118"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.3 "><p id="p29993536"><a name="p29993536"></a><a name="p29993536"></a>是</p>
 </td>
@@ -48,7 +48,7 @@ Host: bucketname.obs.cn-north-4.myhuaweicloud.com
 <tr id="row1506375"><td class="cellrowborder" valign="top" width="25.509999999999998%" headers="mcps1.2.4.1.1 "><p id="p54907514"><a name="p54907514"></a><a name="p54907514"></a>Signature</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.160000000000004%" headers="mcps1.2.4.1.2 "><p id="p18323687"><a name="p18323687"></a><a name="p18323687"></a>根据用户SK、Expires等参数计算出的签名信息。</p>
-<p id="p30695458"><a name="p30695458"></a><a name="p30695458"></a>类型：字符串。</p>
+<p id="p30695458"><a name="p30695458"></a><a name="p30695458"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.3 "><p id="p3304150"><a name="p3304150"></a><a name="p3304150"></a>是</p>
 </td>
@@ -244,16 +244,16 @@ public class SignDemo {
 	
 	private static final String DEFAULT_ENCODING = "UTF-8";
 	
-	private static final List<String> SUB_RESOURCES = Collections.unmodifiableList(Arrays.asList(
+        private static final List<String> SUB_RESOURCES = Collections.unmodifiableList(Arrays.asList(
 			"CDNNotifyConfiguration", "acl", "append", "attname", "backtosource", "cors", "customdomain", "delete",
 			"deletebucket", "directcoldaccess", "encryption", "inventory", "length", "lifecycle", "location", "logging",
-			"metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy", "position", "quota",
-			"rename", "replication", "response-cache-control", "response-content-disposition",
-			"response-content-encoding", "response-content-language", "response-content-type", "response-expires",
-			"restore", " storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
+			"metadata", "mirrorBackToSource", "modify", "name", "notification", "obscompresspolicy",  "orchestration", 
+                        "partNumber", "policy", "position", "quota","rename", "replication", "response-cache-control", 
+                        "response-content-disposition","response-content-encoding", "response-content-language", "response-content-type", 
+                        "response-expires","restore", "storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
 			"uploadId", "uploads", "versionId", "versioning", "versions", "website", "x-image-process",
 			"x-image-save-bucket", "x-image-save-object", "x-obs-security-token"));
-	
+
 	private String ak;
 	
 	private String sk;
@@ -470,4 +470,16 @@ public class SignDemo {
 
 1.  计算签名的接口包含在sign.h头文件中。
 2.  计算签名的示例代码在main.c文件中。
+
+## 签名不匹配报错处理<a name="section1712513019265"></a>
+
+若调用OBS API报如下错误：
+
+状态码：403 Forbidden
+
+错误码：SignatureDoesNotMatch
+
+错误信息：The request signature we calculated does not match the signature you provided. Check your key and signing method.
+
+请参考以下案例进行排查处理：[签名不匹配（SignatureDoesNotMatch）如何处理](https://support.huaweicloud.com/obs_faq/obs_faq_0173.html)
 

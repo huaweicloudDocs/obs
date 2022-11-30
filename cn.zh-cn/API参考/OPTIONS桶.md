@@ -53,7 +53,7 @@ Access-Control-Request-Method: method
 <tbody><tr id="row18455557"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p18505143"><a name="p18505143"></a><a name="p18505143"></a>Origin</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p22521601"><a name="p22521601"></a><a name="p22521601"></a>预请求指定的跨域请求Origin（通常为域名）。</p>
-<p id="p1367823"><a name="p1367823"></a><a name="p1367823"></a>类型：字符串</p>
+<p id="p1367823"><a name="p1367823"></a><a name="p1367823"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p43684849"><a name="p43684849"></a><a name="p43684849"></a>是</p>
 </td>
@@ -61,7 +61,7 @@ Access-Control-Request-Method: method
 <tr id="row57619328"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p36653955"><a name="p36653955"></a><a name="p36653955"></a>Access-Control-Request-Method</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p16180416"><a name="p16180416"></a><a name="p16180416"></a>实际请求可以带的HTTP方法，可以带多个方法头域。</p>
-<p id="p11406019"><a name="p11406019"></a><a name="p11406019"></a>类型：字符串</p>
+<p id="p11406019"><a name="p11406019"></a><a name="p11406019"></a>类型：String</p>
 <p id="p35545309"><a name="p35545309"></a><a name="p35545309"></a>有效值：GET、PUT、HEAD、POST 、DELETE</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p60597762"><a name="p60597762"></a><a name="p60597762"></a>是</p>
@@ -70,7 +70,7 @@ Access-Control-Request-Method: method
 <tr id="row8508952"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p18136477"><a name="p18136477"></a><a name="p18136477"></a>Access-Control-Request-Headers</p>
 </td>
 <td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p59768510"><a name="p59768510"></a><a name="p59768510"></a>实际请求可以带的HTTP头域，可以带多个头域。</p>
-<p id="p1045685"><a name="p1045685"></a><a name="p1045685"></a>类型：字符串</p>
+<p id="p1045685"><a name="p1045685"></a><a name="p1045685"></a>类型：String</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p17591693"><a name="p17591693"></a><a name="p17591693"></a>否</p>
 </td>
@@ -112,32 +112,32 @@ Content-Length: length
 <tbody><tr id="row21523936"><td class="cellrowborder" valign="top" width="28.28%" headers="mcps1.2.3.1.1 "><p id="p65717225"><a name="p65717225"></a><a name="p65717225"></a>Access-Control-Allow-Origin</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.72%" headers="mcps1.2.3.1.2 "><p id="p21494970"><a name="p21494970"></a><a name="p21494970"></a>如果请求的Origin满足服务端的CORS配置，则在响应中包含这个Origin。</p>
-<p id="p59237005"><a name="p59237005"></a><a name="p59237005"></a>类型：字符串</p>
+<p id="p59237005"><a name="p59237005"></a><a name="p59237005"></a>类型：String</p>
 </td>
 </tr>
 <tr id="row63371004"><td class="cellrowborder" valign="top" width="28.28%" headers="mcps1.2.3.1.1 "><p id="p32777686"><a name="p32777686"></a><a name="p32777686"></a>Access-Control-Allow-Headers</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.72%" headers="mcps1.2.3.1.2 "><p id="p37746929"><a name="p37746929"></a><a name="p37746929"></a>如果请求的headers满足服务端的CORS配置，则在响应中包含这个headers。</p>
-<p id="p4178046"><a name="p4178046"></a><a name="p4178046"></a>类型：字符串</p>
+<p id="p4178046"><a name="p4178046"></a><a name="p4178046"></a>类型：String</p>
 </td>
 </tr>
 <tr id="row37602421"><td class="cellrowborder" valign="top" width="28.28%" headers="mcps1.2.3.1.1 "><p id="p25897224"><a name="p25897224"></a><a name="p25897224"></a>Access-Control-Max-Age</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.72%" headers="mcps1.2.3.1.2 "><p id="p17300437"><a name="p17300437"></a><a name="p17300437"></a>服务端CORS配置中的MaxAgeSeconds。</p>
-<p id="p21486208"><a name="p21486208"></a><a name="p21486208"></a>类型：整数</p>
+<p id="p21486208"><a name="p21486208"></a><a name="p21486208"></a>类型：Integer</p>
 </td>
 </tr>
 <tr id="row59158146"><td class="cellrowborder" valign="top" width="28.28%" headers="mcps1.2.3.1.1 "><p id="p27080503"><a name="p27080503"></a><a name="p27080503"></a>Access-Control-Allow-Methods</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.72%" headers="mcps1.2.3.1.2 "><p id="p46037149"><a name="p46037149"></a><a name="p46037149"></a>如果请求的Access-Control-Request-Method满足服务端的CORS配置，则在响应中包含这条rule中的Methods。</p>
-<p id="p11681162"><a name="p11681162"></a><a name="p11681162"></a>类型：字符串</p>
+<p id="p11681162"><a name="p11681162"></a><a name="p11681162"></a>类型：String</p>
 <p id="p38021595"><a name="p38021595"></a><a name="p38021595"></a>有效值：GET、PUT、HEAD、POST 、DELETE</p>
 </td>
 </tr>
 <tr id="row6650043"><td class="cellrowborder" valign="top" width="28.28%" headers="mcps1.2.3.1.1 "><p id="p1782642"><a name="p1782642"></a><a name="p1782642"></a>Access-Control-Expose-Headers</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.72%" headers="mcps1.2.3.1.2 "><p id="p10176276"><a name="p10176276"></a><a name="p10176276"></a>服务端CORS配置中的ExposeHeader。</p>
-<p id="p24477626"><a name="p24477626"></a><a name="p24477626"></a>类型：字符串</p>
+<p id="p24477626"><a name="p24477626"></a><a name="p24477626"></a>类型：String</p>
 </td>
 </tr>
 </tbody>
