@@ -23,33 +23,10 @@ Authorization: authorization
 
 **表 1**  请求消息参数
 
-<a name="table22962068"></a>
-<table><thead align="left"><tr id="row51500263"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.2.4.1.1"><p id="p10771806"><a name="p10771806"></a><a name="p10771806"></a><strong id="b29837390"><a name="b29837390"></a><a name="b29837390"></a>参数名称</strong></p>
-</th>
-<th class="cellrowborder" valign="top" width="57.58%" id="mcps1.2.4.1.2"><p id="p909510"><a name="p909510"></a><a name="p909510"></a><strong id="b8185591"><a name="b8185591"></a><a name="b8185591"></a>描述</strong></p>
-</th>
-<th class="cellrowborder" valign="top" width="18.18%" id="mcps1.2.4.1.3"><p id="p59053163"><a name="p59053163"></a><a name="p59053163"></a><strong id="b61716423"><a name="b61716423"></a><a name="b61716423"></a>是否必选</strong></p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row32974368"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.4.1.1 "><p id="p53678186"><a name="p53678186"></a><a name="p53678186"></a>acl</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.58%" headers="mcps1.2.4.1.2 "><p id="p52965837"><a name="p52965837"></a><a name="p52965837"></a>指定该请求是获取对象的acl。</p>
-<p id="p6930487"><a name="p6930487"></a><a name="p6930487"></a>类型：String</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.4.1.3 "><p id="p24498545"><a name="p24498545"></a><a name="p24498545"></a>是</p>
-</td>
-</tr>
-<tr id="row19160315"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.4.1.1 "><p id="p8481687"><a name="p8481687"></a><a name="p8481687"></a>versionId</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.58%" headers="mcps1.2.4.1.2 "><p id="p15928043"><a name="p15928043"></a><a name="p15928043"></a>指定对象的版本号。</p>
-<p id="p9134666"><a name="p9134666"></a><a name="p9134666"></a>类型：String</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.4.1.3 "><p id="p1710502"><a name="p1710502"></a><a name="p1710502"></a>否</p>
-</td>
-</tr>
-</tbody>
-</table>
+|**参数名称**|**描述**|**是否必选**|
+|--|--|--|
+|versionId|指定对象的版本号。类型：String|否|
+
 
 ## 请求消息头<a name="section2835283"></a>
 
@@ -92,22 +69,10 @@ Content-Type: application/xml
 
 **表 2**  附加响应消息头
 
-<a name="table995015721520"></a>
-<table><thead align="left"><tr id="row43542352"><th class="cellrowborder" valign="top" width="40.400000000000006%" id="mcps1.2.3.1.1"><p id="p37269637"><a name="p37269637"></a><a name="p37269637"></a>消息头名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="59.599999999999994%" id="mcps1.2.3.1.2"><p id="p66050606"><a name="p66050606"></a><a name="p66050606"></a>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row48498868"><td class="cellrowborder" valign="top" width="40.400000000000006%" headers="mcps1.2.3.1.1 "><p id="p36094206"><a name="p36094206"></a><a name="p36094206"></a>x-obs-version-id</p>
-</td>
-<td class="cellrowborder" valign="top" width="59.599999999999994%" headers="mcps1.2.3.1.2 "><p id="p37949556"><a name="p37949556"></a><a name="p37949556"></a>指定对象的版本号。</p>
-<p id="p6001692"><a name="p6001692"></a><a name="p6001692"></a>有效值：字符串</p>
-<p id="p54015232"><a name="p54015232"></a><a name="p54015232"></a>默认值：无</p>
-</td>
-</tr>
-</tbody>
-</table>
+|消息头名称|描述|
+|--|--|
+|x-obs-version-id|指定对象的版本号。有效值：字符串默认值：无|
+
 
 ## 响应消息元素<a name="section13141676"></a>
 
@@ -115,51 +80,15 @@ Content-Type: application/xml
 
 **表 3**  响应消息元素
 
-<a name="table23161487"></a>
-<table><thead align="left"><tr id="row5296547"><th class="cellrowborder" valign="top" width="35.35%" id="mcps1.2.3.1.1"><p id="p26367153"><a name="p26367153"></a><a name="p26367153"></a><strong id="b35977789"><a name="b35977789"></a><a name="b35977789"></a>元素名称</strong></p>
-</th>
-<th class="cellrowborder" valign="top" width="64.64999999999999%" id="mcps1.2.3.1.2"><p id="p28519821"><a name="p28519821"></a><a name="p28519821"></a><strong id="b55351803"><a name="b55351803"></a><a name="b55351803"></a>描述</strong></p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row64485412"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p55935922"><a name="p55935922"></a><a name="p55935922"></a>ID</p>
-</td>
-<td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p34515844"><a name="p34515844"></a><a name="p34515844"></a>用户的DomainId。</p>
-<p id="p42207147"><a name="p42207147"></a><a name="p42207147"></a>类型：String</p>
-</td>
-</tr>
-<tr id="row44320003"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p33150486"><a name="p33150486"></a><a name="p33150486"></a>AccessControlList</p>
-</td>
-<td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p834854"><a name="p834854"></a><a name="p834854"></a>访问控制列表，记录了对该桶有访问权限的用户列表。</p>
-<p id="p7513688"><a name="p7513688"></a><a name="p7513688"></a>类型：XML</p>
-</td>
-</tr>
-<tr id="row514330"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p41660763"><a name="p41660763"></a><a name="p41660763"></a>Grant</p>
-</td>
-<td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p19078608"><a name="p19078608"></a><a name="p19078608"></a>用于标记用户及用户的权限。</p>
-<p id="p37489745"><a name="p37489745"></a><a name="p37489745"></a>类型：XML</p>
-</td>
-</tr>
-<tr id="row1863393"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p16717176"><a name="p16717176"></a><a name="p16717176"></a>Grantee</p>
-</td>
-<td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p11913978"><a name="p11913978"></a><a name="p11913978"></a>记录用户信息。</p>
-<p id="p40116944"><a name="p40116944"></a><a name="p40116944"></a>类型：XML</p>
-</td>
-</tr>
-<tr id="row236755121147"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p1561393711411"><a name="p1561393711411"></a><a name="p1561393711411"></a>Delivered</p>
-</td>
-<td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p5676939411411"><a name="p5676939411411"></a><a name="p5676939411411"></a>对象ACL是否继承桶的ACL。</p>
-<p id="p4116250211411"><a name="p4116250211411"></a><a name="p4116250211411"></a>类型：Boolean</p>
-</td>
-</tr>
-<tr id="row25508177"><td class="cellrowborder" valign="top" width="35.35%" headers="mcps1.2.3.1.1 "><p id="p52896485"><a name="p52896485"></a><a name="p52896485"></a>Permission</p>
-</td>
-<td class="cellrowborder" valign="top" width="64.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p56756893"><a name="p56756893"></a><a name="p56756893"></a>指定的用户对该对象所具有的操作权限。</p>
-<p id="p41049994"><a name="p41049994"></a><a name="p41049994"></a>类型：String</p>
-</td>
-</tr>
-</tbody>
-</table>
+|**元素名称**|**描述**|
+|--|--|
+|ID|用户的DomainId。类型：String|
+|AccessControlList|访问控制列表，记录了对该桶有访问权限的用户列表。类型：XML|
+|Grant|用于标记用户及用户的权限。类型：XML|
+|Grantee|记录用户信息。类型：XML|
+|Delivered|对象ACL是否继承桶的ACL。类型：Boolean|
+|Permission|指定的用户对该对象所具有的操作权限。类型：String|
+
 
 ## 错误响应消息<a name="section51166221"></a>
 
@@ -213,6 +142,57 @@ Content-Length: 769
       <Permission>READ_ACP</Permission> 
     </Grant> 
   </AccessControlList> 
+</AccessControlPolicy>
+```
+
+## 请求示例：已启用版本控制<a name="section1512511218519"></a>
+
+```
+GET /object01?acl HTTP/1.1
+Authorization: OBS H4IPJX0TQTHTHEBQQCEC:iqSPeUBl66PwXDApxjRKk6hlcN4=
+versionId: G001118A6803675AFFFFD3043F7F91D0
+User-Agent: curl/7.29.0
+Host: examplebucket.obs.region.myhuaweicloud.com
+Date: WED, 01 Jul 2015 02:37:22 GMT
+Content-Type: application/xml
+```
+
+## 响应示例：已启用版本控制<a name="section4839225185411"></a>
+
+```
+x-obs-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCSmpL2dv6zZLM2HmUrXKTAi258MPqmrp
+x-obs-request-id: 0000018A2A73AF59D3085C8F8ABF0C65
+Server: OBS
+Content-Length: 0
+Date: WED, 01 Jul 2015 02:37:22 GMT
+x-obs-version-id: G001118A6803675AFFFFD3043F7F91D0
+ 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AccessControlPolicy  xmlns="http://obs.myhwclouds.com/doc/2015-06-30/">
+    <Owner>
+        <ID>d6s58yhnm83f3081577800575ee4cf</ID>
+    </Owner>
+    <Delivered>false</Delivered>
+    <AccessControlList>
+        <Grant>
+            <Grantee>
+                <ID>f262a63g69422e8f330af1349c588f</ID>
+            </Grantee>
+            <Permission>READ</Permission>
+        </Grant>
+        <Grant>
+            <Grantee>
+                <ID>c965gfda2a849422e8f3985562432dsaa</ID>
+            </Grantee>
+            <Permission>FULL_CONTROL</Permission>
+        </Grant>
+        <Grant>
+            <Grantee>
+                <Canned>Everyone</Canned>
+            </Grantee>
+            <Permission>READ</Permission>
+        </Grant>
+    </AccessControlList>
 </AccessControlPolicy>
 ```
 

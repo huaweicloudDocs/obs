@@ -46,26 +46,10 @@ Content-MD5: MD5
 
 **表 1**  CORS请求消息头
 
-<a name="table15021581161521"></a>
-<table><thead align="left"><tr id="row20749318"><th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.4.1.1"><p id="p2973159"><a name="p2973159"></a><a name="p2973159"></a>消息头名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="63.26367363263674%" id="mcps1.2.4.1.2"><p id="p39499321"><a name="p39499321"></a><a name="p39499321"></a>描述</p>
-</th>
-<th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.4.1.3"><p id="p45328419"><a name="p45328419"></a><a name="p45328419"></a>是否必选</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row131151538153117"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p5739124015311"><a name="p5739124015311"></a><a name="p5739124015311"></a>Content-MD5</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p99864193216"><a name="p99864193216"></a><a name="p99864193216"></a>按照RFC 1864标准计算出消息体的MD5摘要字符串，即消息体128-bit MD5值经过base64编码后得到的字符串。也支持设置Content-SHA256头域，其值为消息体256-bit SHA256值经过base64编码后得到的字符串，Content-MD5和Content-SHA256二选一。</p>
-<p id="p1981043326"><a name="p1981043326"></a><a name="p1981043326"></a>类型：String</p>
-<p id="p79817417329"><a name="p79817417329"></a><a name="p79817417329"></a>示例：n58IG6hfM7vqI4K0vnWpog==</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p14739124003114"><a name="p14739124003114"></a><a name="p14739124003114"></a>是</p>
-</td>
-</tr>
-</tbody>
-</table>
+|消息头名称|描述|是否必选|
+|--|--|--|
+|Content-MD5|按照RFC 1864标准计算出消息体的MD5摘要字符串，即消息体128-bit MD5值经过base64编码后得到的字符串。也支持设置Content-SHA256头域，其值为消息体256-bit SHA256值经过base64编码后得到的字符串，Content-MD5和Content-SHA256二选一。类型：String示例：n58IG6hfM7vqI4K0vnWpog==|是|
+
 
 ## 请求消息元素<a name="section54295418"></a>
 
@@ -73,91 +57,17 @@ Content-MD5: MD5
 
 **表 2**  CORS配置元素
 
-<a name="table35453405161544"></a>
-<table><thead align="left"><tr id="row7895657"><th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.4.1.1"><p id="p35568496"><a name="p35568496"></a><a name="p35568496"></a>名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="63.26367363263674%" id="mcps1.2.4.1.2"><p id="p62475956"><a name="p62475956"></a><a name="p62475956"></a>描述</p>
-</th>
-<th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.4.1.3"><p id="p27387676"><a name="p27387676"></a><a name="p27387676"></a>是否必选</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row3809297"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p40117626"><a name="p40117626"></a><a name="p40117626"></a>CORSConfiguration</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p28302272"><a name="p28302272"></a><a name="p28302272"></a>CORSRules的根节点，最大不超过64 KB。</p>
-<p id="p53393857"><a name="p53393857"></a><a name="p53393857"></a>类型：Container</p>
-<p id="p10782666"><a name="p10782666"></a><a name="p10782666"></a>父节点：无。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p980736"><a name="p980736"></a><a name="p980736"></a>是</p>
-</td>
-</tr>
-<tr id="row8826632"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p43868588"><a name="p43868588"></a><a name="p43868588"></a>CORSRule</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p63694769"><a name="p63694769"></a><a name="p63694769"></a>CORS规则，CORSConfiguration下可最多包含100个规则。</p>
-<p id="p36382015"><a name="p36382015"></a><a name="p36382015"></a>类型：Container</p>
-<p id="p59002687"><a name="p59002687"></a><a name="p59002687"></a>父节点：CORSConfiguration。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p14488317"><a name="p14488317"></a><a name="p14488317"></a>是</p>
-</td>
-</tr>
-<tr id="row63285989"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p25891503"><a name="p25891503"></a><a name="p25891503"></a>ID</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p16836989"><a name="p16836989"></a><a name="p16836989"></a>一条Rule的标识，由不超过255个字符的字符串组成。</p>
-<p id="p17315177"><a name="p17315177"></a><a name="p17315177"></a>类型：String</p>
-<p id="p21618872"><a name="p21618872"></a><a name="p21618872"></a>父节点：CORSRule。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p6298183"><a name="p6298183"></a><a name="p6298183"></a>否</p>
-</td>
-</tr>
-<tr id="row56683650"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p27972907"><a name="p27972907"></a><a name="p27972907"></a>AllowedMethod</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p51212956"><a name="p51212956"></a><a name="p51212956"></a>CORS规则允许的Method。</p>
-<p id="p58263423"><a name="p58263423"></a><a name="p58263423"></a>类型：String</p>
-<p id="p54608766"><a name="p54608766"></a><a name="p54608766"></a>有效值：GET、PUT、HEAD、POST 、DELETE</p>
-<p id="p21716848"><a name="p21716848"></a><a name="p21716848"></a>父节点：CORSRule。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p14234302"><a name="p14234302"></a><a name="p14234302"></a>是</p>
-</td>
-</tr>
-<tr id="row60999859"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p42041559"><a name="p42041559"></a><a name="p42041559"></a>AllowedOrigin</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p49923082"><a name="p49923082"></a><a name="p49923082"></a>CORS规则允许的Origin（表示域名的字符串），可以带一个匹配符”*”。每一个AllowedOrigin可以带最多一个“*”通配符。</p>
-<p id="p46654562"><a name="p46654562"></a><a name="p46654562"></a>类型：String</p>
-<p id="p17237879"><a name="p17237879"></a><a name="p17237879"></a>父节点：CORSRule。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p54090948"><a name="p54090948"></a><a name="p54090948"></a>是</p>
-</td>
-</tr>
-<tr id="row17056486"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p39398119"><a name="p39398119"></a><a name="p39398119"></a>AllowedHeader</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p37131036"><a name="p37131036"></a><a name="p37131036"></a>配置CORS请求中允许携带的“Access-Control-Request-Headers”头域。如果一个请求带了“Access-Control-Request-Headers”头域，则只有匹配上AllowedHeader中的配置才认为是一个合法的CORS请求。每一个AllowedHeader可以带最多一个“*”通配符，不可出现空格。</p>
-<p id="p65743869"><a name="p65743869"></a><a name="p65743869"></a>类型：String</p>
-<p id="p54823917"><a name="p54823917"></a><a name="p54823917"></a>父节点：CORSRule。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p11552324"><a name="p11552324"></a><a name="p11552324"></a>否</p>
-</td>
-</tr>
-<tr id="row36862052"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p33036220"><a name="p33036220"></a><a name="p33036220"></a>MaxAgeSeconds</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p58688140"><a name="p58688140"></a><a name="p58688140"></a>客户端可以缓存的CORS响应时间，以秒为单位。</p>
-<p id="p58431217"><a name="p58431217"></a><a name="p58431217"></a>每个CORSRule可以包含至多一个MaxAgeSeconds，可以设置为负值。</p>
-<p id="p56118909"><a name="p56118909"></a><a name="p56118909"></a>类型：Integer</p>
-<p id="p35308137"><a name="p35308137"></a><a name="p35308137"></a>父节点：CORSRule。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p41386862"><a name="p41386862"></a><a name="p41386862"></a>否</p>
-</td>
-</tr>
-<tr id="row36937440"><td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.4.1.1 "><p id="p39142691"><a name="p39142691"></a><a name="p39142691"></a>ExposeHeader</p>
-</td>
-<td class="cellrowborder" valign="top" width="63.26367363263674%" headers="mcps1.2.4.1.2 "><p id="p16441382"><a name="p16441382"></a><a name="p16441382"></a>CORS响应中带的附加头域，给客户端提供额外的信息，不可出现空格。</p>
-<p id="p13754711"><a name="p13754711"></a><a name="p13754711"></a>类型：String</p>
-<p id="p56683537"><a name="p56683537"></a><a name="p56683537"></a>父节点：CORSRule。</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.3 "><p id="p27963789"><a name="p27963789"></a><a name="p27963789"></a>否</p>
-</td>
-</tr>
-</tbody>
-</table>
+|名称|描述|是否必选|
+|--|--|--|
+|CORSConfiguration|CORSRules的根节点，最大不超过64 KB。类型：Container父节点：无。|是|
+|CORSRule|CORS规则，CORSConfiguration下可最多包含100个规则。类型：Container父节点：CORSConfiguration。|是|
+|ID|一条Rule的标识，由不超过255个字符的字符串组成。类型：String父节点：CORSRule。|否|
+|AllowedMethod|CORS规则允许的Method。类型：String有效值：GET、PUT、HEAD、POST 、DELETE父节点：CORSRule。|是|
+|AllowedOrigin|CORS规则允许的Origin（表示域名的字符串，仅支持英文域名），通过正则表达式进行匹配，可以带一个匹配符“*”。每一个AllowedOrigin可以带最多一个“*”通配符。类型：String父节点：CORSRule。|是|
+|AllowedHeader|配置CORS请求中允许携带的“Access-Control-Request-Headers”头域。如果一个请求带了“Access-Control-Request-Headers”头域，则只有匹配上AllowedHeader中的配置才认为是一个合法的CORS请求（通过正则表达式进行匹配）。每一个AllowedHeader可以带最多一个“*”通配符，不可出现空格。类型：String父节点：CORSRule。|否|
+|MaxAgeSeconds|客户端可以缓存的CORS响应时间，以秒为单位。每个CORSRule可以包含至多一个MaxAgeSeconds，可以设置为负值。类型：Integer父节点：CORSRule。|否|
+|ExposeHeader|CORS响应中带的附加头域，给客户端提供额外的信息，不可出现空格。类型：String父节点：CORSRule。|否|
+
 
 ## 响应消息样式<a name="section18896716"></a>
 
@@ -220,5 +130,41 @@ x-obs-request-id: BF26000001643627112BD03512FC94A4
 x-obs-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCSYi6wLC4bkrvuS9sqnlRjxK2a5Fe3ry
 Date: WED, 01 Jul 2015 03:51:52 GMT
 Content-Length: 0
+```
+
+## 请求示例：为桶配置两条CORS规则<a name="section1086510712157"></a>
+
+```
+PUT /?cors HTTP/1.1
+Authorization: OBS H4IPJX0TQTHTHEBQQCEC:iqSPeUBl66PwXDApxjRKk6hlcN4=
+User-Agent: curl/7.29.0
+Host: examplebucket.obs.region.myhuaweicloud.com
+Date: WED, 01 Jul 2015 02:37:22 GMT
+Content-Type: application/xml
+Content-MD5: HwVUAzslyD0rroMp/eIdwQ==
+ 
+<CORSConfiguration>
+    <CORSRule>
+        <AllowedOrigin>http://www.example.com</AllowedOrigin>
+        <AllowedMethod>PUT</AllowedMethod>
+        <AllowedMethod>POST</AllowedMethod>
+        <AllowedMethod>DELETE</AllowedMethod>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+    </CORSRule>
+</CORSConfiguration>
+```
+
+## 响应示例：为桶配置两条CORS规则<a name="section173758189154"></a>
+
+```
+x-obs-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCTPXg+yj9IXC9r6mgmWgfSfqQGvHM3rS
+x-obs-request-id: 0000018A3A14051AD2886D166EE13D98
+Server: OBS
+Content-Length: 0
+Date: WED, 01 Jul 2015 02:37:22 GMT
 ```
 
